@@ -1,0 +1,10 @@
+.active-tab-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activeTabColor{
+    background-color: rgb(65, 65, 176);
+    color: gainsboro;
+}

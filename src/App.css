@@ -1,0 +1,36 @@
+:root {
+  --background-color: #ffffff; /* Default background color */
+  --text-color: #000000; /* Default text color */
+}
+
+.app{
+  padding: 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 1000px;
+}
+.headingandbtn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.light-mode {
+  /* Light mode styles */
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+.dark-mode {
+  /* Dark mode styles */
+  --background-color: #333333;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

@@ -1,0 +1,27 @@
+:root {
+    --background-color :#ffffff;
+    --text-color:#000000;
+}
+
+.app{
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.headingandbtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.light-mode ,p,h3 {
+background-color: #ffffff;
+color: #000000;
+}
+
+.dark-mode,p,h3 {
+    background-color :#333333;
+    color:#ffffff;
+}
+
