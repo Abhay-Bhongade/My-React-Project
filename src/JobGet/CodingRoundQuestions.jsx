@@ -66,7 +66,7 @@ if(arr.length < 3 ){
     return;
 }else{
     const middleIndex = Math.floor(arr.length / 2) ;
-    if (arr?.length % 2 === 0) {
+    if (arr.length % 2 === 0) {
         arr.splice(middleIndex-1,2)
     } else {
         arr.splice(middleIndex,1)  
@@ -78,11 +78,18 @@ removeMiddle(midelems)
 console.log("midelems",midelems);
 
 //4 sort number vs string
+
+//sort number
 const numbsNew = [1,2,3,4,5,6,7,8,9,10];
 const sortedNumValues = numbsNew.sort((a,b)=>a-b);
 console.log("sortedNumValues",sortedNumValues);
 
+//sort string
+const newStingarr = ["Raj","Gopal","Aman","Kunal"]
+const sortedStrings = newStingarr.sort()
+console.log("sortedStrings",sortedStrings);
 
+//to print line after every one second
 // useEffect(()=>{
 //     const interval = setInterval(()=>{
 //         console.log("Hi I am Interval function");
@@ -90,8 +97,8 @@ console.log("sortedNumValues",sortedNumValues);
 // return () => clearInterval(interval);
 // },[])
 
-//from this object change only secondaddress value to test3
 
+//from this object change only secondaddress value to test3
 const [obje, setObject] = useState({
     firsname: "ajay",
     lastname: "johar",
@@ -138,6 +145,7 @@ function compareWords(wordArray) {
   
   for (let i = 0; i < secondWord.length; i++) {
     let letter = secondWord[i];
+    console.log("letter",letter);
     if (firstWord.indexOf(letter) === -1) {
       return false;
     }
@@ -186,7 +194,7 @@ console.log(sum(2,3));
 console.log(sum((2),(3)));
 
 
-//merge two  string and give the resulted string result
+//merge two string and give the resulted string result
 
 function mergeStrings(a,b){
   let len = Math.min(b.length,x.length);
@@ -503,11 +511,48 @@ return str.split(" ").join("")
 console.log(removeWhiteSpace("Hey,   buddy   ok"));
 
 
-var xyx = 10;
-var xyx ;
 
-console.log("xyx",xyx);
+//DSA - two sum problem with and without a sorted array
+//without sorted Array
 
+function twoSum(nums, target) {
+  const numMap = {}; // Map to store seen numbers
+  
+  for (let i = 0; i < nums.length; i++) {
+      const complement = target - nums[i];
+      if (numMap[complement] !== undefined) {
+          return [numMap[complement], i];
+      }
+      numMap[nums[i]] = i;
+  }
+  
+  return [];
+}
+
+//with sorted array
+
+function twoSumSorted(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+  
+  while (left < right) {
+      const sum = nums[left] + nums[right];
+      if (sum === target) {
+          return [left, right];
+      } else if (sum < target) {
+          left++;
+      } else {
+          right--;
+      }
+  }
+  
+  return [];
+}
+
+const numsSorted = [2, 7, 11, 15];
+const targetSorted = 18;
+
+console.log("twoSumSorted",twoSumSorted(numsSorted,targetSorted));
   return (
     <div>
         <h1>CodingRoundQuestions</h1>

@@ -12,8 +12,17 @@ import ParentComponent from "./Components/ChildToParentDataPass/ParentComponent.
 import useOnlineStatus from "../src/Components/MachinecodingRound/CustomHook/useOnlineStatus.jsx"
 import ScrollIndicator from "./Components/MachinecodingRound/ScrollIndicator/ScrollIndicator.jsx";
 import ShowActiveTab from "./Components/MachinecodingRound/ActiveTab/ShowActiveTab.jsx";
+import AppC from "./Components/MachinecodingRound/HigherOrderComponent/AppC.jsx";
 
-
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Home from "./Pages/Home.jsx";
+import About from "./Pages/About.jsx";
+import Blog from "./Pages/Blog.jsx";
+import Navbar from "./Pages/Navbar.jsx";
+import { ThemeProvider } from "./theme-context.jsx";
+import PaginationBackendDriven from "./Components/MachinecodingRound/Pagination/PaginationBackendDriven.jsx";
+import Stepper from "./Components/MachinecodingRound/Stepper/Stepper.jsx";
+import PracticeCodingRoundQuestions from "./JobGet/PracticeCodingRoundQuestions.jsx";
 
 const App = () => {
 
@@ -30,7 +39,21 @@ console.log("onlineStatus",onlineStatus);
 if(onlineStatus ===false) return <h1>Look like your are offline !!,please check your  internet connection </h1>
 
   return (
-  <div><ShowActiveTab /></div>
+  // <div className="App">
+  //   <ThemeProvider>
+  //   <BrowserRouter>
+  //   <Navbar />
+  //   <Routes>
+  //     <Route path="/" element={<Home/>}/>
+  //     <Route path="/about" element={<About/>}/>
+  //     <Route path="/blog" element={<Blog/>}/>
+  //   </Routes>
+  //   </BrowserRouter>
+  //   </ThemeProvider>
+  //   </div>
+ <><CodingRoundQuestions />
+ <PracticeCodingRoundQuestions />
+ </>   
   );
 };
 

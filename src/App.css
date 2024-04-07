@@ -1,6 +1,7 @@
 :root {
   --background-color: #ffffff; /* Default background color */
   --text-color: #000000; /* Default text color */
+  --heading-color:#444444;
 }
 
 .app{
@@ -16,21 +17,24 @@
   align-items: center;
 }
 
-
-
-.light-mode {
-  /* Light mode styles */
+[data-theme="light"]{
   --background-color: #ffffff;
-  --text-color: #000000;
+  --text-color: #333333;
+  --heading-color:#444444;
 }
 
-.dark-mode {
-  /* Dark mode styles */
+[data-theme="dark"]{
   --background-color: #333333;
   --text-color: #ffffff;
+  --heading-color:#e6d3d3;
 }
+
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+h3{
+  color:var(--heading-color);
 }

@@ -18,21 +18,48 @@
 //1. what is your role in the current project in your company , introduction and on which project you work on 
 
 //Tell something about your current project?
-//1. 
+//you have to tell three things 
+//1.high level use to the end user
+//2.what is your project domain like ecommerce,healthcare,hotel management
+//3.tech stack use in your project like nodejs for backend,react,redux,js,css,html(mern stack)
+//currently I am working on the Orange Application which is hotel staff management project the purpose of this project is manage each role like there are roles like admin,recruiter,inspector,bussiness developer,bussiness analyst,accountant,hotel manager,collaborator where admin has full access where he can add,edit,delte all the above role and each role has seperate login also where other role has the view access only and there is dashboard for each screen which show after the particular role login ,the technologies we are using react for frontend ,  nodejs,express for backend and  and mongodb for database we are following for hybrid agile model for our project
+
+//what is meant by agile model
+//The Agile model is a software development approach that emphasizes flexibility, adaptability, and collaboration throughout the development process. It contrasts with traditional "waterfall" methodologies, which involve sequential phases like "requirements gathering, design, implementation, testing, and deployment".
 
 
-//2. what is virtual dom and how it is diffrent from the real dom
-//The Virtual DOM in React is a lightweight copy of the real DOM.
-//When you make changes to the "state" of a React component, instead of directly manipulating the real DOM, React creates a new Virtual DOM representation of the updated UI.
-//React then compares this new Virtual DOM with the previous one to identify the differences (often referred to as "diffing"). Once the differences are identified, React calculates the most efficient way to update the real DOM to match the new Virtual DOM.
-//This process of comparing and updating only the parts of the DOM that have changed, rather than re-rendering the entire UI, is what makes React highly efficient and performant. By minimizing the number of updates to the real DOM, React significantly improves the performance of web applications, especially those with complex and dynamic user interfaces.
+//Introduction
+//your name
+//your total experience
+//technologies you work on
+//location 
+//your background domain knowledge
+//Good Afternoon sir,My name is Abhay Bhongade. I'm from Wardha, Maharashtra. I completed my graduation in copmuter engineering from Nagupur University, I've been working as a React Developer for three years now. My skills include HTML, CSS, JavaScript, React, Redux, and Bootstrap.Thank you for this opportunity to introduce myself.
 
-//3. what is react (v.imp)
-//React is an open-source JavaScript library developed by Facebook and released to the public in 2013.
+//What are your roles and responsibilities in your Project?
+//As a frontend developer my role is to estimate/gather the requirement and creating the design and then development where I focus on the  api integration and adding validation to forms and write unit test cases with the team and finally publish changes to  different environment and also I supportting the production and live environment by fixing the bugs
+
+//Rate yourself in skills 1 - 10(confidence checking question)
+//rate yourself from 5 to 9 
+//in react 8
+//in js 8 
+//in html 7
+//in css 8
+
+//Requirement change at the last moment
+//you can give the reference to situation you face earlier
+//show  your positive attitude to work here
+
+
+
+//2. what is react (v.imp)
+//React is an open-source JavaScript library developed by Facebook 2011 and released to the public in 2013.
 //React follows the component based approch which helps in building Reusabel UI components.
+//It is used for developing complex and interactive web and mobile UI.
+//Even though it was open-sourced only in 2015, it has one of the largest communities supporting it.
 //usage : React simplifies the creation of "SPA" by using Reusable components.
 
-//features of React
+//key features of React
 //1.Component-Based Architecture
 //2.Virtual DOM
 //3.JSX (JavaScript XML)
@@ -40,17 +67,17 @@
 //5.React Hooks
 
 //Advantage of React 
-//1.Component-Based Architecture:React promotes a modular and "reusable" component-based architecture.
-//2.Virtual DOM:React's Virtual DOM improves performance by minimizing direct manipulation of the actual DOM.
-//3.JSX (JavaScript XML):JSX allows developers to write UI components using a syntax that closely resembles HTML, making the code more readable and intuitive. 
-//4.Unidirectional Data Flow: React follows a unidirectional data flow, where data flows from parent components to child components via props.
-//5.Performance Optimization: React offers various performance optimization techniques, such as memoization, lazy loading, and code splitting. These optimizations help improve rendering speed, reduce time to interactive, and enhance overall user experience.
+//1.Component-Based Architecture:React follows the component based approch which helps in building Reusabel UI components.
+//2.Virtual DOM:React's Virtual DOM "improves performance" by minimizing direct manipulation of the actual DOM.
+//3.JSX (JavaScript XML):JSX allows developers to write HTML like code, making the code more "readable". 
+//4.Unidirectional Data Flow: React follows a unidirectional data flow, where "data flows from parent components to child components via props".
+//5.Performance Optimization: React "offers" various performance optimization techniques, such as memoization, lazy loading, and code splitting. These optimizations help improve rendering speed, reduce time to interactive, and enhance overall user experience.
 //6.Strong Community Support
 //7.React Hooks
 
 //Limitation of React 
 //1.Lack of Proper Documentation: fast updates provides less time to document with proper instructions
-//2.Development Speed: tiresome for developers to continuosly learn new technologies
+//2.Development Speed: tiresome for developers to continuosly learn new technologies.
 //3.JSX Complexity:The mix of HTML and JavaScript in JSX makes React JS much more complicated to learn and that may be unappealing to aspiring developers.
 //4.Problems With SEO:require expertise from developers as react had problem with google and indexing.
 
@@ -66,11 +93,16 @@
 //4.React is simple to learn and more popular than Angular
 //4.Angular is slightly difficult to learn as it has Typescript ,OOPS concept and many more things
 
-
+//3. what is virtual dom and how it is diffrent from the real dom
+//The Virtual DOM in React is a lightweight copy of the real DOM.
+//When you make changes to the "state" of a React component, instead of directly manipulating the real DOM, React creates a new Virtual DOM representation of the updated UI.
+//React then compares this new Virtual DOM with the previous one to identify the differences (often referred to as "diffing"). Once the differences are identified, React calculates the most efficient way to update the real DOM to match the new Virtual DOM.
+//This process of comparing and updating only the parts of the DOM that have changed, rather than re-rendering the entire UI, is what makes React highly efficient and performant. By minimizing the number of updates to the real DOM, React significantly improves the performance of web applications, especially those with complex and dynamic user interfaces.
 
 
 //4. what is Higher Order Component/Function give me one practical example (mostly asked)
 //for toggling or expanding function of menu for those purpose we can use higher order component 
+
 //5. explain life cycle methods in react js
 // mounting phase componentDidMount() , updating phase componentDidUpdate() , unmounting phase componentWillUnMount()
 //6. types of components which you prefer mostly
@@ -81,20 +113,20 @@
 /*
 
 //1.Syntax:
-Class-based components: Defined using ES6 classes, with the class keyword. They extend the React.Component class and define a render() method to return the UI.
-Functional components: Defined as plain JavaScript functions that take props as arguments and return React elements. They are also known as stateless functional components.
+Class-based components: Defined using ES6 classes, with the class keyword.
+Functional components: Defined as plain JavaScript functions that take props as arguments and return React elements.
 
 //2.State Management:
-Class-based components: Can manage local state using the this.setState() method provided by React.
-Functional components: Originally Stateless but now maintain state using hooks.
+Class-based components: Can manage "local state" using the this.setState() method provided by React.
+Functional components: Originally Stateless but now maintain state using useState() hooks.
 
 //3.Lifecycle Methods:
 Class-based components: Have access to lifecycle methods like componentDidMount(), componentDidUpdate(), componentWillUnmount(), etc., which allow developers to execute code at specific points in a component's lifecycle.
 Functional components: Before React Hooks, functional components couldn't use lifecycle methods. With Hooks, functional components can now use lifecycle-related hooks like useEffect to perform side effects.
 
 //4.Readability and Conciseness:
-Functional components: more concise and readable
 Class-based components: verbose(complex).
+Functional components: more concise and readable
 
 //5.Render Method
 //Class Component have render() Method
@@ -104,7 +136,7 @@ Class-based components: verbose(complex).
 */
 
 //7. type of hooks ever you created any custom hooks
-//useState(),useEffect(),useMemo(),useCallback(),useReducer(),useContext(),
+//useState(),useEffect(),useMemo(),useCallback(),useContext(),useReducer(),
 
 //yes I create one customHook which check user is online or offline basically internet connect is on or off
 
@@ -134,17 +166,23 @@ Class-based components: verbose(complex).
 //You can use state management libraries like Redux to manage and share application state across components, including sibling components.
 
 //14. what is redux
-//Redux used for managing application state in JavaScript applications.
-//It helps you manage the state of your application in a predictable manner.
+//Redux is open-source javascript library for managing and centralizing application state.
+//It helps you manage the state of your application in a predictable manner,with the help of Redux devtool  a crome extention.
 //It follows a unidirectional data flow pattern.
+//Redux offers easy debugging.
+
 
 // Main Concepts:
-
 // Store: The single source of truth that holds the application state.
 // Actions: Plain JavaScript objects describing the changes in the application state.
 // Reducers: Functions that specify how the application's state changes in response to actions.
 // Dispatch: A method used to dispatch actions to the Redux store.
-// Selectors: Functions used to extract specific pieces of state from the Redux store.
+// Selectors: Functions used to "extract specific pieces of state" from the Redux store.
+
+//Redux Toolkit was originally created to help address three common concerns about Redux:
+//1."Configuring a Redux store is too complicated"
+//2."I have to add a lot of packages to get Redux to do anything useful"
+//3."Redux requires too much boilerplate code"
 
 //Redux Toolkit:
 //It's designed to make Redux easier and more efficient to work with.
@@ -152,12 +190,49 @@ Class-based components: verbose(complex).
 
 // Features:
 // configureStore: A function that wraps around Redux's createStore and provides sensible defaults.
-// createSlice: A function that generates action creators and reducers for a slice of state.
+// createSlice: A function that "generates" action creators and reducers for a slice of state.
 // Immutability Helpers: Simplifies updating immutable state.
 // Thunks: Simplifies writing and managing async logic.
 
 //How we can do Redux setUp
-//step 1:- install following packages npm install react-redux redux-persist @reduxls/toolkit
+//step 1:- install following packages npm install react-redux redux-persist @reduxjs/toolkit
+//write data
+//when you click on the Add button it dispatches an action then this action calls a reducer function and then this reducer function which update the slice of redux store.
+//add btn => dispatch action => reducer(fn) => update the slice of redux store.
+//[add] btn => [A]dispatch action  => call reducer [fn]=>update the slice in the [cart]
+//and this function is know as a reducer
+
+//read data
+//we use selector and this selector will give you data here(when we use selector this phenomenon  called as subscribing to store)
+//the header component(card component) is subscribe to the redux store using a selector
+
+//Redux toolkit setup steps
+//1.install @reduxjs/toolkit react-redux
+//2.Build our store
+//3.connect our store to app
+//4.slice(cartSlice)
+//5.dispatch(action)
+//6.useSelector
+
+//createSlice 
+//A function that accepts an initial state, an object full of reducer functions, and a "slice name", and automatically generates action creators and action types that correspond to the reducers and state.
+
+//useSelector(()=>) subscribing to store
+//A function that takes a selector function as its first argument. The selector function is responsible for selecting a part of the Redux store's state or computing derived data.
+
+//In redux dont do this three things
+//dont get all the store data only get that particular slice from the store
+//ensure when to use reducers and reducer
+//in vanila redux we directly don't mutate the original state 
+//but in redux toolkit we directly mutate the oiginal state
+
+//createAsyncThunk to define an asynchronous action creator. This function takes a string action type prefix and an async callback function as parameters.
+
+//Redux Thunk
+// Redux Toolkit includes Redux Thunk middleware by default.
+// Thunk middleware "allows you" to write action creators "that return a function instead of an action object". This enables you to perform asynchronous logic within your action creators.
+//Async Callback Function: The async callback function you provide to createAsyncThunk is responsible for performing the asynchronous operation, such as making an API call using fetch, axios, or any other async operation. This function should return a promise that resolves to the fetched data.
+
 
 
 
@@ -168,12 +243,51 @@ Class-based components: verbose(complex).
 
 
 //16. what is redux saga
-//Redux Saga is a "middleware library" for Redux that helps manage asynchronous operations, such as fetching data from an API, in a more organized and testable way.
-// It uses generator functions to handle side effects and provides a declarative approach to describe asynchronous logic.
+//Redux Saga is a "middleware library" for Redux that helps "manage asynchronous operations", such as fetching data from an API, in a more organized and testable way.
+// It uses generator functions "to handle" side effects and provides a declarative approach to describe asynchronous logic.
 // With Redux Saga, we can separate side effect logic from the main application logic, leading to cleaner and more maintainable code.
-// It offers benefits such as improved testability, centralized logic, and built-in mechanisms for handling complex asynchronous scenarios.
 
 //17. what is jest? (jest is the unit  testing framework ,which is also created by the facebook only,and it is based on the  jasmine,as we are use jest for testing our component)
+
+//Types of Testing (developer can do)
+//1.Unit Testing(testing single component of application for example Navbar)
+//2.Integration Testing(There are multiple component involve and they are talking to each other we can develop a flow as a action in our react Application)
+//3.End to End Testing(Testing when user landing on the page/website and leaves the website)
+//e2e Testing require different type of tools like cypress,puppetier,selenium
+
+//Unit Testing 
+//we use React-Testing library for Unit Test 
+//React-Testing library  uses jest framework behind the scenes for testing
+//React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components.
+
+//how to create new project using parcel
+//npm init -y
+//npm install react react-dom
+//mkdir src 
+//cd src
+//create index.html  index.js App.js files also
+
+//Setting up Testing in our APP
+//install React Testing Library //npm i -D @testing-library/react
+//install jest //npm install --save-dev jest
+//install babel dependencies //npm install --save-dev babel-jest @babel/core @babel/preset-env
+//configure babel create babel.config.js file
+//configure parcel config file to disable default babel transpilation  .parcelrc (file create) go to parcel website then click on the  javascript from left sidebar and then click on the transpiler and then copy the code and paste it in the .parcelrc
+//writing jest configuration //npx jest --init
+//install jsdom library  //npm install --save-dev jest-environment-jsdom
+//If you're using Jest 28 or later, jest-environment-jsdom package now must be installed separately.
+
+
+//npm vs npx 
+//npm "installs" packages either globally or locally to the project, while npx "runs" packages without installing them permanently.
+//npm is mainly used for managing dependencies and running scripts, whereas npx is primarily used for executing packages as command-line tools.
+//npx helps in executing commands from packages that might not be installed on your system, making it useful for one-off commands or running the latest versions of tools without the need for manual updates.
+
+
+
+
+
+
 
 //18. what are the advantages jest over jasmine
 //19. are you use bootsrap in  react 
@@ -182,8 +296,8 @@ Class-based components: verbose(complex).
 //20. have you hear about react server component
 
 //21. what is JSX?
-//JSX stand for  "javascript xml"
-//JSX used by React to write "HTML like code".
+//JSX stand for "javascript xml"
+//JSX used by React "to write" "HTML like code".
 //JSX is converted to javascirpt via tools like "babel".(Because browser understand javascript not JSX)
 /*
 //this code we write in jsx
@@ -257,7 +371,7 @@ in this it complete the child Component Did Mount also
 3.first child constructor
 4.first child render
 5.second child constructor
-6.second child constructor
+6.second child render
 react did that because it updated Mount phase in batches for optimize the performance(Dom update in batching)
 7.first child component did Mount
 8.second child component did Mount
@@ -291,7 +405,7 @@ react did that because it updated Mount phase in batches for optimize the perfor
 //ComponentWillUnmount()
 
 //what is use of extends keyword in class base component
-//In JavaScript, the extends keyword is used to create a subclass that inherits properties and methods from another class, known as the superclass or parent class. In the context of React class-based components, the extends keyword is "used to create a subclass" that inherits from the React.Component class, allowing you to define custom components with additional functionality.
+//In JavaScript, the extends keyword is "used to create a subclass" that inherits "properties and methods" from another class, known as the superclass or parent class. In the context of React class-based components, the extends keyword is "used to create a subclass" that inherits from the React.Component class, allowing you to define custom components with additional functionality.
 //In this example, MyComponent is a subclass that extends the React.Component class. By extending React.Component, MyComponent inherits all the properties and methods of React.Component, including lifecycle methods such as render, componentDidMount, componentDidUpdate, etc.
 
 /*
@@ -305,7 +419,7 @@ class MyComponent extends React.Component {
 */
 
 //What are Constructor in class components? When to use them?
-//Constructor is a "special method" that is called when an instance of class is created.
+//Constructor is a "special method" that is "called when an instance of class is created".
 //Constructor is "used for initilizing the component's state" or performing any setup that is needed before the component is rendered.
 
 //what is the role of super keyword in constructor?
@@ -317,8 +431,8 @@ class MyComponent extends React.Component {
 
 //How state can be maintaine in a Class Component? (v.imp);
 //two step process
-//this.setState() method is used to update the State.
 //this.state property is used to render the updated state in the DOM.
+//this.setState() method is used to update the State.
 
 /*
 class ExampleComponent extends React.Component{
@@ -354,23 +468,34 @@ render(){
 //to perform the side Effects in browser (fetching data from the API)
 
 //29. Data types in Javascript.
+//primitive data type : string,number,boolean,null,undefine (store single value)
+//non-primitive data type : array,object (store multiple value)
+
 //30. API Calling Sign Up,Login,Add,List,Update,Delete with Dialog Box  with file also upload you have to integrat filter like date wise, search,pagination,category wise
+
 //31. All type of hooks with one example of each
+
 //32. Redux with all the setup and its definations
+
 //33. all the questions related to react and js
-//34. What is React ,features,advantage,disadvantage,why we dont want to use react ,
+
+//34. What is React ,features,advantage,disadvantage,why we dont want to use react,
+
 //35. react vs angular
+
 //36. Error Handling  in React Error Boundry.
+//Error Boundaries are "React components" that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire React application.
+
 //37. why we can not use async before callback in useEffect(async()=>{},[])   
-//The reason for this is because useEffect expects its cleanup function to return either undefined or a function (if cleanup is required), not a Promise.
+//The reason for this is because useEffect expects its cleanup function "to return either undefined or a function" (if cleanup is required), "not a Promise".
 //Here are some common scenarios where cleanup functions are useful:
 //1.Clearing Timers or Intervals: If you set up any timers or intervals in your effect, it's essential to clear them to prevent memory leaks once the component unmounts or the effect re-runs.
 //2.Subscription Cleanup: If your effect sets up any subscriptions (such as with WebSockets or GraphQL subscriptions), it's crucial to unsubscribe when the component unmounts.
 //3.main use cases for cleanup functions in useEffect. They ensure that your application behaves correctly and efficiently, avoiding memory leaks and unnecessary resource consumption
 
 //38.In JavaScript, async and await are typically used together to work with asynchronous code in a synchronous-like manner. Using await outside of async function (will result in SyntaxError)
-//async: The async keyword is used to declare an asynchronous function. It allows you to use the await keyword inside the function to pause execution until a promise is resolved. The function always returns a promise, which resolves with the function's return value or rejects with an exception thrown within the function.
-//await: The await keyword is used inside an async function to wait for a promise to resolve. It can only be used within an async function.
+//async: The async keyword is used to declare an asynchronous function. It allows you to use the await keyword inside the function "to pause execution until a promise is resolved". The async function always returns a promise, which resolves with the function's return value or rejects with an exception thrown within the function.
+//await: The await keyword is used inside an async function "to wait for a promise to resolve". It can only be used within an async function.
 
 // Akshay Saini Tips for Interview 
 
@@ -380,25 +505,35 @@ render(){
 
 /*
 - useState
-//useState hook enable functional component to "manage state"
+//useState is a React Hook that allows functional components to "manage state".
+//Prior to the introduction of Hooks in React 16.8, state management was only possible within class components using the this.state property. However, with the introduction of Hooks, functional components can now manage state using the useState Hook.
 //working:
-//useState function accepts initial state value as parameter and returns array with two elements
+//useState function "accepts" initial state value as argument and returns array with two elements
 //first element is the current state value
 //second element is the function that is used to update the state
 //When state of the component changes, it will re-render the component with the updated state.
 
 - useEffect
 //The useEffect hook in react is used to perform "side effects" in functional components. 
-//for Example, data fetching from API, subscriptions, or any operation that needs to be executed after a component renders or when certain dependencies change.
-//The useEffect hook "accepts" two arguments: a function and an optional array of dependencies. 
+//for Example, data fetching from API, subscribing to external data sources, or any operation that needs to be executed after a component renders or when certain dependencies change.
+//The useEffect hook "accepts" two arguments: a callback function and an optional array of dependencies. 
+//The first argument is the callback function, which contains the code that performs the side effect.
+//The second argument is an optional array of dependencies. If provided, the effect will only run when one of the dependencies changes. If omitted, the effect will run after every render.
 
-- useContext (v.imp)
-//useContext in React provides way to pass data from parent to child component without using Props.
+//createContext and useContext()
 
 //What are createContext() method? What are Provider and Consumer properties?
-//createCotext() function "returns an object" with Provider and Consumer Properties
+//The createContext() function is used to create a new context object.
+//It takes an optional parameter, defaultValue, which represents the initial value of the context.
+//The createContext() function returns an object with two properties: Provider and Consumer.
 //The Provider property is responsible for providing the context value to all its child components.
 //useContext() method or Consumer Property can be used to consume the context value in  the Child Components.
+
+- useContext (v.imp)
+//The useContext() hook allows functional components to consume a context value.
+//It takes a context object (created by createContext()) as an argument and returns the current context value.
+//It allows components to access the nearest matching provider's value in the component tree
+//useContext in React provides way to pass data from parent to child component without using Props.
 
 //MyContex.js
 
@@ -1424,6 +1559,12 @@ That process is called inversion of control.
 //142. What is Promise?
 //A Promise is an object representing the eventual completion or failure of an asynchronous operation.
 //Essentialy ,a promise is a return a object to which you can attach the callback,instead of passing callbacks into a function
+//State: A Promise can be in one of three states:
+//Pending: Initial state, neither fulfilled nor rejected.
+//Fulfilled: The operation has completed successfully.
+//Rejected: The operation has failed with an error.
+
+
 /*
 1. Before promise we used to depend on callback functions which would result in 1.) Callback Hell (Pyramid of doom) | 2.) Inversion of control
 2. Inversion of control is overcome by using promise.
@@ -1436,6 +1577,30 @@ That process is called inversion of control.
 3. To avoid callback hell (Pyramid of doom) => We use promise chaining. This way our code expands vertically instead of horizontally. Chaining is done using '.then()'
 4. A very common mistake that developers do is not returning a value during chaining of promises. Always remember to return a value. This returned value will be used by the next .then()
 */
+
+//Constructing a Promise: Promises are created using the Promise constructor, which takes a function as an argument. This function, called the executor, contains the asynchronous operation logic and is automatically executed when the Promise is created.
+
+
+// const myPromise = new Promise((resolve, reject) => {
+//    Asynchronous operation
+//   if (/* operation is successful */) {
+//     resolve(result); // Resolve the Promise with a value
+//   } else {
+//     reject(error); // Reject the Promise with an error
+//   }
+// });
+
+//Consuming a Promise: We can consume a Promise using .then() and .catch() methods. .then() is called when the Promise is fulfilled, allowing us to handle the result, while .catch() is called when the Promise is rejected, allowing us to handle errors.
+
+// myPromise
+//   .then(result => {
+//     // Handle successful result
+//   })
+//   .catch(error => {
+//     // Handle error
+//   });
+
+
 
 //143. this Keyword
 //this keyword work differently in different environment 
@@ -2261,8 +2426,11 @@ console.log("Clicked,default action prevented")
 //In a typical React application, the index.html file serves as the entry point or the root HTML file of the application. Its primary role is to provide the HTML structure into which the React components are rendered.
 
 //188. what is role of index.js file and ReactDOM in react? (v.imp)
+//The primary purpose of ReactDOM is to render React components into the DOM.
 //ReactDOM is the javascript library that "renders" component to the DOM or browser.
 //ReactDOM provides the render() method, which is used to "render a React element" into the DOM. It takes two arguments: the React element to be rendered and the DOM node where the element should be mounted.
+//ReactDOM.render(<App />, document.getElementById('root'));
+
 /*
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -2273,12 +2441,35 @@ ReactDOM.render(<App />, document.getElementById('root'));
 //189. what is role App.js file in react? (v.imp)
 //the App.js file serves as the primary "entry point for defining the root component" of a React application, organizing its structure, behavior, routing, and state management.
 
+//difference between index.html vs index.js or main.js vs App.js in React app
+//index.html:
+
+//index.html is the main HTML file of your React application.
+//It serves as the entry point for your React application and is typically the file that the browser loads first when a user visits your website.
+//Inside index.html, you define the basic structure of your webpage, including HTML elements such as <head>, <body>, and any other necessary elements.
+//index.html includes a reference to the JavaScript bundle(s) generated by your React application, typically through a <script> tag. This allows the browser to load and execute your React code.
+
+//index.js or main.js:
+//index.js or main.js serves as the main JavaScript file that bootstraps your React application.
+//It's responsible for rendering your root React component into the DOM.
+//Typically, index.js or main.js contains the code to import your root component (e.g., App) and render it using ReactDOM.render() into a specified DOM element in your index.html file.
+
+//App.js:
+//App.js is a React component file that represents the main application component.
+//It typically contains the top-level structure of your application, including layout, navigation, and routing logic.
+//Inside App.js, you define the structure of your application using other React components, including any child components or routes.
+//App.js is where you compose various components to build the UI of your application.
+
+//In summary, index.html is the HTML entry point, index.js or main.js is the JavaScript entry point, and App.js is the main React component where you define the structure of your application.
+
+
 //190.What are the advantages of JSX? (v.imp)
 //1.Improves code readabilty and writability
 //2.Error checking in advance(Type Safe)
 //3.Support Javascript Expression
 //4.Improve Performance
 //5.Code Reusability
+
 
 //191. What is Babel? 
 //Babel is a popular "JavaScript compiler" that is mainly "used" to "convert" ECMAScriptES6+ code into a backwards-compatible version of JavaScript that can be executed in older browsers or environments.
@@ -2450,13 +2641,62 @@ class MyComponent extends React.PureComponent {
 export default MyComponent;
 */
 
-//why we have prevent component from unnecessary re-renders.
+//207.why we have prevent component from unnecessary re-renders.
 //Rendering is a computationally intensive process, involving virtual DOM comparison and reconciliation
 //helps in utilizing system resources efficiently.
 //Unnecessary re-renders "can lead to unnecessary network requests", especially if re-rendering triggers data fetching operations.
 //helps maintain a consistent user interface.
 //Excessive re-renders can drain device battery life, especially on mobile devices
 
+//208. What is Hooks?
+//In React Hooks, are introduce in 16.8.
+//hooks are functions that allow developers to use state and life cycle methods without writing class component. 
+
+//209. Tailwind css
+//how to install
+//1.npm install -D tailwindcss postcss autoprefixer
+// npx tailwindcss init -p (which create tailwind.config.css)
+
+//210. What is useContext() and creteContext()
+//createContext is used to create a context object, while useContext is used to consume the context value within a functional component. Both are important parts of React's Context API and provide a way to manage global state or share data across the component tree.
+
+//createContext:
+//createContext is a function provided by React that creates a new context object. It takes a default value as an argument and returns an object containing two components: Provider and Consumer.
+//The Provider component is used to wrap the parent component and accept a value prop. This value prop is the data that will be shared with the children components.
+//The Consumer component is used to access the data provided by the Provider component. It uses a render prop pattern to access and consume the context value.
+/*
+const MyContext = React.createContext('default');
+function App() {
+  return (
+    <MyContext.Provider value="hello">
+      <Child />
+    </MyContext.Provider>
+  );
+}
+*/
+
+//useContext:
+//useContext is a hook provided by React that allows functional components to consume context values. It accepts a context object (created using createContext) as an argument and returns the current context value.
+//It provides a cleaner and more concise way to consume context compared to the Consumer component.
+/*
+const MyContext = React.createContext('default');
+function Child() {
+  const contextValue = React.useContext(MyContext);
+  return <div>{contextValue}</div>;
+}
+
+function App() {
+  return (
+    <MyContext.Provider value="hello">
+      <Child />
+    </MyContext.Provider>
+  );
+}
+
+*/
+
+//211. REST apis 
+//Client send reques ===>(json) get,put,post,delete <===(http) server sends response
 
 
 //React Coding Round Questions
@@ -2465,16 +2705,26 @@ export default MyComponent;
 //https://blog.imocha.io/react-coding-challenges
 //https://www.youtube.com/watch?v=_XOToOfrwtc&list=PL_KW_uw2ITn_J_BNfTpv-yePk8vcyg4dp
 //https://github.com/NarendraKoya999/Frontend-Machine-Coding-Interview-Questions
-    //1. Nested component
-      //2. Calendar App
-      //3. Toast
-      //4. Modal
+    //1.Nested component
+      //2.Calendar App
+      //3.Toast
+      //4.Modal
       //5.Progress Bar
-      //6.Create Star rating utility using HTML,CSS & JAVASCRIPT
-      //7. Implement chess board using HTML, CSS and Vanilla Javascript, where if you click on any of the block it should highlight its diagonals.
-      //8.Implement Progress bar using HTML, CSS and Vanilla Javascript ,it run on button click
+      //6.Dark Mode and Light Mode
+      //7.Stepper component
+      //8.Countdown timer
       //9.Machine Coding - implement a basic react app to fetch and display from external API, follow questions were to add some features like searching, filtering, etc
-      //10. Image Slider/Carousal
+      //10.Image Slider/Carousal
+      //11.file explorer
+      //12.Todo list
+      //13.Redux Setup and API integration
+      //14.Pagination
+      //15.Countdown timer
+      //16.Multi Select Search
+      //17.Selectable Grid
+      //18.Stepper component
+      //19.
+      //20.
 
 //1. Build a User Registration Form
 //Create a user registration form with fields for username, email, and password. Validate inputs and display appropriate error messages.
@@ -2496,3 +2746,18 @@ Add a success message upon successful registration
 //answer: 1.I will communicate the risk to the superior manager
 //2.I will taking things based on the priority
 //3. I will take some extra efforts to deliver project on time 
+
+
+//1.js 
+//ES6,ES7
+//promises,closuers,
+
+//react 
+//performance 
+
+
+
+//javascript questions
+//react questions
+//coding round questions
+//machine coding round tasks 

@@ -1,0 +1,17 @@
+
+
+.link-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 30px;
+}
+
+.main-link a{
+    padding:0 30px;
+    text-decoration: none;
+}
+.App{
+    text-align: center;
+    padding: 10px 20px;
+}
