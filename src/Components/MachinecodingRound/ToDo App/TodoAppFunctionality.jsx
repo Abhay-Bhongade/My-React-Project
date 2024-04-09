@@ -32,8 +32,7 @@ const editTodo = (id)=>{
 
 const saveEditedTodo = () =>{
     const updatedTodos = todos?.map((todo)=>
-    todo?.id === editId ? {...todo,text:textValue} : todo
-    )
+    todo?.id === editId ? {...todo,text:textValue} : todo)
     setTodos(updatedTodos);
     setEditId(null);
     setTextValue("");

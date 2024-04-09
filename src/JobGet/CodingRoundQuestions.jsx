@@ -553,6 +553,54 @@ const numsSorted = [2, 7, 11, 15];
 const targetSorted = 18;
 
 console.log("twoSumSorted",twoSumSorted(numsSorted,targetSorted));
+
+
+//Remove duplicate element from the object
+function removeDuplicateElements(obj) {
+  // Create an empty object to store unique elements
+  const uniqueElements = {};
+
+  // Iterate over the object's properties
+  for (const key in obj) {
+    // Check if the property is not inherited
+    if (obj.hasOwnProperty(key)) {
+      // Store the property value as a key in the uniqueElements object
+      // This automatically removes duplicates, as object keys must be unique
+      uniqueElements[obj[key]] = obj[key];
+    }
+  }
+
+  // Convert uniqueElements object back to an array of values
+  const result = Object.values(uniqueElements);
+
+  return result;
+}
+
+// Example usage:
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 2, // Duplicate value
+  e: 1 // Duplicate value
+};
+
+const uniqueValues1 = removeDuplicateElements(obj);
+console.log(uniqueValues1); // Output: [1, 2, 3]
+
+
+function removeDuplicateElements2(obj) {
+  // Use Set to remove duplicate values
+  const uniqueValues = new Set(Object.values(obj));
+
+  // Convert Set back to an array
+  return [...uniqueValues];
+}
+
+
+const uniqueValues2 = removeDuplicateElements2(obj);
+console.log("uniqueValues2",uniqueValues2);
+
   return (
     <div>
         <h1>CodingRoundQuestions</h1>

@@ -276,6 +276,9 @@ Functional components: more concise and readable
 //writing jest configuration //npx jest --init
 //install jsdom library  //npm install --save-dev jest-environment-jsdom
 //If you're using Jest 28 or later, jest-environment-jsdom package now must be installed separately.
+//instal @babel/preset-react //to work jsx work in the test cases
+//Include @babel/preset-react inside my babel config
+//npm install -D @testing-library/jest-dom  to use toBeInTheDocument()
 
 
 //npm vs npx 
@@ -580,14 +583,15 @@ export default Child;
 //2.Localization(Language Selection)
 //3.Notification System
 
-
-
-
-- useReducer(complex state Manage)
-//useReducer is a React hook that provides an "alternative to useState" for "managing state" in functional components, especially when the "state logic is complex" and involves multiple sub-values or when the next state depends on the previous state. It is inspired by the reducer pattern used in Redux.
+- useReducer(to manage complex state logic)
+//useReducer Hook is used for "managing complex state logic" within functional components.
+// It is an alternative to the more commonly used useState hook.
+//The useReducer hook "accepts" a "reducer function" and an "initial state", and returns the "current state" and a "dispatch function".
+// The reducer function takes the current state and an action as arguments, and returns a new state based on the action type.
 
 import React, { useReducer } from 'react';
 
+// Reducer function
 const reducer = (state, action) => {
   switch (action.type) {
     case 'increment':
@@ -595,11 +599,12 @@ const reducer = (state, action) => {
     case 'decrement':
       return { count: state.count - 1 };
     default:
-      throw new Error();
+      return state;
   }
 };
 
-const Counter = () => {
+function Counter() {
+  // Initializing state using useReducer
   const [state, dispatch] = useReducer(reducer, { count: 0 });
 
   return (
@@ -609,12 +614,15 @@ const Counter = () => {
       <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
     </div>
   );
-};
+}
 
 export default Counter;
 
 
+
 - useMemo(Performance) (v.imp)
+//useMemo is used for memoization, which is the process of caching the result of a function call and returning the cached result when the same inputs occur again.
+
 //useMemo, React can store the result of a function call and reuse it when the dependencies of that function haven't changed, rather than recalculating the value on every render.
 
 
@@ -623,61 +631,99 @@ Imagine we have a function that does some heavy lifting, like calculating a comp
 But with useMemo, React remembers the result of that function as long as its inputs stay the same. So, if your inputs don't change, React just grabs the stored result instead of recalculating it every time. This saves time and makes your app snappier.
 
 In simple terms, useMemo is like having a smart assistant who remembers the answers to math problems, so you don't have to solve them again and again.
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 
-const MyComponent = ({ data }) => {
-  // Memoize the result of the expensive computation
-  const memoizedValue = useMemo(() => {
-    // Perform some expensive computation using the data
-    return processData(data);
-  }, [data]); // Dependency array: recompute if 'data' changes
+function MyComponent({ a, b }) {
+  // Memoizing the result of the expensive computation
+  const result = useMemo(() => {
+    console.log('Computing result...');
+    return a * b;
+  }, [a, b]); // Dependencies array: recompute if 'a' or 'b' change
+  
+  return <div>Result: {result}</div>;
+}
+
+function App() {
+  const [valueA, setValueA] = useState(5);
+  const [valueB, setValueB] = useState(10);
 
   return (
     <div>
-      // Render the memoized value 
-      <p>{memoizedValue}</p>
+      <input value={valueA} onChange={(e) => setValueA(parseInt(e.target.value))} />
+      <input value={valueB} onChange={(e) => setValueB(parseInt(e.target.value))} />
+      <MyComponent a={valueA} b={valueB} />
     </div>
   );
-};
+}
 
-export default MyComponent;
+export default App;
+
 
 - useCallback(use to memoize function ,memoization) (v.imp)
+//useCallback hook is used for memoizing callback functions. It returns a memoized version of the callback that only changes if one of its dependencies has changed.
 //useCallback(callback, dependencies) can be used like useMemo(), but it memoizes functions instead of values, to prevent recreation upon every render. allowing you to avoid unnecessary re-rendering which makes your application more efficient.
+
+//useCallback is particularly useful when passing callbacks to child components, as it helps optimize performance by preventing unnecessary re-renders of those components when the parent component re-renders.
 
 // when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
 useCallback(callback, dependencies) will return a memoized instance of the callback that only changes if one of the dependencies has changed. This means that instead of recreating the function object on every re-render, we can use the same function object between renders.
 
-const memoized = useCallback(() => {
-   // the callback function to be memoized
- },
-  // dependencies array
-[]);
+import React, { useState, useCallback } from 'react';
+
+function Button({ onClick, children }) {
+  console.log('Button rendered');
+  return <button onClick={onClick}>{children}</button>;
+}
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  // Memoizing the increment function using useCallback
+  const increment = useCallback(() => {
+    setCount(count + 1);
+  }, [count]); // Dependency array: re-create callback when 'count' changes
+
+  return (
+    <div>
+      <Button onClick={increment}>Increment</Button>
+      <p>Count: {count}</p>
+    </div>
+  );
+}
+
+export default App;
+
 
 //useCallback vs useMemo
-//, useMemo is used to memoize values,
+//useMemo is used to memoize values,
 // while useCallback is used to memoize callback functions. 
 //Both hooks help optimize the performance of React components by memoizing values and functions, respectively, and re-computing them only when necessary.
 
 - useRef(it does not rerender component when updated) (v.imp)
-//useRef provides a way to create mutable references that persist across renders of a functional component.
-//It's commonly used for accessing DOM elements, storing mutable values, and preserving values across renders without triggering re-renders.
-//By updating the current value of the ref object, you can modify its value without causing React to re-render the component.
+//useRef allows us to "persist values" and "access DOM elements" across renders without causing re-renders.
+// It's particularly useful for interacting with the DOM imperatively and storing values that you don't want to trigger re-renders.
+//It returns a mutable ref object whose .current property is initialized with the passed argument (initialValue). The returned object will persist for the entire lifetime of the component.
 
-const countRef = useRef(0);
+import React, { useRef, useEffect } from 'react';
 
-useEffect(() => {
-  countRef.current += 1;
-});
+function MyComponent() {
+  const renderCount = useRef(0);
 
-console.log(countRef.current); // Access and update the count across renders
+  useEffect(() => {
+    renderCount.current++;
+    console.log('Component has been rendered:', renderCount.current, 'times');
+  });
+
+  return <div>Render count: {renderCount.current}</div>;
+}
+
 
 
 
 // 40) Higher Order Components (HOC): with example (v.imp)
 - What?
 //Higher order component are functions that "takes another component as an argument" and return a new enhanced component with additional functionality.
-//Higher order component allows you to "reuse component logic" in a more flexible and modular way. 
+//Higher order component allows us to "reuse component logic" in a more flexible and modular way. 
 
 - When?
 //Use HOCs when you need to "share common functionality" between multiple components.
@@ -688,7 +734,7 @@ console.log(countRef.current); // Access and update the count across renders
 //Avoiding Prop Drilling: HOCs can be used to inject props or behavior into deeply nested components without manually passing them down through multiple levels of component hierarchy.
 
 - How?
-
+//code example
 
 
 // 41) Life Cycle Methods of Components:
@@ -713,10 +759,6 @@ console.log(countRef.current); // Access and update the count across renders
 
 //5.State cannot make components reusable.
 //5.Props make components reusable.	
-
-
-- Props drilling
-- Context
 
 // 43) Redux or Zustand: Redux is use when application is complex and large
 - How redux works?
@@ -752,7 +794,7 @@ console.log(countRef.current); // Access and update the count across renders
 //No, they are different. The Shadow DOM is a "browser technology designed primarily for scoping variables and CSS in web components". The virtual DOM is a concept implemented by libraries in JavaScript on top of browser APIs.
 
 - React Fiber
-//React, however, also uses internal objects called “fibers” "to hold additional information about the component tree".
+//React uses internal objects called “fibers” "to hold additional information about the component tree".
 Fiber is the "new reconciliation engine" in React 16. Its main goal is to enable "incremental rendering" of the virtual DOM.
 
 
@@ -814,7 +856,8 @@ However, CSR may result in slower initial page load times, especially for large 
 
 // 49) Testing
 - React Testing Library
-- Unit Testing
+- Unit Testing(testing single component)
+- Integration Testing (testing multiple components)
 
 Hack for interview: Try to mention that the code you wrote is testable and try to write test cases.
 
@@ -863,10 +906,10 @@ Use performance monitoring tools like "Lighthouse", "Google PageSpeed Insights",
 
 // 54) Accessibility
 // 55) Security
-// four pillars perforamce accessibility,testablity , security
+// four pillars perforamce accessibility,testablity,security
 
 */
-//56. in userSignup form if there is functionality for checkbox,Radiobutton so implement this also like select male,female
+//56. in userSignup form if there is functionality for checkbox,Radio button so implement this also like select male,female
 //57. arrow function vs normal function when to use arrow function and when to use normal function 
 //58. what is callback hell and write code for it and any alternative to tackle it
 //59. Debounce question.
@@ -958,7 +1001,8 @@ const arr1 = [10, 20, 30];
 const resularr = arr1.myMap((item) => item * 2);
 console.log("resularr", resularr);
 */
-//65. what is reconcilation in react (virtual dom explain in detail with all its methods.
+//65. what is reconcilation in react (virtual dom explain in detail with all its methods).
+
 //66. when you use useCallback hook?
 //The useCallback hook in React is used to memoize functions, preventing them from being recreated on every render unless their dependencies change. It's primarily used to optimize performance in scenarios where you have a component that relies on functions as props or involves heavy computations within functions.
 //67. this Optimization technique in detail like useMemo,useCallback,Higher Order Component,Pure component,
@@ -1028,7 +1072,7 @@ function App() {
         <Route exact path="/" element={Home} />
         <Route path="/about" element={About} />
         <Route path="/contact" element={Contact} />
-        <Route element={NotFound} />
+        <Route path="/*" element={NotFound} />
       </Routes>
     </Router>
   );
@@ -1259,8 +1303,8 @@ sum((2),(3))
 //Unlike PUT, PATCH is not intended to replace the entire resource. Instead, it applies a set of changes to the existing resource.
 //In summary, while both PUT and PATCH are used to update resources, PUT is used for full replacements of resources, whereas PATCH is used for partial updates or modifications.
 //difference between POST vs PATCH METHOD
-// post is used to create the new record 
-// where as put is used to update the existing record
+// post is used to create the new record to server
+// where as put is used to update the existing record it replaces existing record
 //DELETE methods is used to delete record from the server
 
 //97.can you explain some  status code that you get from the API response 
@@ -1283,29 +1327,29 @@ sum((2),(3))
 */
 
 //98. how many library you use for HTTP request 
-// fetch is the inbuilt browser library and axios we used 
+//use fetch and axios
+
 // difference between fetch vs axios
-//fetch method return a promise 
-//to handle the error in fetch method we use catch block
+//1.fetch is the "inbuilt browser library" 
+//1.axios is "third party library" we need to install it.
+//2.Axios performs automatic transforms of JSON data. 
+//2.Fetch is a two-step process when handling JSON data- first, to make the actual request; second, to call the .json() method on the response.
 
 //99. What is Hoisting in JavaScript 
-//Phenomena in JS through which we can access the variables and functions even before they have initialized, without any error.
+//Hoisting is a Phenomena in JS through which we can access the variables and functions even before they have "initialized", without any error.
 //console.log(x); //perfectly fine but o/p will be ‘undefined’
 //x = 90;
 //let & const
+
 /*
-let & const are hoisted but stored in different memory space than other
-variables like var. (And hence they cannot be access via window object or
+let & const are hoisted but stored in different memory space than other variables like var. (And hence they cannot be access via window object or
 this specifier)
-They cannot be accessed until they’re initialized. Hence, the time from
-hoisting these variable(s) and initialization is temporal dead zone, and
-during this we cannot access let & const, in turns throws Reference
-error.
-let cannot be re-declared in the same scope unlike var, it will throw
-Syntax Error.
+They cannot be accessed until they’re initialized. Hence, the time from hoisting these variable(s) and initialization is temporal dead zone, and during this we cannot access let & const, in turns throws Reference error.
+let cannot be re-declared in the same scope unlike var, it will throw Syntax Error.
 In case of const we need to declare and initialise at the same line/time.
-If we try changing the value later at some line to const variable, we’ll get
+If we try changing the value later at some line to const variable, we’ll get error 
 */
+
 //100.how js works in  the  browser
 //  1.these are Parentheses (), 2.these are brackets [] , 3.these are curly baces {} 
 /*
@@ -1318,19 +1362,47 @@ If we try changing the value later at some line to const variable, we’ll get
 //Event Queue: The event queue holds tasks (callbacks) waiting to be executed. When the call stack is empty, the event loop takes tasks from the event queue and pushes them onto the call stack for execution.
 */
 
-//101 difference between synchronous and asynchronous 
-//102 how to make asynchronous task to the syncronous
+//101. difference between synchronous and asynchronous 
+//In JavaScript, synchronous and asynchronous refer to two different ways of handling code execution:
+
+//Synchronous Execution:
+//In synchronous code, statements are executed line by line in a sequential manner.
+//Each statement waits for the previous one to finish before executing.
+//Synchronous operations block the execution thread until they are completed.
+
+//Asynchronous Execution:
+//In asynchronous code, statements don't necessarily execute in sequence. Instead, they are scheduled to run after a certain event occurs or after a specified amount of time.
+//Asynchronous operations don't block the execution thread; instead, they allow the program to continue executing other tasks while waiting for the asynchronous operation to complete.
+
+
+//102. how to make asynchronous task to the syncronous
 // for that we can use async await 
+
+
 //103 what are the closures?
 //A Closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). That means, each function in JS has access to its surrounding environment (which includes variables and functions).
 // there is the parent scope and child . there is two  functions  inner function and outer function where inner function has the access to the outer function variable 
 // means inner function has the access to the outer function variable this is the concept of closures
-//104 what is currying in js 
+
+//104 what is function currying in js 
+//function currying is a Technique in which we convert a function with multiple arguments into several functions of a single arguments in sequence.
+/*
+function add(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+console.log(add(3)(4)); // Output: 7    
+*/
+
+
 //105 why we use promises what is promises
 //promises are used to perform asynchronous oprations
 //Promises are used in JavaScript to handle asynchronous operations in a more manageable and readable way. They provide a cleaner alternative to traditional callback-based asynchronous code, making it easier to write and reason about asynchronous operations.
-//106. life cycle methods in  functional component //useEffect
-//107 from both this given string the merge the string
+
+//106.
+
+//107. from both this given string the merge the string
 /*
 'abcdef'
 '123'
@@ -1350,10 +1422,13 @@ function mergeStrings(a,b){
 
 }
 */
-//108. block element div,p,heading,ul,li     inline element span,a,img,input,bold,strong,
+//108.block element vs inline element 
 //Inline Elements: Inline elements do not have a width or height specified by default. Their width is determined by their content, and they cannot have width or height applied directly.
+//ex : div,p,heading,ul,li
 //Block-Level Elements: Block-level elements have a width of 100% by default, meaning they stretch to fill the entire width of their container. Their height is determined by the content they contain, or it can be explicitly specified.
-//109 css priority
+//span,a,img,input,bold,strong,
+
+//109 css priority/Specificity
 //Here's a summarized priority order:
 
 //1. Inline styles (highest priority)
@@ -1363,26 +1438,40 @@ function mergeStrings(a,b){
 //5. Source order
 
 //110. what is declarative and  imparative way of programming
-//react is declarative way of programming and javascript is the imparative way of programming
-//imperative programming involves explicitly specifying the steps to achieve a task, while declarative programming focuses on describing the desired outcome without detailing the specific operations.
+//react is declarative way of programming 
+//and javascript is the imparative way of programming
+//imperative programming "involves explicitly specifying the steps to achieve a task", while declarative programming focuses on "describing the desired outcome" without detailing the specific operations.
 
 //111. element  vs component 
 // An element represents a single unit of UI, such as a button, a paragraph, a header, etc.
 //Components can be composed of multiple elements and other components, allowing for a hierarchical and modular approach to building UIs.
 
-//112. what is promise and async vs await when we use promise and async await and what is difference between promise vs async await 
+//112.difference between promise vs async await 
+// both promises and async/await are used for handling asynchronous operations in JavaScript, async/await provides a more readable and convenient syntax for writing asynchronous code, especially when dealing with multiple asynchronous operations or complex error handling scenarios
+//Promises were introduced in ES6(2015) and provide a way to work with asynchronous code in a more organized manner.
+//Promises represent a value that might be available now, or in the future, or never.
+//A promise can be in one of three states: pending (initial state), fulfilled (resolved), or rejected.
+//Promises use .then() and .catch() methods for handling success and error cases, respectively.
 
-//113. synchronous vs asynchronous 
+//Async/Await:
+//Async functions are a syntactic sugar built on top of promises, introduced in ES8 (ES2017).
+//Async functions allow you to write asynchronous code in a synchronous manner, making it easier to read and understand.
+//The async keyword is used to define an asynchronous function, which internally returns a promise.
+//The await keyword can be used inside an async function to wait for the resolution of a promise. It pauses the execution of the async function until the promise is resolved and returns the resolved value.
+//Async functions can use try/catch blocks for error handling.
+
+
+//113.  
 
 //114. can you explain what is  prototype in javascript 
-//115. what is meant by memoization ?
-//116. what is meant by event bubbling ?
-//117. how do you pass the data between components , if I have 5 components then how do you pass the data between components 
+//115. 
+//116. 
+//117. 
 //118. what is Prop drilling ? what is Context API , what is Redux ? Difference between Context API vs Redux
 // context used in  the  small application and also the react team says that we can use  Context API for those application where state is not changing very frequent where the theme of the website
-// and where the cart state change opten where discount get added  so that time we can use Redux 
+// and where the cart state change often where discount get added so that time we can use Redux 
 
-//119. can you tell me what are the limitations of React 
+//119.  
 
 //120. difference between controlled and uncontrolled component in React (v.imp)
 //In controlled components, form input elements such as <input>, <textarea>, and <select> are fully controlled by React state.
@@ -1514,11 +1603,34 @@ The ability of functions to be:
 In JS, is called first class function, aka, first class citizens.
 */
 
-//135. Asynchronous JavaScript & EVENT LOOP
+//135. Object.keys()
+//The Object.keys() static method returns an array of a given object's own enumerable string-keyed property names.
+/*
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false,
+};
+
+console.log(Object.keys(object1));
+// Expected output: Array ["a", "b", "c"]
+*/
 
 
-//136. Axios vs Fetch
 
+//136. Object.values()
+//The Object.values() static method returns an array of a given object's own enumerable string-keyed property values.
+
+/*
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false,
+};
+
+console.log(Object.values(object1));
+// Expected output: Array ["somestring", 42, false]
+*/
 
 //137. JS Engine EXPOSED 🔥 Google's V8 Architecture 🚀 
 /*
@@ -1557,15 +1669,32 @@ That process is called inversion of control.
 */
 
 //142. What is Promise?
-//A Promise is an object representing the eventual completion or failure of an asynchronous operation.
+//A Promise is an object that represent the eventual completion or failure of an asynchronous operation.
 //Essentialy ,a promise is a return a object to which you can attach the callback,instead of passing callbacks into a function
 //State: A Promise can be in one of three states:
-//Pending: Initial state, neither fulfilled nor rejected.
+//Pending: Initial state
 //Fulfilled: The operation has completed successfully.
 //Rejected: The operation has failed with an error.
-
+//Promises use .then() and .catch() methods for handling success and error cases. 
 
 /*
+function getData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Data fetched successfully");
+    }, 1000);
+  });
+}
+
+getData()
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+
 1. Before promise we used to depend on callback functions which would result in 1.) Callback Hell (Pyramid of doom) | 2.) Inversion of control
 2. Inversion of control is overcome by using promise.
   2.1) A promise is an object that represents eventual completion/failure of an asynchronous operation.
@@ -1707,7 +1836,7 @@ const obj2 = {
 
 //call Method
 //with call method we can do a  funcion borrowing we can borrow a fucntion from other object and used with the data of other object
-//in call first argument refer to the name of the object and other argument are optional
+//in call first argument refer to the name of the object and other argument are optional comma seperated
 /*
 const student1 = {
     name:"Aman",
@@ -1735,15 +1864,16 @@ printName.call(student2,"Mumbai")  //value of this is student2(we will override 
 
 //printName.apply(student2,["Mumbai","Maharashtra"])
 
-//bind method is same as call method only difference is that it does not call  in same line insted it bind with this method make copy and called it later
+//bind method is same as call method only difference is that it does not call in same line insted it bind with this method make copy and called it later
 //bind method return the copy of that method so we can call it later 
 //let printMyName = printName.bind(student,"Dehradun");
 //printMyName()
 
 
 //145. What is JavaScript ? What is the role of Javascript engine? (v.imp)
+//Javascript is synchronus single threaded language , we used javascript to convert static web pages to ineractive and dynamic web pages.
 //Javascript is programming language that is used for converting static web pages to "interactive and dynamic" web pages.
-//Javascript engine is a program present in the web browser that execute javascript code 
+//Javascript engine is a program present in the web browser that execute javascript code.
 
 //146. What are the Client Side and Server Side? (v.imp)
 //A client is a device,application or software component that "requests" and consumes services or resource from a server.
@@ -1938,16 +2068,15 @@ function foo() {
 */
 
 //155.What is Arrow function? what is used of arrow function?
-//arrow function is also called as fat Arrow function,is a simple and sorter way for defining functions in javascript.
+//arrow function is also called as fat Arrow function,is a "simple and sorter way" for defining functions in javascript.
 
 //156. difference between arrow and normal function 
 //1.syntax 
 //1.Arrow functions have a concise syntax using the => arrow token. They don't need the function keyword, curly braces, or the return keyword if the function body is a single expression.
 //2.Normal functions can be defined using either function declarations or function expressions. They use the function keyword and may have a name (in function declarations) and a block body enclosed in curly braces.
 
-//function Declaration(){
+//function Declaration()
 /*
-
 function Declaration(){
     //body
 }
@@ -2024,6 +2153,9 @@ exampleFunction(1, 2);
 
 //163. Explain ES6 features
 //1.let and const keyword
+//both are block scope variable 
+//with let keyword we can declare a varible and we can e assign value to it later
+//but in const case we have declare and assign value to it same line/time
 
 //2.spread and Rest Operator
 // What is the difference between Rest and Spread Operator in Js?(v.imp);
@@ -2035,7 +2167,7 @@ exampleFunction(1, 2);
 //Rest Operator "allows" a function to "accept" an "indefinite number of arguments as an array".
 
 //3.Template literal
-//Template literals, introduced in ECMAScript 6 (ES6), are a type of string literal that allow for easier and more flexible "string interpolation" in JavaScript. 
+//Template literals, introduced in ECMAScript 6 (ES6), are a type of string literal that "allow" for easier and more flexible "string interpolation" in JavaScript. 
 //They are enclosed by backticks (` `) instead of single quotes or double quotes.
 
 //4.Arrow function
@@ -2064,8 +2196,8 @@ exampleFunction(1, 2);
 //we can not do method chaining with forEach because it returns undefined
 
 //165. What is Array Destructuring in js? (v.imp)
-//Array Destructuring  allows you to extract elements from an array and assign them to "individual variables" in the single Statement
 //It introduced in ECMAScript6
+//Array Destructuring  allows you to "extract elements from an array" and assign them to "individual variables" in the single Statement
 
 //166. for of vs for in
 //for of loop is used to loop through the values of an array.
@@ -2080,7 +2212,8 @@ for (let key in obj) {
 
 //167. What is Callback Function 
 //A callback function is a function which "passed as an argument" to another function
-
+//JS is synchronous single threaded language but through use of Callback functions we can perform async task.
+//Eg, Event listeners make use of this.
 
 //168. What is Higher Order Function
 //Higher Order Function is function which take one or more function as an arguments or return a function
@@ -2109,6 +2242,8 @@ sum(5) //10   when second time called with same argument
 */
 
 //170. what is meant by Function Currying?
+//Technique in which we convert a function with multiple arguments into several functions of a single arguments in sequence.
+
 //currying in JavaScript is a process in functional programming in which you can transform a function with multiple arguments into a sequence of nesting functions. It returns a new function that expects the next argument inline.  
 //In other words, instead of a function taking all arguments at one time, it takes the first one and returns a new function, which takes the second one and returns a new function, which takes the third one, and so on, until all arguments have been fulfilled.
 //Advantage,Modularity
@@ -2196,7 +2331,7 @@ for(let keys in person){
 //name :Raj
 */
 
-//2.Object.keys() and forEach()
+//2.Object.keys() and forEach() 
 /*
 Object.keys(person).forEach((values)=>{
     console.log(values + ":" + person[values]);
@@ -2217,7 +2352,7 @@ Object.values(person).forEach((values)=>{
 //console.log("name" in person);  //true
 //console.log("city" in person);  //false
 
-//2. Using hasOwnProperty() Method
+//2. Using hasOwnProperty() Method(Returns true if the object has the specified property as own property; false otherwise.)
 //console.log(person.hasOwnProperty("name"));  //true
 //console.log(person.hasOwnProperty("city"));  //false
 
@@ -2239,6 +2374,10 @@ let person = {
         city:"Mumbai"
     }
 }
+//Object.assign(target, ...sources)
+//target: The target object where the properties will be copied to.
+//sources: One or more source objects whose properties will be copied to the target object. 
+
 let shallowCopy = Object.assign({},person);
 shallowCopy.address.city = "Pune";
 console.log(person.address.city);  //Pune
@@ -2303,7 +2442,7 @@ console.log(myArray); // Output: [1, 2, 3, 4] (original array modified)
 */
 //181. What is Set Object in js?
 //The set Object is the collection of "unique values" ,meaning that duplicate values are not allowed.
-//Set provides Method for a"dding,deleting and checking the existence of values" in the set.
+//Set provides Method for "adding,deleting and checking the existence of values" in the set.
 //set can be used to "remove duplicate values" from arrays.
 /*
 creating a set to store unique values
@@ -2362,8 +2501,8 @@ console.log(personDetails.size); //1
 </div>
 //Get the references of an elements
 var outer = document.getElementById("outer");
-var inner = document.getElementById("outer");
-var myButton = document.getElementById("outer");
+var inner = document.getElementById("inner");
+var myButton = document.getElementById("myButton");
 
 //attach the event handlers with elements
 outer.addEventListeners("click",EventBubbling);
@@ -2445,7 +2584,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 //index.html:
 
 //index.html is the main HTML file of your React application.
-//It serves as the entry point for your React application and is typically the file that the browser loads first when a user visits your website.
+//It serves as the "entry point for your React application" and is typically the "file that the browser loads first" when a user visits your website.
 //Inside index.html, you define the basic structure of your webpage, including HTML elements such as <head>, <body>, and any other necessary elements.
 //index.html includes a reference to the JavaScript bundle(s) generated by your React application, typically through a <script> tag. This allows the browser to load and execute your React code.
 
@@ -2478,7 +2617,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 //192. What is the Role of Fragement in JSX? (v.imp)
  //React Fragment "allow" you to "wrap multiple component or elements" without adding extra node to the DOM.
 //This can be useful when rendering multiple child elements/components in a single parent component
-//We can't use className inside the fragment ex: < className> , but can use key inside the fragment ex: <key = {data.id}>
+//We can't use className inside the fragment ex: < className> , but can use key inside the fragment ex: <React.Fragment key = {data.id}>
 
 //193. What are the Types of conditional Rendering in jsx? (v.imp)
 //1.if/else statement
@@ -2643,8 +2782,8 @@ export default MyComponent;
 
 //207.why we have prevent component from unnecessary re-renders.
 //Rendering is a computationally intensive process, involving virtual DOM comparison and reconciliation
-//helps in utilizing system resources efficiently.
 //Unnecessary re-renders "can lead to unnecessary network requests", especially if re-rendering triggers data fetching operations.
+//helps in utilizing system resources efficiently.
 //helps maintain a consistent user interface.
 //Excessive re-renders can drain device battery life, especially on mobile devices
 
@@ -2698,6 +2837,7 @@ function App() {
 //211. REST apis 
 //Client send reques ===>(json) get,put,post,delete <===(http) server sends response
 
+//can add extra point above  113,115,116,117
 
 //React Coding Round Questions
 
@@ -2761,3 +2901,5 @@ Add a success message upon successful registration
 //react questions
 //coding round questions
 //machine coding round tasks 
+
+//Apply first company 1.website, 2.hrmail direct ,3.naukari.com

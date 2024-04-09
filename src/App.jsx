@@ -24,6 +24,7 @@ import PaginationBackendDriven from "./Components/MachinecodingRound/Pagination/
 import Stepper from "./Components/MachinecodingRound/Stepper/Stepper.jsx";
 import PracticeCodingRoundQuestions from "./JobGet/PracticeCodingRoundQuestions.jsx";
 
+
 const App = () => {
 
 //6month intership 
@@ -39,6 +40,7 @@ console.log("onlineStatus",onlineStatus);
 if(onlineStatus ===false) return <h1>Look like your are offline !!,please check your  internet connection </h1>
 
   return (
+    <>
   // <div className="App">
   //   <ThemeProvider>
   //   <BrowserRouter>
@@ -51,10 +53,13 @@ if(onlineStatus ===false) return <h1>Look like your are offline !!,please check 
   //   </BrowserRouter>
   //   </ThemeProvider>
   //   </div>
- <><CodingRoundQuestions />
+ {/* <CodingRoundQuestions /> */}
  <PracticeCodingRoundQuestions />
  </>   
   );
 };
 
 export default App;
+
+//135
+//136
