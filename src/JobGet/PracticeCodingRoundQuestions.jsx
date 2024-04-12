@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import React from 'react'
 
 const PracticeCodingRoundQuestions = () => {
@@ -176,6 +177,26 @@ function firstLetterCapital(str){
 }
 let sentence = "i am javascript developer";
 console.log("firstLetterCapital",firstLetterCapital(sentence));
+
+//How can you uppercase first character in string from  the array.
+
+
+function upperCasefirstChar(arr){
+  let newMonths = [];
+  for(let day of arr){
+    day = day.charAt(0).toUpperCase() + day.substring(1);
+    console.log("day",day);
+    newMonths.push(day)
+  }
+  return newMonths
+}
+
+let months = ["january","febuary","march","april"];
+
+console.log("upperCasefirstChar",upperCasefirstChar(months));
+
+
+
 
 //Implement a debounce function in JavaScript that limits the frequency of a function’s execution when it’s called repeatedly within a specified time frame. 
 function debounceFunc(func,delay){
@@ -424,6 +445,151 @@ return `even Numbers are ${evenNums} and odd Numbers are ${oddNums}`
 let nums3 = [1,2,3,4,5,6,7,8,9,10]
 
 console.log("groupEvenOdd",groupEvenOdd(nums3));
+
+//write a function to  find three largest element from  the array in js
+
+function findThreeLargestNums(arr){
+  if(arr.length < 3){
+    return 'Array length should be at least 3';
+  }
+    let sortedArr = arr.sort((a,b)=>b-a);
+    return [sortedArr[0],sortedArr[1],sortedArr[2]]
+}
+console.log("findThreeLargestNums",findThreeLargestNums(nums3));
+
+//without method
+//NEGATIVE_INFINITY
+//A value that is less than the largest negative number that can be represented in JavaScript. JavaScript displays NEGATIVE_INFINITY values as -infinity.
+
+function findLargestThreeNum(arr){
+  if(arr.length < 3){
+    alert("Array should contain at least 3 elements");
+    return;
+  }
+
+let firstLargestNum = Number.NEGATIVE_INFINITY;
+let secondLargestNum = Number.NEGATIVE_INFINITY;
+let thirdLargestNum = Number.NEGATIVE_INFINITY;
+
+for(let num of arr){
+  if(num > firstLargestNum){
+    thirdLargestNum = secondLargestNum;
+    secondLargestNum = firstLargestNum;
+    firstLargestNum = num
+  }
+  else if(num > secondLargestNum){
+    thirdLargestNum = secondLargestNum;
+    secondLargestNum = num
+  }
+  else if(num > firstLargestNum){
+    firstLargestNum = num
+  }
+}
+
+return [firstLargestNum,secondLargestNum,thirdLargestNum]
+}
+let arr39 = [10,20,30,40,50]
+console.log("findLargestThreeNum",findLargestThreeNum(arr39));
+
+//write a function to remove  middle element from the array
+
+function removeMiddleNum(arr){
+  if(arr.length < 3){
+    alert("Array should contain at least three elements");
+    return;
+  }
+let middleIndex = Math.floor(arr.length / 2);
+if(arr.length % 2 === 0){
+  arr.splice(middleIndex - 1,2)
+}else{
+  arr.splice(middleIndex,1)
+}
+}
+
+let arrMain = [1,2,3,4,5]
+removeMiddleNum(arrMain);
+
+console.log("arrMain",arrMain);
+
+//how to make sentence out of array
+
+function makeSentence(arr){
+ // return arr.join(" ")
+    let sentence = "";
+    for(let word of arr){
+      sentence += word + " "
+    }
+    return sentence
+
+}
+let arrOfSentence = ["My","Name","Is","David"];
+console.log("makeSentence",makeSentence(arrOfSentence));
+
+
+//How to check if array contains any elements  of another array 
+
+function arrayContainAnother(arr1,arr2){
+    let result = arr1.some(item=>arr2.includes(item));
+   return result
+}
+
+let arr100 = [1,2,3,4,5];
+let  arr101 = [6,7,8,9,10];
+console.log("arrayContainAnother",arrayContainAnother(arr100,arr101));
+
+//How we can extract few fields from the given json object and form a new array out of it
+
+let jsonData = {
+  "students" : [
+    {
+      id:1,
+      name:"Sahil",
+      email:"shahil@gmail.com",
+      note:"how are you"
+    },
+    {
+      id:2,
+      name:"Rahul",
+      email:"rahul@gmail.com",
+      note:"how are you"
+    },
+    {
+      id:3,
+      name:"Aman",
+      email:"aman@gmail.com",
+      note:"how are you"
+    },
+    {
+      id:4,
+      name:"Rajiv",
+      email:"rajiv@gmail.com",
+      note:"how are you"
+    },
+    {
+      id:5,
+      name:"Kunal",
+      email:"kunal@gmail.com",
+      note:"how are you"
+    },
+  ]
+}
+
+const newFormData = jsonData.students.map((item)=>{
+  let obj = {
+    id:item.id,
+    name:item.name,
+    email:item.email
+  }
+  return obj
+})
+
+console.log("newFormData",newFormData);
+
+ //What is IIFE (Immediately Invoke function expression) 
+
+ (function(){
+  console.log("I am IIFE");
+ })()
 
 
   return (

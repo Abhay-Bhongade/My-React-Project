@@ -97,7 +97,7 @@
 //The Virtual DOM in React is a lightweight copy of the real DOM.
 //When you make changes to the "state" of a React component, instead of directly manipulating the real DOM, React creates a new Virtual DOM representation of the updated UI.
 //React then compares this new Virtual DOM with the previous one to identify the differences (often referred to as "diffing"). Once the differences are identified, React calculates the most efficient way to update the real DOM to match the new Virtual DOM.
-//This process of comparing and updating only the parts of the DOM that have changed, rather than re-rendering the entire UI, is what makes React highly efficient and performant. By minimizing the number of updates to the real DOM, React significantly improves the performance of web applications, especially those with complex and dynamic user interfaces.
+//This process of comparing and updating only the parts of the DOM that have changed(reconcilation), rather than re-rendering the entire UI, is what makes React highly efficient and performant. By minimizing the number of updates to the real DOM, React significantly improves the performance of web applications, especially those with complex and dynamic user interfaces.
 
 
 //4. what is Higher Order Component/Function give me one practical example (mostly asked)
@@ -1128,6 +1128,11 @@ export default Navigation;
 //Route 
 //used to define route and specify that component that should render when the "route matches".
 
+//What is Outlet
+//An <Outlet> should be used in parent route elements to render their child route elements. This allows nested UI to show up when child routes are rendered. If the parent route matched exactly, it will render a child index route or nothing if there is no index route.
+
+
+
 
 //74. difference between functional vs class component
 //75. how to create object in react js
@@ -1461,10 +1466,36 @@ function mergeStrings(a,b){
 //Async functions can use try/catch blocks for error handling.
 
 
-//113.  
+//113.Error boundary
+//In React, an error boundary is a React component that catches JavaScript errors anywhere in its child component tree, logs those errors, and displays a fallback UI instead of crashing the entire application.
 
 //114. can you explain what is  prototype in javascript 
-//115. 
+
+//115. What is Generator Function in Javascript?
+//In javascript , generator are the special type of function which allow us to control the execution flow and pause/resume it at certain points.
+//Generator function define using "function*" syntax
+//and it uses yeild keyword to "produce a sequence of values".
+//when generator function is called it returns an iterator called a generator.
+//We use the next() method to iterate over the generator object. Each call to next() returns an object with two properties: value (the yielded value) and done (a boolean indicating whether the generator has finished iterating).
+
+/*
+function* generatNumbers(){
+  yield 1;
+  yield 2;
+  yield 3;
+}
+const generator = generatNumbers();
+console.log(generator.next()) //{ value: 1, done: false }
+console.log(generator.next()) //{ value: 2, done: false }
+console.log(generator.next()) //{ value: 3, done: false }
+console.log(generator.next()) //{ value: undefined, done: true }
+*/
+//Generator functions are useful for :
+//1.iterators,
+ //2.asynchronous programming
+ //3. managing stateful logic in a more intuitive way.
+
+
 //116. 
 //117. 
 //118. what is Prop drilling ? what is Context API , what is Redux ? Difference between Context API vs Redux
@@ -1729,6 +1760,9 @@ getData()
 //     // Handle error
 //   });
 
+
+//Promise.all()
+//The Promise.all() accepts an array of promises and returns a promise that resolves when all of the promises in the array are fulfilled or when the iterable contains no promises. It rejects with the reason of the first promise that rejects
 
 
 //143. this Keyword
@@ -2057,7 +2091,16 @@ var a = function () {
 
 //4.Arrow function (v.imp)
 //const sum = ()=>{}
+
 //5.IIFE
+/*
+(function example(){
+// in strict mode this refers to undefined
+console.log(this === window);
+})();
+// true
+*/
+
 //6.Callback Function (v.imp)
 //7. Higher Order Function (v.imp)
 //8.Function Declaration
@@ -2837,7 +2880,27 @@ function App() {
 //211. REST apis 
 //Client send reques ===>(json) get,put,post,delete <===(http) server sends response
 
+//212. CSS Media Query
+/*
+//1.Extra Small Devices(Phones) --upto 576px
+@media (max-width:576px){
+}
+//2.Small Devices(Notepad,tablets) min 577 to max 768
+@media (min-width:577px) and (max-width:768px){
+}
+//3.Medium Devices(Laptops)
+@media (min-width:769px) and (max-width:992px){
+}
+//4.Large Devices(Desktop)
+@media (min-width:993px) and (max-width:1200px){
+}
+//5.Extra Large Devices(Large Desktop)
+@media (min-width:1201px){   
+}
+*/
 //can add extra point above  113,115,116,117
+
+//212. How web works ? How Browser Works ? How you get Data from the server ? how local storage works ? how cookies store in the browser ? How make you and API request
 
 //React Coding Round Questions
 
@@ -2850,7 +2913,7 @@ function App() {
       //3.Toast
       //4.Modal
       //5.Progress Bar
-      //6.Dark Mode and Light Mode
+      //6.Dark Mode and Light Mode(done)
       //7.Stepper component
       //8.Countdown timer
       //9.Machine Coding - implement a basic react app to fetch and display from external API, follow questions were to add some features like searching, filtering, etc
@@ -2859,12 +2922,23 @@ function App() {
       //12.Todo list
       //13.Redux Setup and API integration
       //14.Pagination
-      //15.Countdown timer
+      //15.show the input fields base on the data from backend
       //16.Multi Select Search
       //17.Selectable Grid
-      //18.Stepper component
-      //19.
+      //18.Stepper component(done)
+      //19.Infinite Scroll
       //20.
+
+      //Make and E-commerce website with login and logout, filters, pagination ,search
+      //G-mail template
+      //tick tack toe
+      //calender
+
+      //website I work on https://app.championlister.com
+      //https://oranjepeople.com/login   //email:orange.org2023@gmail.com //password:admin@org@2023
+      //https://api.oranjepeople.com/api/admin
+      //mpp disha //http://13.53.170.82/login
+      //cms url http://disha.parimalabs.in/   //employeeId:653243453
 
 //1. Build a User Registration Form
 //Create a user registration form with fields for username, email, and password. Validate inputs and display appropriate error messages.
@@ -2887,6 +2961,11 @@ Add a success message upon successful registration
 //2.I will taking things based on the priority
 //3. I will take some extra efforts to deliver project on time 
 
+
+//Machine coding round tips
+//write modular code DRY
+//if you stuck anywhere ask for the interview because you will be part of the team
+//
 
 //1.js 
 //ES6,ES7

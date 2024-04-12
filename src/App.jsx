@@ -23,6 +23,10 @@ import { ThemeProvider } from "./theme-context.jsx";
 import PaginationBackendDriven from "./Components/MachinecodingRound/Pagination/PaginationBackendDriven.jsx";
 import Stepper from "./Components/MachinecodingRound/Stepper/Stepper.jsx";
 import PracticeCodingRoundQuestions from "./JobGet/PracticeCodingRoundQuestions.jsx";
+import ParentComponentForStepper from "./Components/MachinecodingRound/Stepper/ParentComponent.jsx";
+import UseDebounceInput from "./Components/MachinecodingRound/Debounce/UseDebounceInput.jsx";
+import StopWatchApplication from "./Components/MachinecodingRound/Counter/StopWatchApplication.jsx";
+import PaginationWithApiData from "./Components/MachinecodingRound/Pagination/PaginationWithApiData.jsx";
 
 
 const App = () => {
@@ -41,20 +45,22 @@ if(onlineStatus ===false) return <h1>Look like your are offline !!,please check 
 
   return (
     <>
-  // <div className="App">
-  //   <ThemeProvider>
-  //   <BrowserRouter>
-  //   <Navbar />
-  //   <Routes>
-  //     <Route path="/" element={<Home/>}/>
-  //     <Route path="/about" element={<About/>}/>
-  //     <Route path="/blog" element={<Blog/>}/>
-  //   </Routes>
-  //   </BrowserRouter>
-  //   </ThemeProvider>
-  //   </div>
+{/* <div className="App">
+  <ThemeProvider>
+   <BrowserRouter>
+   <Navbar />
+   <Routes>
+     <Route path="/" element={<Home/>}/>
+     <Route path="/about" element={<About/>}/>
+     <Route path="/blog" element={<Blog/>}/>
+   </Routes>
+   </BrowserRouter>
+  </ThemeProvider>
+   </div> */}
  {/* <CodingRoundQuestions /> */}
+ {/* <ParentComponentForStepper /> */}
  <PracticeCodingRoundQuestions />
+ {/* <CodingRoundQuestions /> */}
  </>   
   );
 };
@@ -63,3 +69,10 @@ export default App;
 
 //135
 //136
+
+
+//old resume
+//bi 1/11/2021 - 30/11/2022  1year 1month
+//saviesa  1/12/2022 - present 1year 4month
+
+//total 2year 5 month

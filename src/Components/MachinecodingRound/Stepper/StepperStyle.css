@@ -1,0 +1,47 @@
+.stepper-container{
+    position: relative;
+}
+.steps{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aqua;
+    cursor: pointer;
+    transition: all 0.25s ease-in;
+}
+.step-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.progress-line{
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: brown;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    transition: all 0.25s ease-in;
+}
+.component-wrapper{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    text-align: center;
+}
+button{
+    margin: 10px;
+}
+
+div > .active{
+    background-color: skyblue;
+    color: #000;
+}

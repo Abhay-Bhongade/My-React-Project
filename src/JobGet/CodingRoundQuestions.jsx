@@ -601,6 +601,31 @@ function removeDuplicateElements2(obj) {
 const uniqueValues2 = removeDuplicateElements2(obj);
 console.log("uniqueValues2",uniqueValues2);
 
+//How to find duplicate elements from the given array
+
+function findDuplicateElements(arr){
+const duplicate = arr.filter((item,index,arr)=>arr.indexOf(item) !== index);
+return duplicate;
+}
+let duplicateArr = [11,22,11,44,55,55,33];
+console.log("findDuplicateElements",findDuplicateElements(duplicateArr));
+
+//How to find count of duplicates elements from the given array
+
+const arrOfMonths = ["Jan","Feb","March","April","Jul","Jan","Jul","Aug","Aug"];
+
+let months = arrOfMonths.reduce((prev,month)=>{
+      if(prev[month] === undefined){
+        prev[month] = 1
+        return prev;
+      }else{
+        prev[month]++
+        return prev
+      }
+},{})
+
+console.log("months",months);
+
   return (
     <div>
         <h1>CodingRoundQuestions</h1>
