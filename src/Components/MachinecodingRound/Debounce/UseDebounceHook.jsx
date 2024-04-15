@@ -18,5 +18,6 @@ timer.current = setTimeout(() => {
   return debounce;
 }
 
-
+//debouncing
+//calling the functions only after certain threshold time, from last invocation.
 

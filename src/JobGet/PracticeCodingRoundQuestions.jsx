@@ -168,7 +168,7 @@ let nestedArrNum = [[9,4,5,6]];
 
 console.log("nestedArr",nestedArrFun(nestedArrNum));
 
-//Write a JavaScript program to convert a string to title case (capitalize the first letter of each word). 
+//Write a JavaScript program to convert a string to title case (capitalize the first letter of each word from the sentence). 
 
 function firstLetterCapital(str){
   
@@ -180,13 +180,12 @@ console.log("firstLetterCapital",firstLetterCapital(sentence));
 
 //How can you uppercase first character in string from  the array.
 
-
 function upperCasefirstChar(arr){
   let newMonths = [];
   for(let day of arr){
     day = day.charAt(0).toUpperCase() + day.substring(1);
     console.log("day",day);
-    newMonths.push(day)
+    newMonths.push(day);
   }
   return newMonths
 }
@@ -199,14 +198,23 @@ console.log("upperCasefirstChar",upperCasefirstChar(months));
 
 
 //Implement a debounce function in JavaScript that limits the frequency of a function’s execution when it’s called repeatedly within a specified time frame. 
+
+const getData = ()=>{
+  console.log("fetching data...");
+}
+
 function debounceFunc(func,delay){
-let timer ; 
+let timer; 
 return function(){
+  let context = this;
   clearTimeout(timer);
- timer = setTimeout(func,delay)
+ timer = setTimeout(()=>{
+    func.apply(context)
+ },delay)
 }
 }
 
+let debounceMethod = debounceFunc(getData,1000);
 
 //Write a function that takes an array of objects and a key, and returns a new array sorted based on the values of that key in ascending order. 
 
@@ -591,7 +599,24 @@ console.log("newFormData",newFormData);
   console.log("I am IIFE");
  })()
 
+//formate the Date using react
+ function formateDate(date){
+  const dateFormated = new Date(date).toLocaleDateString("en-US",{
+      year:"numeric",
+      month:"long",
+      day:"numeric",
+  });
+  return dateFormated
+ }
 
+ const date = '2024-04-15'
+
+ const divStyle = {
+  color:"blue",
+  backgroundColor:"green"
+ }
+
+console.log("formateDate",formateDate(date));  //April 15,2024
   return (
     <div>PracticeCodingRoundQuestions</div>
   )

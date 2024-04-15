@@ -99,9 +99,11 @@
 //React then compares this new Virtual DOM with the previous one to identify the differences (often referred to as "diffing"). Once the differences are identified, React calculates the most efficient way to update the real DOM to match the new Virtual DOM.
 //This process of comparing and updating only the parts of the DOM that have changed(reconcilation), rather than re-rendering the entire UI, is what makes React highly efficient and performant. By minimizing the number of updates to the real DOM, React significantly improves the performance of web applications, especially those with complex and dynamic user interfaces.
 
+//It’s a lightweight copy of the actual DOM, and changes are first made to the Virtual DOM and then efficiently reflected in the real DOM. This process is known as “reconciliation” and helps optimize performance by minimizing expensive DOM manipulations.
 
-//4. what is Higher Order Component/Function give me one practical example (mostly asked)
-//for toggling or expanding function of menu for those purpose we can use higher order component 
+//4. What Is Shadow DOM?
+//ShadowDOM is the concept that refers to the "encapsulation" of DOM elements and components.
+//Shadow  DOM is helpful for CSS scoping.(css of one component not conflict with the other component css)
 
 //5. explain life cycle methods in react js
 // mounting phase componentDidMount() , updating phase componentDidUpdate() , unmounting phase componentWillUnMount()
@@ -138,12 +140,13 @@ Functional components: more concise and readable
 //7. type of hooks ever you created any custom hooks
 //useState(),useEffect(),useMemo(),useCallback(),useContext(),useReducer(),
 
-//yes I create one customHook which check user is online or offline basically internet connect is on or off
+//yes I create one customHook which check user is online or offline basically the device is conected to internet or not
 
 //8. how to update a component in every one seconds
 //with useEffect hook we can create setInterval method we can call it after every one second
+
 //9. what is refs can we use this in functional component
-//yes we can use the refs in the functioanl component because in react version 16.8.0 useRef hook where introduce and refs are used to store value when  refs change that time  component not render like useState hook when state change that time component render
+//yes we can use the refs in the functioanl component because in react version 16.8.0 useRef hook where introduce and refs are used to store value when  refs change that time  component not render like useState hook when state change that time component re-render
 
 //10. how we can pass data from child to parent component, can we pass data from parent to child(we use props) and child to parent(we use callback function) and which is legal ,data in react flow unidirectional means parent to child ,one way data binding 
 
@@ -162,6 +165,7 @@ Functional components: more concise and readable
     </div>
 */
 //2.Using Context API:-If the sibling components are not directly connected in the component tree, you can use React's Context API to provide and consume data across the components.
+
 //3.with state Management library like Redux
 //You can use state management libraries like Redux to manage and share application state across components, including sibling components.
 
@@ -247,7 +251,8 @@ Functional components: more concise and readable
 // It uses generator functions "to handle" side effects and provides a declarative approach to describe asynchronous logic.
 // With Redux Saga, we can separate side effect logic from the main application logic, leading to cleaner and more maintainable code.
 
-//17. what is jest? (jest is the unit  testing framework ,which is also created by the facebook only,and it is based on the  jasmine,as we are use jest for testing our component)
+//17. what is jest?(created by facebook)
+//jest is the "unit testing framework",which is also created by the facebook only,and it is based on the jasmine,as we are use jest for testing our component
 
 //Types of Testing (developer can do)
 //1.Unit Testing(testing single component of application for example Navbar)
@@ -280,23 +285,21 @@ Functional components: more concise and readable
 //Include @babel/preset-react inside my babel config
 //npm install -D @testing-library/jest-dom  to use toBeInTheDocument()
 
-
-//npm vs npx 
-//npm "installs" packages either globally or locally to the project, while npx "runs" packages without installing them permanently.
-//npm is mainly used for managing dependencies and running scripts, whereas npx is primarily used for executing packages as command-line tools.
-//npx helps in executing commands from packages that might not be installed on your system, making it useful for one-off commands or running the latest versions of tools without the need for manual updates.
-
-
-
-
-
-
-
 //18. what are the advantages jest over jasmine
+//Advantages(ZSP)
+//1.Zero Configuration:- Jest requires minimal configuration out of the box.
+//2.Snapshot Testing:- Jest allows us to "capture the output of a component or function" and compare it against a previously stored snapshot This is particularly useful for testing UI components.
+//3.Parallel Test Execution:-Jest can run tests in parallel, significantly "reducing the overall test execution time", especially for large test suites.
+
 //19. are you use bootsrap in  react 
 //yes I used bootstrap in my react project 
 
-//20. have you hear about react server component
+//20. npm vs npx 
+//1.npm "installs" packages either "globally or locally" to the project,
+//1.while npx "runs" packages without installing them permanently.
+//2.npm is mainly used for "managing dependencies and running scripts", 
+//2.whereas npx is primarily "used for executing packages" as command-line tools.
+
 
 //21. what is JSX?
 //JSX stand for "javascript xml"
@@ -331,14 +334,116 @@ export default App;
 */
 
 
-//22. What is Interceptor and Prototype Inheritance 
+//22.What is Axios Interceptor and Prototype Inheritance 
+//Axios Interceptor
+//Axios Interceptor are "functions" that axios calls for each HTTP requests or response before they are handle by .then and .catch block
+//Axios interceptors "provide" a convenient way to apply common functionality across all HTTP requests and responses in your application. 
+//They help keep your code clean and consistent by centralizing logic that needs to be applied globally.
 
-//23. how to  format date using react 
+//Axios interceptors are commonly used for tasks such as:
+//1.Adding headers to requests.
+//2.Modifying request or response data.
+//3.Handling authentication tokens.
+
+/*
+import axios from 'axios';
+// Add a request interceptor
+axios.interceptors.request.use(
+  config => {
+    // Modify request configuration
+    config.headers.Authorization = 'Bearer token'; // Add authorization header
+    return config;
+  },
+  error => {
+    // Handle request error
+    return Promise.reject(error);
+  }
+);
+
+// Add a response interceptor
+axios.interceptors.response.use(
+  response => {
+    // Modify response data
+    console.log('Response:', response.data);
+    return response;
+  },
+  error => {
+    // Handle response error
+    console.error('Error:', error.message);
+    return Promise.reject(error);
+  }
+);
+
+// Now you can make requests using Axios
+axios.get('https://api.example.com/data')
+  .then(response => {
+    console.log('Data:', response.data);
+  })
+  .catch(error => {
+    console.error('Request failed:', error);
+  });
+
+//We define a request interceptor using axios.interceptors.request.use(). This interceptor modifies the request configuration by adding an authorization header.
+//We define a response interceptor using axios.interceptors.response.use(). This interceptor logs the response data.
+//Both interceptors can also handle errors by returning a rejected promise using Promise.reject(error).
+//Once the interceptors are defined, we can make requests using Axios as usual.
+
+
+//23.Prototypes in Javascript
+//Prototypes in Javascript is mechanism by which javascript objects inherit(inheritance) features from one another.
+//Prototype inheritance is mechanism which allows javascript objects to inherit "properties and methods" from other objects.
+//In JavaScript, almost all objects have a prototype object associated with them.
+// Each object has an internal property called [[Prototype]] (sometimes referred to as __proto__) that points to its prototype object.
+//When you access a property or method on an object, JavaScript first checks if that property or method exists directly on the object itself. If it doesn't find it, it looks up the prototype chain by following the [[Prototype]] link until it finds the property or method or reaches the end of the chain (which is usually the Object.prototype).
+
+
+//23.how to  format date using react 
+//In React, you can format dates using JavaScript's 1.built-in Date object and various libraries like 2.moment.js or 3.date-fns. 
+function formatDate(date){
+  const formatedDate = new Date(date).toLocaleDateString("en-US",{
+    year:"numeric",
+    month:"long",
+    day:"numeric"
+  });
+  return formatedDate
+}
+const createdAt = "2024-04-15"
+const date = formatDate(createdAt);
+console.log("date",date)//April 15,2024
+
+//or using moment js library
+//npm install moment
+import React from 'react';
+import moment from 'moment';
+
+function App() {
+  const date = '2024-04-15';
+  const formattedDate = moment(date).format('MMMM D, YYYY');
+
+  return <div>{formattedDate}</div>;
+}
+
+export default App;
+
 
 //24. what are the technology to optimize react app performance 
-//lazy loading,assest optimization,using hooks like useMemo(),useCallback(),
+//1.lazy loading,2.assest optimization(images used webp over jpeg),3.using hooks like useMemo(),useCallback(),4.Using Deboncing and Throttling
+//5.implement suggesions given by Lighthouse  Report(Performance,SEO,Accesibility,Best Practices)
 
-//25. what are the  different ways to style react component(inline style, javascript object or style,style sheet means external style sheet )
+//25.what are the  different ways to style react component(inline style, javascript object or style,style sheet means external style sheet )
+//1.Inline style 
+//2.External stylesheet (make an external stylesheet file and import it in your component)
+//3.CSS Modules (automatically generating "unique class names" for each component. This approach helps prevent style conflicts)
+/* MyComponent.module.css */
+
+// .myDiv {
+//   color: blue;
+//   font-size: 20px;
+// }
+//import styles from './MyComponent.module.css';
+//<div className={styles.myDiv}>Hello, World!</div>
+//4.Using third party libraries like bootstrap,tailwind
+
 //26. what are the rules must follow when use react hooks
 //1.Only Call Hooks at the Top Level
 //2.Don't Call Hooks Conditionally(Don’t call Hooks inside loops, conditions, or nested functions)
@@ -476,17 +581,58 @@ render(){
 
 //30. API Calling Sign Up,Login,Add,List,Update,Delete with Dialog Box  with file also upload you have to integrat filter like date wise, search,pagination,category wise
 
-//31. All type of hooks with one example of each
+//31.What is Debounce function (scrolling,resizing,typing)
+//calling a functions only after certain threshold time from the last invocation.
+//If we’re searching for some product in the search bar(say in ecommerce website), then instead of hitting API for each letter, through this, we can call it, after user has stopped for a while, say 300ms.
 
-//32. Redux with all the setup and its definations
+/*
 
-//33. all the questions related to react and js
+const getData = ()=>{
+  console.log("fetching data...");
+}
 
-//34. What is React ,features,advantage,disadvantage,why we dont want to use react,
+function debounceFunc(func,delay){
+  let timer ;
+  return function(){
+    let context = this;
+    
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(context)
+    }, delay);
+  }
+}
 
-//35. react vs angular
+const debounceMethod = debounceFunc(getData,300);
 
-//36. Error Handling  in React Error Boundry.
+/*
+
+//32. What is Throttling
+//Limiting the function call rate by "only" making the "next" call after some time interval.
+//Eg. if api call happen at button click and user is continuously clicking the button , the api call would be made continuously which is costly. So, through throttling, we can prevent this.
+
+const throttleFunction = (fn,limit)=>{
+    let flag = true;
+    return function(){
+      if(flag){
+        fn();
+        flag = false;
+        setTimeOut(()=>{
+          flag = true;
+        },limit)
+      }
+    }
+}
+
+//debouncing delays the execution of a function until a certain amount of time has passed since the last invocation, throttling ensures that the function is not executed more than once within a specified time interval.
+
+//33. 
+
+//34. 
+
+//35. 
+
+//36.Error Handling in React Error Boundry.
 //Error Boundaries are "React components" that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire React application.
 
 //37. why we can not use async before callback in useEffect(async()=>{},[])   
@@ -501,20 +647,23 @@ render(){
 //await: The await keyword is used inside an async function "to wait for a promise to resolve". It can only be used within an async function.
 
 // Akshay Saini Tips for Interview 
-
+//current React version 18 stabel
+//current Node version 21 stabel
+//current npm version 9
 
 // 39) What are React Hooks.: Prepare this in order
+//Hooks are introduced in 16.8 version of React.
 //React hooks are "in-built functions" provided by react that allow functional components to "use state" and "lifecycle features".
 
 /*
 - useState
-//useState is a React Hook that allows functional components to "manage state".
+//useState Hook "allows" functional components to "manage state".
 //Prior to the introduction of Hooks in React 16.8, state management was only possible within class components using the this.state property. However, with the introduction of Hooks, functional components can now manage state using the useState Hook.
 //working:
-//useState function "accepts" initial state value as argument and returns array with two elements
+//useState function "accepts" initial state value(optional) as argument and returns array with two elements
 //first element is the current state value
 //second element is the function that is used to update the state
-//When state of the component changes, it will re-render the component with the updated state.
+//When state of the component changes, React will re-render the component with the updated state.
 
 - useEffect
 //The useEffect hook in react is used to perform "side effects" in functional components. 
@@ -523,14 +672,14 @@ render(){
 //The first argument is the callback function, which contains the code that performs the side effect.
 //The second argument is an optional array of dependencies. If provided, the effect will only run when one of the dependencies changes. If omitted, the effect will run after every render.
 
-//createContext and useContext()
-
+//createContext and useContext()hook (v.imp)
+//In React createContext() and useContext hook is "used to manage state globally" instead of passing down the props to each nested level.
 //What are createContext() method? What are Provider and Consumer properties?
-//The createContext() function is used to create a new context object.
+//The createContext() function is "used to create a new context object".
 //It takes an optional parameter, defaultValue, which represents the initial value of the context.
 //The createContext() function returns an object with two properties: Provider and Consumer.
-//The Provider property is responsible for providing the context value to all its child components.
-//useContext() method or Consumer Property can be used to consume the context value in  the Child Components.
+//The Provider property is responsible for "providing" the context value to all its child components.
+//useContext() method or Consumer Property can be used to consume the context value in the Child Components.
 
 - useContext (v.imp)
 //The useContext() hook allows functional components to consume a context value.
@@ -584,8 +733,8 @@ export default Child;
 //3.Notification System
 
 - useReducer(to manage complex state logic)
-//useReducer Hook is used for "managing complex state logic" within functional components.
 // It is an alternative to the more commonly used useState hook.
+//useReducer Hook is used for "managing complex state logic" within functional components.
 //The useReducer hook "accepts" a "reducer function" and an "initial state", and returns the "current state" and a "dispatch function".
 // The reducer function takes the current state and an action as arguments, and returns a new state based on the action type.
 
@@ -621,7 +770,8 @@ export default Counter;
 
 
 - useMemo(Performance) (v.imp)
-//useMemo is used for memoization, which is the process of caching the result of a function call and returning the cached result when the same inputs occur again.
+
+//The useMemo hook in React is used for memoization. Memoization is an optimization technique that stores the result of expensive function calls and returns the cached result when the same inputs occur again, instead of recomputing the result. 
 
 //useMemo, React can store the result of a function call and reuse it when the dependencies of that function haven't changed, rather than recalculating the value on every render.
 
@@ -660,10 +810,12 @@ export default App;
 
 
 - useCallback(use to memoize function ,memoization) (v.imp)
-//useCallback hook is used for memoizing callback functions. It returns a memoized version of the callback that only changes if one of its dependencies has changed.
-//useCallback(callback, dependencies) can be used like useMemo(), but it memoizes functions instead of values, to prevent recreation upon every render. allowing you to avoid unnecessary re-rendering which makes your application more efficient.
+//The useCallback hook in React is used for memoizing callback functions. It returns a memoized version of the callback that only changes if one of its dependencies has changed.
 
 //useCallback is particularly useful when passing callbacks to child components, as it helps optimize performance by preventing unnecessary re-renders of those components when the parent component re-renders.
+
+//useCallback(callback, dependencies) can be used like useMemo(), but it memoizes functions instead of values, "to prevent recreation upon every render". allowing you to avoid unnecessary re-rendering which makes your application more efficient.
+
 
 // when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
 useCallback(callback, dependencies) will return a memoized instance of the callback that only changes if one of the dependencies has changed. This means that instead of recreating the function object on every re-render, we can use the same function object between renders.
@@ -700,6 +852,7 @@ export default App;
 //Both hooks help optimize the performance of React components by memoizing values and functions, respectively, and re-computing them only when necessary.
 
 - useRef(it does not rerender component when updated) (v.imp)
+//It allows you to access and interact with DOM nodes directly or to store any mutable value that doesn't trigger a re-render when it changes.
 //useRef allows us to "persist values" and "access DOM elements" across renders without causing re-renders.
 // It's particularly useful for interacting with the DOM imperatively and storing values that you don't want to trigger re-renders.
 //It returns a mutable ref object whose .current property is initialized with the passed argument (initialValue). The returned object will persist for the entire lifetime of the component.
@@ -765,6 +918,13 @@ function MyComponent() {
 - Why?
 - When?
 - Redux Toolkit (RTK)
+
+//What is Action 
+//An action is simple javascript object ,Action tells store change is needed
+
+//What is Reducer
+//A reducer is pure function which accept/takes previous state and action as an argument and return new state as a result
+
 
 // 44) Custom Hooks:
 - When to use?
@@ -872,10 +1032,12 @@ Hack for interview: Try to mention that the code you wrote is testable and try t
 // in Machine Coding Round // make code more Reusability, Readability, modularity, testability
 
 // 52) Performance (Important)
-- Lazy loading (Shimmer UI)
+ 1.Lazy loading (Shimmer UI)
 //Use code splitting to split your application code into smaller chunks that are loaded asynchronously.
 
-- Asset optimization (how do you optimize js, css code)
+2.Asset optimization (how do you optimize js, css code)
+3.Impleament the Suggestions given by Lighthouse report
+// It audits web pages for performance, accessibility, best practices, and SEO, and generates a report on how well the web page performs in these areas.
 
 - Writing optimized code
 
@@ -1001,7 +1163,16 @@ const arr1 = [10, 20, 30];
 const resularr = arr1.myMap((item) => item * 2);
 console.log("resularr", resularr);
 */
-//65. what is reconcilation in react (virtual dom explain in detail with all its methods).
+//65. What is DOM?
+//Dom stand for Document Object Model
+//Dom represents the structure of a web page as a tree-like structure.
+//Each element of the web page, such as paragraphs, headings, images, etc., is represented as a node in the DOM tree.
+//These nodes can be "manipulated" using JavaScript.
+
+//What is Browser Object Model (BOM)?
+//The Browser Object Model (BOM) is used to "interact" with the browser.
+//The default object of browser is window.
+//The BOM includes objects such as: Window,Document,Location,History,Screen objects.
 
 //66. when you use useCallback hook?
 //The useCallback hook in React is used to memoize functions, preventing them from being recreated on every render unless their dependencies change. It's primarily used to optimize performance in scenarios where you have a component that relies on functions as props or involves heavy computations within functions.
@@ -2959,7 +3130,7 @@ Add a success message upon successful registration
 //somebody resigned from the team and there is extra work load on you 
 //answer: 1.I will communicate the risk to the superior manager
 //2.I will taking things based on the priority
-//3. I will take some extra efforts to deliver project on time 
+//3.I will take some extra efforts to deliver project on time 
 
 
 //Machine coding round tips
