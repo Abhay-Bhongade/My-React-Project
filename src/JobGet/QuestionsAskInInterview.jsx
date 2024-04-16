@@ -303,7 +303,7 @@ Functional components: more concise and readable
 
 //21. what is JSX?
 //JSX stand for "javascript xml"
-//JSX used by React "to write" "HTML like code".
+//JSX allows developers to write HTML-like code directly within JavaScript files.
 //JSX is converted to javascirpt via tools like "babel".(Because browser understand javascript not JSX)
 /*
 //this code we write in jsx
@@ -958,54 +958,29 @@ function MyComponent() {
 Fiber is the "new reconciliation engine" in React 16. Its main goal is to enable "incremental rendering" of the virtual DOM.
 
 
-// 47) SSR vs CSR (important) :
+// 47) What is Server Side Rendering(uses Next.js) vs Client Side Rendering(Reactjs and Vuejs)? (important) :
 - What?
-//Server-side rendering (SSR) and client-side rendering (CSR) are two approaches to rendering web pages in web development, each with its own advantages and use cases.
+//Server-side rendering (SSR) and client-side rendering (CSR) are two approaches to rendering web pages in web development.
 - Difference
-//Server-side Rendering (SSR):
-//In SSR, the HTML for a web page is generated on the server and sent to the client as a fully rendered page.
-//When a user requests a page, the server executes the necessary code, fetches data if needed, renders the HTML content, and sends it to the client.
-//The client receives the pre-rendered HTML, CSS, and JavaScript, which is ready to be displayed immediately.
-//SSR is often used for content-heavy websites, where search engine optimization (SEO) is important, as search engine crawlers can easily index the content.
-//It can also lead to faster initial page load times, especially on low-powered devices or slow network connections, since the client receives a fully rendered page from the server.
+1.Rendering
+//server generates the HTML content for the requested page on the server, and sends the complete HTML document to the client.
+//CSR, the server sends a minimal HTML document along with JavaScript bundles to the client. The browser then executes the JavaScript to render the page dynamically on the client-side.
 
-//Client-side Rendering (CSR):
-//In CSR, the HTML file sent by the server typically contains minimal content and references to JavaScript files.
-//The browser downloads the HTML file and executes the JavaScript code to render the page dynamically on the client-side.
-//The JavaScript code may fetch data from an API, manipulate the DOM, and render the content dynamically based on user interactions or data changes.
-//CSR is commonly used in single-page applications (SPAs) or applications where interactivity and dynamic updates are crucial.
-//It can provide a smoother user experience, as only the necessary data and content are fetched and updated dynamically, without needing to reload the entire page.
-However, CSR may result in slower initial page load times, especially for large applications or on slower devices, since the browser needs to download and execute JavaScript code before rendering the content.
+2.Initial Page Load
+//SSR delivers fully rendered HTML to the client, so the browser can display the content immediately upon receiving the response from the server.
+//CSR initially loads a skeleton or shell of the page, with content placeholders, while JavaScript loads and processes data to render the complete page dynamically.
 
-//Client-side Rendering (CSR):
-//Advantages
-//1.Rich User Experience
-//2.Reduced Server Load
-//3.Better Developer Experience
-//4.Offline Support
+3.SEO (Search Engine Optimization)
+//SSR is beneficial for SEO because search engine crawlers can easily index the content since it's already present in the initial HTML response.
+//CSR can present challenges for SEO since search engine crawlers may not execute JavaScript, potentially leading to content not being indexed or indexed with delays.
 
-//Disadvantages
-//1.SEO Challenges
-//2.Slower Initial Page Load
-//3.Accessibility Concerns
+4.Performance
+//SSR can potentially provide better perceived performance for users on slower network connections
+//CSR may result in slower initial page load times, especially for larger applications, as the browser needs to download and execute JavaScript bundles before rendering content.
 
-//Server-side Rendering (SSR):
-
-//Advantages
-//1.Improved SEO
-//2.Faster Initial Page Load
-//3.Enhanced Performance
-//4.Improved Accessibility
-
-//Disadvantages
-//1.Increased Server Load
-//2.Complexity
-//3.Limited Interactivity
-
-
-- SEO and performance (SSR)
-//Choosing between SSR and CSR depends on various factors such as the type of application, performance requirements, SEO considerations, and development complexity. Some projects may even use a combination of both approaches, known as hybrid rendering, to leverage the benefits of each method for different parts of the application.
-
+5.Use Cases
+//SSR is well-suited for content-heavy websites, static websites, and applications where SEO is critical.
+CSR is often preferred for highly interactive web applications, single-page applications (SPAs), and applications that require real-time updates.
 
 // 48) Routing (Role-based access control-RBAC)
 - react-router
@@ -1132,7 +1107,7 @@ if(!Array.prototype.reduce){
     let accumulator = initialValue !== undefined ? initialValue : array[0];
     for(let i = initialValue !== undefined ? 0 : 1 ; i < lengtharr ; i++){
       if(i in arr){
-        accumulator = callback.call(undefined,accumulator,arr[i],i.array);
+        accumulator = callback.call(undefined,accumulator,arr[i],i,array);
       }
     }
     return accumulator
@@ -1176,7 +1151,8 @@ console.log("resularr", resularr);
 
 //66. when you use useCallback hook?
 //The useCallback hook in React is used to memoize functions, preventing them from being recreated on every render unless their dependencies change. It's primarily used to optimize performance in scenarios where you have a component that relies on functions as props or involves heavy computations within functions.
-//67. this Optimization technique in detail like useMemo,useCallback,Higher Order Component,Pure component,
+
+//67.
 
 //68. what is the difference between props and state 
 //In React, both props and state are used to manage data
@@ -1192,7 +1168,7 @@ console.log("resularr", resularr);
 //Changes to state trigger re-renders, updating the component UI to reflect the new state.
 
 
-//69. create a function in JavaScript to check if one word contains another word
+//69.
 
 //70. in react how many ways we can pass data between components? can we pass data from  child component to parent component 
 //1.Props
@@ -1214,10 +1190,11 @@ console.log("resularr", resularr);
 //Yes, in React, you can pass data from a child component to a parent component by using callback functions. The parent component can pass a function down to the child component as a prop, and the child component can then call this function and pass data to it.
 
 
-//71. difference between .js vs .jsx file
-//72. Es6 vs Es5
-//73. how we can  use Routing in React ? What is Routing and Router in React?
+//71.difference between .js vs .jsx file
 
+//72.
+
+//73. how we can  use Routing in React ? What is Routing and Router in React?
 //Here's a basic guide on how to use React Router for routing in a React application:
 //in short 1.install React Router 2.crate Navigation 3.Create Routes
 
@@ -1305,16 +1282,20 @@ export default Navigation;
 
 
 
-//74. difference between functional vs class component
+//74.
+
 //75. how to create object in react js
 //with help  of object.create method we can create new object
-//76. difference between map vs filter
+
+//76.difference between map vs filter
+
 //77. what is the use of slice method 
 // to extract particular part of the string we can use slice method 
+
 //78. what is use of Redux 
 // Redux user for global state management when we deal with larger project with large amount of state that time we use it
-//79. what is use of useEffect 
-// when we want to perform side effects that time we use useEffect for performing mounting,updating,unmounting
+
+//79.
 
 //80. difference between var and let keyword
 // 1.Variables declared with var are function-scoped or globally scoped.
@@ -1351,7 +1332,9 @@ exampleLet();
 
 
 //81. what is type conversion
+
 //82. difference between AND and OR operator
+
 //83. difference between == vs ===
 //== and === are both comparison operators
 // == is use to check the value //The == operator compares two values for equality, but it performs "type coercion" before making the comparison.
@@ -1382,9 +1365,7 @@ getData();
 
 */
 
-//85.fetch vs axios
-//fetch function  return response Object.
-//after that we do data.json() to convert this json body into a json
+//85.
 
 
 //86. shallow copy vs deep copy
@@ -1444,6 +1425,7 @@ console.log(deepCopyArray);    // Output: [1, 2, [3, 4]]
 
 
 //88. single thread and multi threading 
+
 //89. what is template literals 
 //90. what is destrcutering
 //91. what is useRef
@@ -3153,3 +3135,30 @@ Add a success message upon successful registration
 //machine coding round tasks 
 
 //Apply first company 1.website, 2.hrmail direct ,3.naukari.com
+
+
+//background verification 
+//1.company name and address
+//2.period of employment
+//3.Designation
+//4.employee code
+//5.last drawn salary
+//6.supervisor name
+//7.duties and responsibilities handle
+//8.attitude and personal reputation of the candidate
+//9.performance at work
+//10.reason for leaving and relavant information
+//11.eligible for rehire yes or no
+
+//in your resume write role as React developer and designation which offer by the company
+//graduation May 2019
+//coditas ,1year 5 month  1,Dec 2020 to 1,April 2022
+//brain inventory,6month  1,May 2022 to 18,Nov,2022
+//saviesa infotech 1year 3 month (selection done at 4dec) but date of joining 15Dec 2022 to 19March 2024
+//Total 3year 3months 
+
+//Project wants to be mention in resume
+//1.Constructor
+//2.championlister project
+//3.Orange Project(both mobile and web app)
+//4.MPP Disha web APP (both mobile and web app)
