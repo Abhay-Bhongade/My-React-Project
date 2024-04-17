@@ -27,6 +27,7 @@ import ParentComponentForStepper from "./Components/MachinecodingRound/Stepper/P
 import UseDebounceInput from "./Components/MachinecodingRound/Debounce/UseDebounceInput.jsx";
 import StopWatchApplication from "./Components/MachinecodingRound/Counter/StopWatchApplication.jsx";
 import PaginationWithApiData from "./Components/MachinecodingRound/Pagination/PaginationWithApiData.jsx";
+import PaginationAndSearch from "./Components/MachinecodingRound/Pagination/PaginationAndSearch.jsx";
 
 
 const App = () => {
@@ -59,8 +60,9 @@ if(onlineStatus ===false) return <h1>Look like your are offline !!,please check 
    </div> */}
  {/* <CodingRoundQuestions /> */}
  {/* <ParentComponentForStepper /> */}
- <PracticeCodingRoundQuestions />
+ {/* <PracticeCodingRoundQuestions /> */}
  {/* <CodingRoundQuestions /> */}
+ <PaginationAndSearch />
  </>   
   );
 };

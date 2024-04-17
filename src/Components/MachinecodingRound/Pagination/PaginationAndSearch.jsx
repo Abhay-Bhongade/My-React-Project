@@ -100,9 +100,11 @@ const PaginationAndSearch = () => {
                             </button>
                             {currentPage > 2 && <button onClick={() => handlePageChange(1)}>1</button>}
                             {currentPage > 3 && <span>...</span>}
+
                             {currentPage > 1 && <button onClick={() => handlePageChange(currentPage - 1)}>{currentPage - 1}</button>}
                             <button className="active">{currentPage}</button>
-                            {currentPage < totalPages && <button onClick={() => handlePageChange(currentPage + 1)}>{currentPage + 1}</button>}
+                            {currentPage < totalPages && <button onClick={() => handlePageChange(totalPages - 1)}>{currentPage + 1}</button>}
+                            
                             {currentPage < totalPages - 1 && <span>...</span>}
                             {currentPage < totalPages - 1 && <button onClick={() => handlePageChange(totalPages)}>{totalPages}</button>}
                             <button onClick={handleNextPage} disabled={currentPage === totalPages} className="mx-2">
