@@ -1,4 +1,4 @@
-//knowledge wale insaan ko hi paisa milta
+//knowledge wale insaan ko hi paisa milta hai
 //The vital thing due to which the resume do get selected is due to projects. Mainly, if you have worked on e-commerce domain that would be a great plus.
 //you have to confident about your answer 
 //Top 100 React JS Interview Questions and Answers https://www.youtube.com/watch?v=IMEzmmP3WAs
@@ -22,11 +22,11 @@
 //1.high level use to the end user
 //2.what is your project domain like ecommerce,healthcare,hotel management
 //3.tech stack use in your project like nodejs for backend,react,redux,js,css,html(mern stack)
-//currently I am working on the Orange Application which is hotel staff management project the purpose of this project is manage each role like there are roles like admin,recruiter,inspector,bussiness developer,bussiness analyst,accountant,hotel manager,collaborator where admin has full access where he can add,edit,delte all the above role and each role has seperate login also where other role has the view access only and there is dashboard for each screen which show after the particular role login ,the technologies we are using react for frontend ,  nodejs,express for backend and  and mongodb for database we are following for hybrid agile model for our project
+//currently I am working on the Orange Application which is hotel staff management project the purpose of this project is manage each role like there are roles like admin,recruiter,inspector,bussiness developer,bussiness analyst,accountant,hotel manager,collaborator where admin has full access where he can add,edit,delte all the above role and each role has seperate login also where other role has the view access only and there is dashboard for each screen which show after the particular role login ,the technologies we are using react for frontend,nodejs,express for backend and mongodb for database we are following for hybrid agile model for our project.
 
 //what is meant by agile model
 //The Agile model is a software development approach that emphasizes flexibility, adaptability, and collaboration throughout the development process. It contrasts with traditional "waterfall" methodologies, which involve sequential phases like "requirements gathering, design, implementation, testing, and deployment".
-
+//Instead of trying to deliver the entire software product at once, Agile breaks down the development process into smaller, manageable increments called iterations. Each iteration typically lasts from one to four weeks and results in a potentially shippable product increment.
 
 //Introduction
 //your name
@@ -34,10 +34,12 @@
 //technologies you work on
 //location 
 //your background domain knowledge
+
 //Good Afternoon sir,My name is Abhay Bhongade. I'm from Wardha, Maharashtra. I completed my graduation in copmuter engineering from Nagupur University, I've been working as a React Developer for three years now. My skills include HTML, CSS, JavaScript, React, Redux, and Bootstrap.Thank you for this opportunity to introduce myself.
 
 //What are your roles and responsibilities in your Project?
 //As a frontend developer my role is to estimate/gather the requirement and creating the design and then development where I focus on the  api integration and adding validation to forms and write unit test cases with the team and finally publish changes to  different environment and also I supportting the production and live environment by fixing the bugs
+//1.gather requirement => 2.create the design =>3.development(where I focus on the api integration and adding  validation to forms => 4.finally publish changes different environment) =>5.fixing the production time bugs.
 
 //Rate yourself in skills 1 - 10(confidence checking question)
 //rate yourself from 5 to 9 
@@ -53,7 +55,7 @@
 
 
 //2. what is react (v.imp)
-//React is an open-source JavaScript library developed by Facebook 2011 and released to the public in 2013.
+//React is an open-source JavaScript library developed by Facebook.
 //React follows the component based approch which helps in building Reusabel UI components.
 //It is used for developing complex and interactive web and mobile UI.
 //Even though it was open-sourced only in 2015, it has one of the largest communities supporting it.
@@ -80,6 +82,7 @@
 //2.Development Speed: tiresome for developers to continuosly learn new technologies.
 //3.JSX Complexity:The mix of HTML and JavaScript in JSX makes React JS much more complicated to learn and that may be unappealing to aspiring developers.
 //4.Problems With SEO:require expertise from developers as react had problem with google and indexing.
+//5.React is not  a complete framework it is just library
 
 //Difference Between React and Angular
 //both are use to create single page application UI application using components.
@@ -239,8 +242,6 @@ Functional components: more concise and readable
 //Async Callback Function: The async callback function you provide to createAsyncThunk is responsible for performing the asynchronous operation, such as making an API call using fetch, axios, or any other async operation. This function should return a promise that resolves to the fetched data.
 
 
-
-
 //15. what is difference between react-redux and react context API
 //both Redux and useContext used for managing and sharing state across components
 //Redux is suitable for applications with complex state management requirements, such as large-scale applications with multiple interconnected components.
@@ -305,7 +306,7 @@ Functional components: more concise and readable
 //21. what is JSX?
 //JSX stand for "javascript xml"
 //JSX allows developers to write HTML-like code directly within JavaScript files.
-//JSX is converted to javascirpt via tools like "babel".(Because browser understand javascript not JSX)
+//JSX is converted to javascirpt via tools like "babel".(Because browser understand javascript not JSX)//Babel is a popular JavaScript compiler
 /*
 //this code we write in jsx
 function App(){
@@ -338,7 +339,7 @@ export default App;
 //22.What is Axios Interceptor and Prototype Inheritance 
 //Axios Interceptor
 //Axios Interceptor are "functions" that axios calls for each HTTP requests or response before they are handle by .then and .catch block
-//Axios interceptors "provide" a convenient way to apply common functionality across all HTTP requests and responses in your application. 
+//Axios interceptors "provide" a convenient way to "apply common functionality" across "all HTTP requests and responses" in your application. 
 //They help keep your code clean and consistent by centralizing logic that needs to be applied globally.
 
 //Axios interceptors are commonly used for tasks such as:
@@ -431,7 +432,7 @@ export default App;
 //1.lazy loading,2.assest optimization(images used webp over jpeg),3.using hooks like useMemo(),useCallback(),4.Using Deboncing and Throttling
 //5.implement suggesions given by Lighthouse  Report(Performance,SEO,Accesibility,Best Practices)
 
-//26.what are the  different ways to style react component(inline style, javascript object or style,style sheet means external style sheet )
+//26.what are the different ways to style react component(inline style, javascript object or style,style sheet means external style sheet )
 //1.Inline style 
 //2.External stylesheet (make an external stylesheet file and import it in your component)
 //3.CSS Modules (automatically generating "unique class names" for each component. This approach helps prevent style conflicts)
@@ -710,7 +711,7 @@ export default Parent;
 import MyContext from './MyContext';
 
 const Child = ()=>{
-    const ContextValue = useContext(MyContext)
+    const ContextValue = useContext(MyContext);
     return <p>{ContextValue}</p>
     // return(
     //     <MyContext.Consumer>
@@ -1857,8 +1858,24 @@ getData()
 
 
 //Promise.all()
-//The Promise.all() accepts an array of promises and returns a promise that resolves when all of the promises in the array are fulfilled or when the iterable contains no promises. It rejects with the reason of the first promise that rejects
+//The Promise.all() "accepts an array of promises" and "returns a promise" that resolves when all of the promises in the array are "fulfilled" or when the iterable contains no promises. 
+//It rejects with the reason of the first promise that rejects
 
+//Promise.any()
+//Promise.any() takes an iterable of Promise objects. It returns a single promise that fulfills as soon as any of the  promises in the iterable fulfills, with the value of the fulfilled promise. If no promises in the iterable fulfill (if all of the given promises are rejected), then the returned promise is rejected with an AggregateError, a new subclass of Error that groups together individual errors.
+//In simple terms Promise.any() is just opposite of Promise.all().
+
+//Promise.race() (jo bhi pehale ho,means race me jo bhi first aye)
+//The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects, with the value or reason from that promise.
+
+//Promise.allSettled()
+//The Promise.allSettled() method returns a promise that fulfills after all of the given promises have either fulfilled or rejected, with an array of objects that each describes the outcome of each promise.
+
+// res [
+//   { status: 'fulfilled', value: 'first Promise is resolve' },
+//   { status: 'rejected', reason: 'second Promise is rejected' },
+//   { status: 'rejected', reason: 'third Promise is rejected' }
+// ]
 
 //101. this Keyword
 //this keyword work differently in different environment 
@@ -2981,9 +2998,24 @@ function App() {
 */
 //can add extra point above  113,115,116,117
 
-//171. How web works ? How Browser Works ? How you get Data from the server ? how local storage works ? how cookies store in the browser ? How make you and API request
+//171.What is Progressive Web Apps (PWA)
+//full Responsive: you can install it your phone and used it 
+//it runs in window,android,ios no need to write specific code for this
+//they work offline
+//they use service workers when you click on the button for api call if there cache data for this response they provide it insted of calling api if no data call api and first cache this data then call the api
+//background synchronization
 
-//
+//172.What is Webpack
+//Webpack is a powerful "static module bundler" for JavaScript applications. Its primary role is to take multiple modules with dependencies and bundle them into a single file (or multiple files) in a way that's optimized for deployment on the web.
+
+//173.What is Babel
+//Babel is a popular JavaScript compiler that allows you to use the latest JavaScript syntax (ES6+ and beyond) while ensuring compatibility with older browsers and environments that may not support these features natively. 
+// Its primary role is to transform modern JavaScript code into a backward-compatible version that can run in older browsers.
+
+//174.What is service worker
+//A service worker is a type of JavaScript worker that runs in the background of a web application, separate from the main browser thread. Its "primary role is to intercept network requests" and provide powerful features like caching, push notifications, and background synchronization. Service workers enable Progressive Web Apps (PWAs) to deliver offline functionality, improved performance, and a more engaging user experience. 
+
+
 
 //React Coding Round Questions
 

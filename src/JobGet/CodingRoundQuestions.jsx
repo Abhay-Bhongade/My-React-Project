@@ -78,7 +78,7 @@ removeMiddle(midelems)
 console.log("midelems",midelems);
 
 //4 sort number vs string
-
+//the sort() method sorts the array elements as strings. 
 //sort number
 const numbsNew = [1,2,3,4,5,6,7,8,9,10];
 const sortedNumValues = numbsNew.sort((a,b)=>a-b);
@@ -137,7 +137,7 @@ const [obje, setObject] = useState({
     const resultarr = arr1.myMap((item)=> item * 2);
     console.log("resultarr",resultarr)
 
-//create a function in JavaScript to check if one word contains another word
+//create a function in JavaScript to check if one word contains another word(look again)
 
 function compareWords(wordArray) {
   let firstWord = wordArray[0].toLowerCase();
@@ -200,14 +200,14 @@ function mergeStrings(a,b){
   let len = Math.min(b.length,x.length);
   let temp = "";
   for(var i =0; i<len ; i++){
-      temp = temp + a[i] + b[i]
+      temp += a[i] + b[i]
   }
   return temp + a.slice(i) + b.slice(i)
 
 }
 let str1 = 'abcdef';
 let str2 = '123'
-console.log("mergeStrings",mergeStrings("abcdef","123")
+console.log("mergeStrings",mergeStrings("abcdef","123")//a1b2c3def
 );
 
 
@@ -392,7 +392,7 @@ let sentence = "I love coding in Javascript"
 
 console.log("longestWord",longestWord(sentence));
 
-//write a function that check whether given string is palindrome or not?
+//write a function that check whether given string is palindrome or not?(Read string from both side meaning same)
 
 function isPalindrome(string){
   let reverseStr = string.split("").reverse().join("");
@@ -476,7 +476,7 @@ return largest;
 }
 console.log("findLargestNum",findLargestNum(arrNums));
 
-//write a function that check wheter given number is prime or not?
+//write a function that check wheter given number is prime or not?(see once)
 function isPrimeNum(num){
  for(let i =2; i < num / 2 ; i++){
   if(num % 2 ===0){
@@ -490,7 +490,7 @@ console.log("isPrime",isPrimeNum(num));
 
 //write a function to calculate factorial of number (multiply the number with all previous number);
 function findFactorial(num){
-if(num === 0){
+if(num <= 1){
   return 1;
 }
 let factorial = 1;
@@ -625,6 +625,21 @@ let months = arrOfMonths.reduce((prev,month)=>{
 },{})
 
 console.log("months",months);
+
+
+
+const first = (a) => a.reduce(fourth);
+const second = (...a) => third(...a);
+const third = (...a) => () => first(a);
+
+function fourth(a, b, c) {
+return c % 2 == "0" ? a : a + b;
+}
+
+const final = second(2, 3, 5, 6, 7, 8, 9, 10, 1, 42, 52)();
+
+console.log(typeof final, String(final));
+
 
   return (
     <div>

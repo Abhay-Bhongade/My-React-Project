@@ -119,7 +119,7 @@ console.log("filterEvenNums",filterEvenNums);
 //Write a JavaScript program to calculate the factorial of a given number. (look once again)
 
 function factorialOfNums(num){
-    if(num === 0 || num === 1){
+    if(num <= 1){
       return 1;
     }
 
