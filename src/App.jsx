@@ -29,6 +29,10 @@ import StopWatchApplication from "./Components/MachinecodingRound/Counter/StopWa
 import PaginationWithApiData from "./Components/MachinecodingRound/Pagination/PaginationWithApiData.jsx";
 import PaginationAndSearch from "./Components/MachinecodingRound/Pagination/PaginationAndSearch.jsx";
 import Promise from "./Components/MachinecodingRound/Promise/Promise.jsx";
+import BoxColorChange from "./Components/MachinecodingRound/BoxescolorChange/BoxColorChange.jsx";
+import ImageCarousal from "./Components/MachinecodingRound/ImageSlider/ImageCarousal.jsx";
+import ProgressBar from "./Components/MachinecodingRound/ProgressBar/ProgressBar.jsx";
+import InfiniteScrollWindow from "./Components/MachinecodingRound/InfiniteScroll/InfiniteScrollWindow.jsx";
 
 
 const App = () => {
@@ -62,7 +66,10 @@ if(onlineStatus ===false) return <h1>Look like your are offline !!,please check 
  {/* <CodingRoundQuestions /> */}
  {/* <ParentComponentForStepper /> */}
  {/* <PracticeCodingRoundQuestions /> */}
-  <CodingRoundQuestions /> 
+  {/* <CodingRoundQuestions />  */}
+  {/* <Promise /> */}
+  {/* <ImageCarousal /> */}
+  <InfiniteScrollWindow />
  </>   
   );
 };

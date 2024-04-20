@@ -806,8 +806,9 @@ export default App;
 
 
 - useCallback(use to memoize function ,memoization) (v.imp)
-//The useCallback hook in React is used for memoizing callback functions. It returns a memoized version of the callback that only changes if one of its dependencies has changed.
+//The useCallback() hook in React is used to memoize a function instead of memoizing the function result. It is particularly useful when passing callbacks as props to child components to prevent unnecessary re-renders.
 
+//The useCallback hook in React is used for memoizing callback functions. It returns a memoized version of the callback that only changes if one of its dependencies has changed.
 //useCallback is particularly useful when passing callbacks to child components, as it helps optimize performance by preventing unnecessary re-renders of those components when the parent component re-renders.
 
 //useCallback(callback, dependencies) can be used like useMemo(), but it memoizes functions instead of values, "to prevent recreation upon every render". allowing you to avoid unnecessary re-rendering which makes your application more efficient.
@@ -1005,12 +1006,14 @@ Hack for interview: Try to mention that the code you wrote is testable and try t
 // 48) Performance (Important)
  1.Lazy loading (Shimmer UI)
 //Use code splitting to split your application code into smaller chunks that are loaded asynchronously.
-
 2.Asset optimization (how do you optimize js, css code)
 3.Impleament the Suggestions given by Lighthouse report
 // It audits web pages for performance, accessibility, best practices, and SEO, and generates a report on how well the web page performs in these areas.
-
-- Writing optimized code
+4.Writing optimized code
+5.Memoization and Memoization:
+//In React, there are three techniques for memoization: React.memo(), useMemo(), and useCallback().
+//Memoize expensive calculations or computations using techniques like React's useMemo hook or memoized selectors in Redux.
+//Memoize function components using React's React.memo to prevent unnecessary re-renders.
 
 - Bundler
 //Analyze your bundle size using tools like "Webpack Bundle Analyzer" or the built-in tools in "Create React App".
@@ -1021,9 +1024,6 @@ Remove unused dependencies and code.
 - Rendering of components/Performance Monitoring
 Use performance monitoring tools like "Lighthouse", "Google PageSpeed Insights", or "Web Vitals" to identify performance bottlenecks and areas for improvement.
 
--Memoization and Memoization:
-//Memoize expensive calculations or computations using techniques like React's useMemo hook or memoized selectors in Redux.
-//Memoize function components using React's React.memo to prevent unnecessary re-renders.
 
 -Optimize Network Requests:
 //Use caching strategies (e.g., HTTP caching, service worker caching) to reduce the number of requests and improve response times.
@@ -1523,8 +1523,8 @@ console.log(add(3)(4)); // Output: 7
 'a1b2c3456'
 
 function mergeStrings(a,b){
-    let len = Math.min(b);
-    let temp 
+    let len = Math.min(a,b);
+    let temp = "";
     for(let i =0; i<len ; i++){
         temp += a[i] + b[i]
     }
@@ -3127,3 +3127,51 @@ Add a success message upon successful registration
 //2.championlister project
 //3.Orange Project(both mobile and web app)
 //4.MPP Disha web APP (both mobile and web app)
+
+//oops concept,polyphormism,what is react,advantages of react,flux,redux,
+//concept explain in detail , fluent communication ,take a break before explain things
+
+
+//salary increament tips
+//1. Highlight your achievements instead of your job description on your CV
+//2. Improve your skill set
+//3. Take on additional responsibility
+//4. Be likeable
+//5. Don’t complain/gossip
+//6. Embrace feedback
+//7. If you don’t ask, the answer is always ‘No’.
+//8. Upskill my self
+
+//between 55 to 60 
+
+//why you are leaving your current job
+//I am leaving current job because I am looking for role that will challenge me allow me to take on more responsibility.
+
+
+//if hr ask have you any question for me
+//can you tell me more about the team I will be working with?
+//can you share more about the onboarding process?
+
+//any challenge you face in your project 
+
+//yes ma'am at the I end of project client requirement is change so this time we discuss with this with our team and base on that discussion we take a decision that on priority basis we have to complete this things first 
+
+//at previous company tight deadline cause tension within the team ,I initiated open communication and delagated task efficiently and we successfully met the deadline fostering better team work.
+
+//Resume selected 
+//1.keywords are key ,tailor your cv to match , get more jobs offer
+//2.focus on achievement
+//3. your impact base on percentage and numbers
+//4.use free word cloud generator to extract important word from your cv
+
+//any challenge you face at your current job(STAR (situation,task,action,result))
+//1.there is tight deadline of project completion  and many functionality is change at last time
+//2.action => I initiated open communication with team and list things we have done first on the priority basis
+//3.result => by doing this we complete project before the deadline and implement all the requirement of client.
+
+
+//resume ATS friendly
+//company name
+//role
+//duration
+//your key responsibilities and achievements

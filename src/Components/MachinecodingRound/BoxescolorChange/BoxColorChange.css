@@ -1,0 +1,17 @@
+.yello{
+    background-color: yellow;
+  
+}
+.green{
+    background-color:green;
+}
+
+.comman{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+    flex-direction: row;
+}
