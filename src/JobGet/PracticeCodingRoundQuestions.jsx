@@ -98,7 +98,7 @@ let string2 = "abba"
 console.log("stringIsPalindrome",stringIsPalindrome(string2));
 
 //Write a JavaScript function that takes an array of numbers and returns a new array with only the even numbers. 
-
+// (% remainder(below value) 0 and / quoesoent(top value) 0)
 function findEvenNumbers(arr){
   let evenNums = [];
 for(let i =0; i<arr.length;i++){
@@ -164,7 +164,7 @@ function nestedArrFun(nestedArr){
   return largest;
 }
 
-let nestedArrNum = [[9,4,5,6]];
+let nestedArrNum = [[1,9,4,5,6]];
 
 console.log("nestedArr",nestedArrFun(nestedArrNum));
 
@@ -207,9 +207,10 @@ function debounceFunc(func,delay){
 let timer; 
 return function(){
   let context = this;
+  let args = arguments;
   clearTimeout(timer);
  timer = setTimeout(()=>{
-    func.apply(context)
+    func.apply(context,args)
  },delay)
 }
 }
@@ -345,7 +346,7 @@ return result
 }
 
 
-let sentence21 = "How are You"
+let sentence21 = "How are You";
 
 console.log("reverseWords",reverseWords(sentence21));
 

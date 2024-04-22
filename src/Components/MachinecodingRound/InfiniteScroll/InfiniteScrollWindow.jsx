@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const  InfiniteScrollWindow =()=> {
   const [data, setData] = useState(50);
@@ -25,6 +26,7 @@ const  InfiniteScrollWindow =()=> {
   return (
     <div className="App">
       <h1>Infinite Scroll</h1>
+      <ScrollToTopButton />
       <h2>{element}</h2>
     </div>
   );

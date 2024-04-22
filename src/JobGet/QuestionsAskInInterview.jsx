@@ -609,10 +609,10 @@ const debounceMethod = debounceFunc(getData,300);
 /*
 
 //32. What is Throttling
-//Limiting the function call rate by "only" making the "next" call after some time interval.
+//Throttling in React is a technique used to Limiting the function call rate by "only" making the "next" call after some time interval.
 //Eg. if api call happen at button click and user is continuously clicking the button , the api call would be made continuously which is costly. So, through throttling, we can prevent this.
 
-const throttleFunction = (fn,limit)=>{
+const throttle = (fn,limit)=>{
     let flag = true;
     return function(){
       if(flag){
@@ -624,6 +624,11 @@ const throttleFunction = (fn,limit)=>{
       }
     }
 }
+
+// Throttled event handler
+const throttledHandleResize = throttle(handleResize,  200);
+
+window.addEventListener('resize', throttledHandleResize)
 
 //debouncing delays the execution of a function until a certain amount of time has passed since the last invocation, throttling ensures that the function is not executed more than once within a specified time interval.
 
@@ -767,6 +772,7 @@ export default Counter;
 
 - useMemo(Performance) (v.imp)
 
+
 //The useMemo hook in React is used for memoization. Memoization is an optimization technique that stores the result of expensive function calls and returns the cached result when the same inputs occur again, instead of recomputing the result. 
 
 //useMemo, React can store the result of a function call and reuse it when the dependencies of that function haven't changed, rather than recalculating the value on every render.
@@ -806,13 +812,12 @@ export default App;
 
 
 - useCallback(use to memoize function ,memoization) (v.imp)
-//The useCallback() hook in React is used to memoize a function instead of memoizing the function result. It is particularly useful when passing callbacks as props to child components to prevent unnecessary re-renders.
-
 //The useCallback hook in React is used for memoizing callback functions. It returns a memoized version of the callback that only changes if one of its dependencies has changed.
-//useCallback is particularly useful when passing callbacks to child components, as it helps optimize performance by preventing unnecessary re-renders of those components when the parent component re-renders.
+//useCallback is particularly useful when passing callbacks as props to child components to prevent unnecessary re-renders.
 
 //useCallback(callback, dependencies) can be used like useMemo(), but it memoizes functions instead of values, "to prevent recreation upon every render". allowing you to avoid unnecessary re-rendering which makes your application more efficient.
 
+//The useCallback() hook in React is used to memoize a function instead of memoizing the function result. It is particularly useful when passing callbacks as props to child components to prevent unnecessary re-renders.
 
 // when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
 useCallback(callback, dependencies) will return a memoized instance of the callback that only changes if one of the dependencies has changed. This means that instead of recreating the function object on every re-render, we can use the same function object between renders.
@@ -1014,7 +1019,7 @@ Hack for interview: Try to mention that the code you wrote is testable and try t
 //In React, there are three techniques for memoization: React.memo(), useMemo(), and useCallback().
 //Memoize expensive calculations or computations using techniques like React's useMemo hook or memoized selectors in Redux.
 //Memoize function components using React's React.memo to prevent unnecessary re-renders.
-
+6.Debounce and Trottling Event Handlers
 - Bundler
 //Analyze your bundle size using tools like "Webpack Bundle Analyzer" or the built-in tools in "Create React App".
 Remove unused dependencies and code.
@@ -3015,6 +3020,18 @@ function App() {
 //174.What is service worker
 //A service worker is a type of JavaScript worker that runs in the background of a web application, separate from the main browser thread. Its "primary role is to intercept network requests" and provide powerful features like caching, push notifications, and background synchronization. Service workers enable Progressive Web Apps (PWAs) to deliver offline functionality, improved performance, and a more engaging user experience. 
 
+//175.What is OOP's Concept
+//The OOP acronym is short for Object-Oriented Programming, and it’s a paradigm that uses concepts such as classes, objects, and inheritance.
+
+//The main concepts of OOP are the following: 
+//"Inheritance" is a concept where objects inherit all the behaviors and properties of a parent object.
+//A "class" is made up of objects with several common methods but that exhibit different behaviors and in different states. 
+//"Encapsulation" is when "data and code are bound together into a single unit". An example of this is a class.
+//Polymorphism means having many forms,It is the Property of some code to behaves differently for different context.
+
+//176.Can you define recursion?
+//Recursion is a function that calls itself after a termination condition has been reached. It uses a Last In First Out (LIFO) operation, which means it uses stacks. 
+
 
 
 //React Coding Round Questions
@@ -3175,3 +3192,16 @@ Add a success message upon successful registration
 //role
 //duration
 //your key responsibilities and achievements
+
+//why you want to switch your current job
+//Seeking a More Challenging Role.
+
+
+//Today I will be Practice
+//1.useMemo() with example
+//2.useCallback()
+//3.useRef()
+//4.useReducer
+//5.Debounce and Trottle
+//6.React.memo()
+//7.Axios.interceptors

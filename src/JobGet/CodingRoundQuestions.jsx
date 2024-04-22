@@ -210,6 +210,20 @@ let str2 = '123'
 console.log("mergeStrings",mergeStrings("abcdef","123")//a1b2c3def
 );
 
+function MergeTwoStringOneByOne(str1,str2){
+  let maxLength = Math.max(str1.length , str2.length);
+  let mergeString = "";
+  for(let i = 0; i<maxLength;i++){
+    if(i< str1.length) mergeString += str1[i];
+    if(i< str2.length) mergeString += str2[i];
+  }
+  return mergeString;
+
+}
+
+let str22 = "abcdef"
+let str23 = "123"
+console.log("MergeTwoStringOneByOne",MergeTwoStringOneByOne(str22,str23));
 
 //which user has the age 26 return his firstname
 //also achieve same thing with the reduce method
@@ -343,7 +357,7 @@ Array.prototype.myFilter = function(cb){
 const newfilterarr = data.myFilter((item)=> item > 3)
 console.log("newfilterarr",newfilterarr);
 
-Array.prototype.myReduce = function(callback,initialValue){
+Array.prototype.myReduce = function (callback,initialValue){
     if(typeof callback !== "function"){
       throw new TypeError(callback + "is not a function")
     }
@@ -364,6 +378,29 @@ const sumnew = data.myReduce((acc,curr)=> {
   return acc + curr;
 },0)
 console.log("sumnew",sumnew);
+
+
+// Check if Array.prototype.reduce already exists (it exists in modern JavaScript environments)
+if (!Array.prototype.reduce) {
+  Array.prototype.reduce = function(callback, initialValue) {
+    // Check if the array is empty and initialValue is not provided
+    if (this.length === 0 && initialValue === undefined) {
+      throw new TypeError('Reduce of empty array with no initial value');
+    }
+
+    // Initialize accumulator
+    let accumulator = initialValue !== undefined ? initialValue : this[0];
+    let startingIndex = initialValue !== undefined ? 0 : 1;
+
+    // Iterate over each element of the array
+    for (let i = startingIndex; i < this.length; i++) {
+      accumulator = callback(accumulator, this[i], i, this);
+    }
+
+    return accumulator;
+  };
+}
+
 
 //write a function to reverse a string?()
 function reverseString(str){
@@ -465,10 +502,9 @@ function largestNum(arr){
 
   //without method
   function findLargestNum(arr){
-let firstEleAsLargest =  arr[0];
 let largest = 0;
 for(let i = 1 ; i < arr.length; i++){
-  if(arr[i] > firstEleAsLargest){
+  if(arr[i] > largest){
     largest = arr[i]
   }
 }
@@ -478,6 +514,9 @@ console.log("findLargestNum",findLargestNum(arrNums));
 
 //write a function that check wheter given number is prime or not?(see once)
 function isPrimeNum(num){
+  if(num <= 1){
+    return false;
+  }
  for(let i =2; i < num / 2 ; i++){
   if(num % 2 ===0){
     return false
@@ -626,6 +665,17 @@ let months = arrOfMonths.reduce((prev,month)=>{
 
 console.log("months",months);
 
+const monthCount = arrOfMonths.reduce((prev,month)=>{
+if(prev[month]){
+  prev[month]++
+}else{
+  prev[month] = 1
+}
+return prev;
+
+},{})
+
+console.log("monthCount",monthCount);
 
 
 const first = (a) => a.reduce(fourth);

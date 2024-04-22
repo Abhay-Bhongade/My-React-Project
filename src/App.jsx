@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Suspense} from "react";
 import InputFields from "./Components/MachinecodingRound/Debounce/InputFiels.jsx";
 import CodingRoundQuestions from "./JobGet/CodingRoundQuestions.jsx";
 import TodoUsingLocalStorage from "./Components/MachinecodingRound/ToDo App/TodoUsingLocalStorage.jsx";
@@ -33,7 +33,12 @@ import BoxColorChange from "./Components/MachinecodingRound/BoxescolorChange/Box
 import ImageCarousal from "./Components/MachinecodingRound/ImageSlider/ImageCarousal.jsx";
 import ProgressBar from "./Components/MachinecodingRound/ProgressBar/ProgressBar.jsx";
 import InfiniteScrollWindow from "./Components/MachinecodingRound/InfiniteScroll/InfiniteScrollWindow.jsx";
-
+import SignIn from "./Components/MachinecodingRound/React.memo/SignIn.jsx";
+import AddTodoItem from "./Components/MachinecodingRound/UseMemoHook/AddTodoItem.jsx";
+import UseCallbackHook from "./Components/MachinecodingRound/UseCallbackHook/UseCallbackHook.jsx";
+import UseReducer from "./Components/MachinecodingRound/UseReducer/UseReducer.jsx";
+//import UseDebounceExample from "./Components/MachinecodingRound/Debounce/UseDebounceExample.jsx";
+const UseDebounceExample = React.lazy(()=>import("./Components/MachinecodingRound/Debounce/UseDebounceExample.jsx"))
 
 const App = () => {
 
@@ -69,7 +74,12 @@ if(onlineStatus ===false) return <h1>Look like your are offline !!,please check 
   {/* <CodingRoundQuestions />  */}
   {/* <Promise /> */}
   {/* <ImageCarousal /> */}
-  <InfiniteScrollWindow />
+  {/* <InfiniteScrollWindow /> */}
+  {/* <UseCallbackHook /> */}
+  {/* <Suspense fallback={<div>loading...</div>}>
+  <UseDebounceExample />
+  </Suspense> */}
+  <UseReducer />
  </>   
   );
 };

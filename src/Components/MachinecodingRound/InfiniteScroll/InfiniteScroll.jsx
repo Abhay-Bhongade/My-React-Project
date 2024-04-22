@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ScrollToTopButton from './ScrollToTopButton';
 
 const InfiniteScroll = () => {
   const [count, setCount] = useState(50);
@@ -31,6 +32,7 @@ const InfiniteScroll = () => {
     <>
       <div style={{ textAlign: 'center' }}>InfiniteScroll</div>
       <div>{element}</div>
+      <ScrollToTopButton />
     </>
   );
 };
