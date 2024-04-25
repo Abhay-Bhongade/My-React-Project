@@ -1,3 +1,7 @@
+//Total 2 Rounds
+//1.Technical Round(30 to 45min)
+//2.Problem Solving Round
+
 //knowledge wale insaan ko hi paisa milta hai
 //The vital thing due to which the resume do get selected is due to projects. Mainly, if you have worked on e-commerce domain that would be a great plus.
 //you have to confident about your answer 
@@ -35,7 +39,7 @@
 //location 
 //your background domain knowledge
 
-//Good Afternoon sir,My name is Abhay Bhongade. I'm from Wardha, Maharashtra. I completed my graduation in copmuter engineering from Nagupur University, I've been working as a React Developer for three years now. My skills include HTML, CSS, JavaScript, React, Redux, and Bootstrap.Thank you for this opportunity to introduce myself.
+//Good Afternoon sir,My name is Abhay Bhongade. I'm from Wardha, Maharashtra. I completed my graduation in copmuter engineering from Nagupur University, I have total 3years of experience as a React Developer. My skills include HTML, CSS, JavaScript, React, Redux, and Bootstrap.Thank you for giving me opportunity to introduce myself.
 
 //What are your roles and responsibilities in your Project?
 //As a frontend developer my role is to estimate/gather the requirement and creating the design and then development where I focus on the  api integration and adding validation to forms and write unit test cases with the team and finally publish changes to  different environment and also I supportting the production and live environment by fixing the bugs
@@ -82,7 +86,7 @@
 //2.Development Speed: tiresome for developers to continuosly learn new technologies.
 //3.JSX Complexity:The mix of HTML and JavaScript in JSX makes React JS much more complicated to learn and that may be unappealing to aspiring developers.
 //4.Problems With SEO:require expertise from developers as react had problem with google and indexing.
-//5.React is not  a complete framework it is just library
+//5.React is not a complete framework it is just library.
 
 //Difference Between React and Angular
 //both are use to create single page application UI application using components.
@@ -105,7 +109,7 @@
 //It’s a lightweight copy of the actual DOM, and changes are first made to the Virtual DOM and then efficiently reflected in the real DOM. This process is known as “reconciliation” and helps optimize performance by minimizing expensive DOM manipulations.
 
 //4. What Is Shadow DOM?
-//ShadowDOM is the concept that refers to the "encapsulation" of DOM elements and components.
+//Shadow DOM is the concept that refers to the "encapsulation" of DOM elements and components.
 //Shadow  DOM is helpful for CSS scoping.(css of one component not conflict with the other component css)
 
 //5. explain life cycle methods in react js
@@ -140,7 +144,6 @@ Functional components: more concise and readable
 
 
 */
-
 //8. type of hooks ever you created any custom hooks
 //useState(),useEffect(),useMemo(),useCallback(),useContext(),useReducer(),
 
@@ -175,7 +178,7 @@ Functional components: more concise and readable
 
 //14. what is redux
 //Redux is open-source javascript library for managing and centralizing application state.
-//It helps you manage the state of your application in a predictable manner,with the help of Redux devtool  a crome extention.
+//It helps you manage the state of your application in a predictable manner,with the help of Redux devtool a crome extention.
 //It follows a unidirectional data flow pattern.
 //Redux offers easy debugging.
 
@@ -395,7 +398,7 @@ axios.get('https://api.example.com/data')
 //Prototypes in Javascript is mechanism by which javascript objects inherit(inheritance) features from one another.
 //Prototype inheritance is mechanism which allows javascript objects to inherit "properties and methods" from other objects.
 //In JavaScript, almost all objects have a prototype object associated with them.
-// Each object has an internal property called [[Prototype]] (sometimes referred to as __proto__) that points to its prototype object.
+//Each object has an internal property called [[Prototype]] (sometimes referred to as __proto__) that points to its prototype object.
 //When you access a property or method on an object, JavaScript first checks if that property or method exists directly on the object itself. If it doesn't find it, it looks up the prototype chain by following the [[Prototype]] link until it finds the property or method or reaches the end of the chain (which is usually the Object.prototype).
 
 
@@ -460,7 +463,7 @@ export default App;
 //    super(props);
 //    console.log("props",props);
 //} 
-//first constructor is called after that render method is called and if there is any child component is used there then child all life cycle methods are called like first constructor after rendor method after that component did mount in child and after that if componend did mount in parent is called.
+//first constructor is called after that render method is called and if there is any child component is used there then child all life cycle methods are called like first constructor after rendor method after that component did mount in child and after that if component did mount in parent is called.
 //1.constructor called 2.render called 3.componentDidMount(mainly used for api call work like useEffect) is called 
 //functional component is a function  which return some piece of jsx
 /*
@@ -678,7 +681,7 @@ window.addEventListener('resize', throttledHandleResize)
 //What are createContext() method? What are Provider and Consumer properties?
 //The createContext() function is "used to create a new context object".
 //It takes an optional parameter, defaultValue, which represents the initial value of the context.
-//The createContext() function returns an object with two properties: Provider and Consumer.
+//The createContext() function "returns an object with two properties": Provider and Consumer.
 //The Provider property is responsible for "providing" the context value to all its child components.
 //useContext() method or Consumer Property can be used to consume the context value in the Child Components.
 
@@ -770,9 +773,7 @@ export default Counter;
 
 
 
-- useMemo(Performance) (v.imp)
-
-
+//useMemo(Performance) (v.imp)
 //The useMemo hook in React is used for memoization. Memoization is an optimization technique that stores the result of expensive function calls and returns the cached result when the same inputs occur again, instead of recomputing the result. 
 
 //useMemo, React can store the result of a function call and reuse it when the dependencies of that function haven't changed, rather than recalculating the value on every render.
@@ -812,12 +813,11 @@ export default App;
 
 
 - useCallback(use to memoize function ,memoization) (v.imp)
-//The useCallback hook in React is used for memoizing callback functions. It returns a memoized version of the callback that only changes if one of its dependencies has changed.
-//useCallback is particularly useful when passing callbacks as props to child components to prevent unnecessary re-renders.
+//The useCallback() hook in React is used to memoize a function instead of memoizing the function result. It is particularly useful when passing callbacks as props to child components to prevent unnecessary re-renders.
 
 //useCallback(callback, dependencies) can be used like useMemo(), but it memoizes functions instead of values, "to prevent recreation upon every render". allowing you to avoid unnecessary re-rendering which makes your application more efficient.
 
-//The useCallback() hook in React is used to memoize a function instead of memoizing the function result. It is particularly useful when passing callbacks as props to child components to prevent unnecessary re-renders.
+
 
 // when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
 useCallback(callback, dependencies) will return a memoized instance of the callback that only changes if one of the dependencies has changed. This means that instead of recreating the function object on every re-render, we can use the same function object between renders.
@@ -853,11 +853,16 @@ export default App;
 // while useCallback is used to memoize callback functions. 
 //Both hooks help optimize the performance of React components by memoizing values and functions, respectively, and re-computing them only when necessary.
 
-- useRef(it does not rerender component when updated) (v.imp)
-//It allows you to access and interact with DOM nodes directly or to store any mutable value that doesn't trigger a re-render when it changes.
-//useRef allows us to "persist values" and "access DOM elements" across renders without causing re-renders.
-// It's particularly useful for interacting with the DOM imperatively and storing values that you don't want to trigger re-renders.
+
+//useRef(it does not causes re-render component when updated) (v.imp)
+//It can be used to store a mutable value that does not cause a re-render when updated.
+//It can be used to access a DOM element directly.
+//The useRef Hook allows you to persist values between renders.
+//when component render that time show focus in input field
+
 //It returns a mutable ref object whose .current property is initialized with the passed argument (initialValue). The returned object will persist for the entire lifetime of the component.
+
+//to access DOM elements or store mutable values that persist across renders.
 
 import React, { useRef, useEffect } from 'react';
 
@@ -872,10 +877,7 @@ function MyComponent() {
   return <div>Render count: {renderCount.current}</div>;
 }
 
-
-
-
-// 37) Higher Order Components (HOC): with example (v.imp)
+// 37) Higher Order Components (HOC): with example (v.imp)("reuse component logic")
 - What?
 //Higher order component are functions that "takes another component as an argument" and return a new enhanced component with additional functionality.
 //Higher order component allows us to "reuse component logic" in a more flexible and modular way. 
@@ -1005,7 +1007,7 @@ Hack for interview: Try to mention that the code you wrote is testable and try t
 - Promises //Callback hell 
 - setTimeout,setInterval
 
-// 47) Reusability, Readability, modularity, testability (Coding Practices) used this keywords in iterview
+// 47) Reusability, Readability, modularity, testability (Coding Practices) used this keywords in interview
 // in Machine Coding Round // make code more Reusability, Readability, modularity, testability
 
 // 48) Performance (Important)
@@ -1018,7 +1020,7 @@ Hack for interview: Try to mention that the code you wrote is testable and try t
 5.Memoization and Memoization:
 //In React, there are three techniques for memoization: React.memo(), useMemo(), and useCallback().
 //Memoize expensive calculations or computations using techniques like React's useMemo hook or memoized selectors in Redux.
-//Memoize function components using React's React.memo to prevent unnecessary re-renders.
+//Memoize functional components using React's React.memo to prevent unnecessary re-renders.
 6.Debounce and Trottling Event Handlers
 - Bundler
 //Analyze your bundle size using tools like "Webpack Bundle Analyzer" or the built-in tools in "Create React App".
@@ -1091,7 +1093,7 @@ Array.prototype.myFilter = function(cb){
             arr.push(this[i])
         }
     }
-    return;
+    return arr;
 }
 */
 
@@ -1107,9 +1109,10 @@ if(!Array.prototype.reduce){
     let array = this;
     let lengtharr = this.length
     let accumulator = initialValue !== undefined ? initialValue : array[0];
-    for(let i = initialValue !== undefined ? 0 : 1 ; i < lengtharr ; i++){
-      if(i in arr){
-        accumulator = callback.call(undefined,accumulator,arr[i],i,array);
+    let startIndex = initialValue !== undefined ? 0 : 1;
+    for(let i = startIndex ; i < lengtharr ; i++){
+      if(i in array){
+        accumulator = callback.call(undefined,accumulator,array[i],i,array);
       }
     }
     return accumulator
@@ -1188,7 +1191,7 @@ console.log("resularr", resularr);
 //Yes, in React, you can pass data from a child component to a parent component by using callback functions. The parent component can pass a function down to the child component as a prop, and the child component can then call this function and pass data to it.
 
 
-//59. how we can  use Routing in React ? What is Routing and Router in React?
+//59. how we can use Routing in React ? What is Routing and Router in React?
 //Here's a basic guide on how to use React Router for routing in a React application:
 //in short 1.install React Router 2.crate Navigation 3.Create Routes
 
@@ -1211,10 +1214,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={Home} />
-        <Route path="/about" element={About} />
-        <Route path="/contact" element={Contact} />
-        <Route path="/*" element={NotFound} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </Router>
   );
@@ -1320,7 +1323,7 @@ exampleLet();
 
 //63. difference between == vs ===
 //== and === are both comparison operators
-// == is use to check the value //The == operator compares two values for equality, but it performs "type coercion" before making the comparison.
+//== is use to check the value //The == operator compares two values for equality, but it performs "type coercion" before making the comparison.
 //Type coercion means that if the two values being compared are of different types, JavaScript will attempt to convert them to a common type before making the comparison.
 //where as === used to check the value and data type
 //The === operator also compares two values for equality, but it does not perform type coercion.
@@ -1350,6 +1353,16 @@ getData();
 
 //65. shallow copy vs deep copy
 /*
+//when we copy object that time memory location copy 
+//but when we copy variable that time value copy 
+//In shallow copy ,copy the object only one level if there is nested object that time it does not copy nested objects.
+//to copy nested object we can use deep copy by using json.parse(json.stringify(obj1))  but is has two limitation 1.if there is any method under original inside nested object that it does not copy does not show in the deep copy object and date also does not copy proper means show but not work as expected.
+//we can resolve this issue with 1.make a function and copy each key and value 2.by using lodash library it provide a function _.cloneDeep(obj1)
+//example let user = _.cloneDeep(obj1)
+//in shallow copy ke andar main object hi copy hota hai ,but in deep copy nested object bhi copy hote hai.
+
+//A deep copy means that all of the values of the new variable are copied and disconnected from the original variable.(memory location(memory reference))
+//A shallow copy means that certain (sub-)values are still connected to the original variable.
 //shallow copy is copy of main objeect if there is a change in one object so it  reflected in the other object
 //A shallow copy creates a new object/array, but it doesn't create copies of nested objects/arrays. Instead, it copies references to the nested objects/arrays. This means that changes made to nested objects/arrays in the original will affect the shallow copy, and vice versa.
 const originalArray = [1, 2, [3, 4]];
@@ -1382,11 +1395,31 @@ originalArray[2][0] = 10;
 console.log(originalArray);    // Output: [1, 2, [10, 4]]
 console.log(deepCopyArray);    // Output: [1, 2, [3, 4]]
 
-//Shallow copy creates a new object/array and copies references to nested objects/arrays.
-//Deep copy creates a completely new object/array with copies of all nested objects/arrays.
+//Shallow copy creates a new object/array and "copies references" to nested objects/arrays.
+//Deep copy creates a completely new object/array with "copies of all nested objects/arrays".
 */
 
-//66. what is Event Loop
+//Json.stringify(convert js object or value to json string)
+//The JSON.stringify() method is used to convert a JavaScript object or value to a "JSON string".
+//This method is commonly used when you need to "send data to a server"
+//JSON.stringify() can handle various types of values, including objects, arrays, strings, numbers, boolean values, and null.
+// However, it "does not handle functions or undefined values".
+
+//const obj = { name: 'John', age: 30, city: 'New York' };
+//const jsonString = JSON.stringify(obj);
+//console.log(jsonString); // Output: {"name":"John","age":30,"city":"New York"}
+
+//Json.parse(parse json string and convert it to javascript object)
+//The JSON.parse() method is used to parse a JSON string and convert it into a JavaScript object or value.
+//This method is commonly used for transmitting data between a server and a web application.
+//const jsonString = '{"name": "John", "age": 30, "city": "New York"}';
+//const obj = JSON.parse(jsonString);
+//console.log(obj); // Output: { name: 'John', age: 30, city: 'New York' }
+
+
+
+
+//66.what is Event Loop
 //Javascript is the synchronous single threaded language 
 //single threaded means we have only one call stack and all the js code execute in this call stack only which is present in JS engine, which is run in the browser.
 //the job of the Event loop continuously checks for the call stack and callback queue and microtask queue, and if we have something in callback queue AND the call stack is empty, it pushes callback method into call stack.
@@ -1411,13 +1444,13 @@ console.log(deepCopyArray);    // Output: [1, 2, [3, 4]]
 //68. API Methods 
 // Get method is used the receive the records from the  server
 //POST method is used to  send the records/data to the server  // it creates new record to the server
-//PUT methods is used to update the existing record on  the rerver 
+//PUT methods is used to update the existing record on the rerver
 //The PUT method is used to update or replace an entire resource at a specific URI.
 //PATCH vs PUT method
 //The PATCH method is used to partially update a resource at a specific URI.
 //Unlike PUT, PATCH is not intended to replace the entire resource. Instead, it applies a set of changes to the existing resource.
 //In summary, while both PUT and PATCH are used to update resources, PUT is used for full replacements of resources, whereas PATCH is used for partial updates or modifications.
-//difference between POST vs PATCH METHOD
+//difference between POST vs PUT METHOD
 // post is used to create the new record to server
 // where as put is used to update the existing record it replaces existing record
 //DELETE methods is used to delete record from the server
@@ -1493,7 +1526,7 @@ If we try changing the value later at some line to const variable, we’ll get e
 
 
 //73. how to make asynchronous task to the syncronous
-// for that we can use async await 
+//for that we can use async await 
 
 
 //74. what are the closures?
@@ -1540,9 +1573,10 @@ function mergeStrings(a,b){
 
 //77.block element vs inline element 
 //Inline Elements: Inline elements do not have a width or height specified by default. Their width is determined by their content, and they cannot have width or height applied directly.
-//ex : div,p,heading,ul,li
-//Block-Level Elements: Block-level elements have a width of 100% by default, meaning they stretch to fill the entire width of their container. Their height is determined by the content they contain, or it can be explicitly specified.
 //span,a,img,input,bold,strong,
+
+//Block-Level Elements: Block-level elements have a width of 100% by default, meaning they stretch to fill the entire width of their container. Their height is determined by the content they contain, or it can be explicitly specified.
+//ex : div,p,heading,ul,li
 
 //78. css priority/Specificity
 //Here's a summarized priority order:
@@ -1581,7 +1615,7 @@ function mergeStrings(a,b){
 //In React, an error boundary is a React component that catches JavaScript errors anywhere in its child component tree, logs those errors, and displays a fallback UI instead of crashing the entire application.
 
 //83. What is Generator Function in Javascript?
-//In javascript , generator are the special type of function which allow us to control the execution flow and pause/resume it at certain points.
+//In javascript , generator are the special type of function which allow us to "control the execution flow and pause/resume it at certain points".
 //Generator function define using "function*" syntax
 //and it uses yeild keyword to "produce a sequence of values".
 //when generator function is called it returns an iterator called a generator.
@@ -2009,7 +2043,7 @@ printName.call(student2,"Mumbai")  //value of this is student2(we will override 
 
 
 //103. What is JavaScript ? What is the role of Javascript engine? (v.imp)
-//Javascript is synchronus single threaded language , we used javascript to convert static web pages to ineractive and dynamic web pages.
+//Javascript is synchronus single threaded language , we used javascript to "convert" static web pages to ineractive and dynamic web pages.
 //Javascript is programming language that is used for converting static web pages to "interactive and dynamic" web pages.
 //Javascript engine is a program present in the web browser that execute javascript code.
 
@@ -3011,14 +3045,17 @@ function App() {
 //background synchronization
 
 //172.What is Webpack
-//Webpack is a powerful "static module bundler" for JavaScript applications. Its primary role is to take multiple modules with dependencies and bundle them into a single file (or multiple files) in a way that's optimized for deployment on the web.
+//Webpack is use to 1.make build 2.css and js minify 3.Entry file
+//Webpack is a "JavaScript module bundler" that is commonly used with React to bundle and manage dependencies.
+//It takes all of the individual JavaScript files and other assets in a project, such as images and CSS, and combines them into a single bundle that can be loaded by the browser.
 
 //173.What is Babel
 //Babel is a popular JavaScript compiler that allows you to use the latest JavaScript syntax (ES6+ and beyond) while ensuring compatibility with older browsers and environments that may not support these features natively. 
-// Its primary role is to transform modern JavaScript code into a backward-compatible version that can run in older browsers.
+//Its primary role is to transform modern JavaScript code into a backward-compatible version that can run in older browsers.
 
 //174.What is service worker
-//A service worker is a type of JavaScript worker that runs in the background of a web application, separate from the main browser thread. Its "primary role is to intercept network requests" and provide powerful features like caching, push notifications, and background synchronization. Service workers enable Progressive Web Apps (PWAs) to deliver offline functionality, improved performance, and a more engaging user experience. 
+//A service worker is a type of JavaScript worker that runs in the background of a web application, separate from the main browser thread. 
+//Its "primary role is to intercept network requests" and provide powerful features like caching, push notifications, and background synchronization. Service workers enable Progressive Web Apps (PWAs) to deliver offline functionality, improved performance, and a more engaging user experience. 
 
 //175.What is OOP's Concept
 //The OOP acronym is short for Object-Oriented Programming, and it’s a paradigm that uses concepts such as classes, objects, and inheritance.
@@ -3178,7 +3215,7 @@ Add a success message upon successful registration
 //Resume selected 
 //1.keywords are key ,tailor your cv to match , get more jobs offer
 //2.focus on achievement
-//3. your impact base on percentage and numbers
+//3.your impact base on percentage and numbers
 //4.use free word cloud generator to extract important word from your cv
 
 //any challenge you face at your current job(STAR (situation,task,action,result))
@@ -3196,12 +3233,17 @@ Add a success message upon successful registration
 //why you want to switch your current job
 //Seeking a More Challenging Role.
 
+//Buzzy Brains interview question(tip:try to explain with example)
+//deep copy and shallow copy  json.parse() and json.stringify
+//hoisting
+//closuere
+//call,apply,bind
+//useEffect in Detail 
+//creteContext() and useContext()
+//useReducer()
+//useCallback()
+//React.memo()
+//babel
 
-//Today I will be Practice
-//1.useMemo() with example
-//2.useCallback()
-//3.useRef()
-//4.useReducer
-//5.Debounce and Trottle
-//6.React.memo()
-//7.Axios.interceptors
+
+//synechron,bussiness complex,

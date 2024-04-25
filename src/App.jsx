@@ -37,17 +37,16 @@ import SignIn from "./Components/MachinecodingRound/React.memo/SignIn.jsx";
 import AddTodoItem from "./Components/MachinecodingRound/UseMemoHook/AddTodoItem.jsx";
 import UseCallbackHook from "./Components/MachinecodingRound/UseCallbackHook/UseCallbackHook.jsx";
 import UseReducer from "./Components/MachinecodingRound/UseReducer/UseReducer.jsx";
+import DynamicInputComponent from "./Components/MachinecodingRound/DynamicInputComponent.jsx";
+import ComponentWithEffect from "./Components/MachinecodingRound/ComponentWithEffect.jsx";
+import TaskAPI from "./Components/MachinecodingRound/TaskAPI.jsx";
+import UseEffect from "./Components/MachinecodingRound/UseEffect.jsx";
+import DeepCopy from "./Components/MachinecodingRound/DeepCopy.jsx";
+import UseRefHook from "./Components/MachinecodingRound/UseRefHook.jsx";
 //import UseDebounceExample from "./Components/MachinecodingRound/Debounce/UseDebounceExample.jsx";
 const UseDebounceExample = React.lazy(()=>import("./Components/MachinecodingRound/Debounce/UseDebounceExample.jsx"))
 
 const App = () => {
-
-//6month intership 
-// in maharashtra job 1.5year with salary 12k   
-// in Brain Inventory job for 6 month with  salary 20k
-// in Saviesa Job for 1.4 month with salary  23k or 33k 
-//overall 3.5year as total experience
-
 
 const onlineStatus = useOnlineStatus();
 console.log("onlineStatus",onlineStatus);
@@ -79,19 +78,9 @@ if(onlineStatus ===false) return <h1>Look like your are offline !!,please check 
   {/* <Suspense fallback={<div>loading...</div>}>
   <UseDebounceExample />
   </Suspense> */}
-  <UseReducer />
+  <UseRefHook />
  </>   
   );
 };
 
 export default App;
-
-//135
-//136
-//20,31,32,33,34,35,67,69,72,74
-
-//old resume
-//bi 1/11/2021 - 30/11/2022  1year 1month
-//saviesa  1/12/2022 - present 1year 4month
-
-//total 2year 5 month
