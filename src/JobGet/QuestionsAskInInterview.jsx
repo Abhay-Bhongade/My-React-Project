@@ -678,7 +678,6 @@ window.addEventListener('resize', throttledHandleResize)
 
 //createContext and useContext()hook (v.imp)
 //In React createContext() and useContext hook is "used to manage state globally" instead of passing down the props to each nested level.
-//What are createContext() method? What are Provider and Consumer properties?
 //The createContext() function is "used to create a new context object".
 //It takes an optional parameter, defaultValue, which represents the initial value of the context.
 //The createContext() function "returns an object with two properties": Provider and Consumer.
@@ -774,7 +773,8 @@ export default Counter;
 
 
 //useMemo(Performance) (v.imp)
-//The useMemo hook in React is used for memoization. Memoization is an optimization technique that stores the result of expensive function calls and returns the cached result when the same inputs occur again, instead of recomputing the result. 
+//The useMemo hook in React is used for memoization.
+//Memoization is an optimization technique that stores the result of expensive function calls and returns the cached result when the same inputs occur again, instead of recomputing the result. 
 
 //useMemo, React can store the result of a function call and reuse it when the dependencies of that function haven't changed, rather than recalculating the value on every render.
 
@@ -796,6 +796,9 @@ function MyComponent({ a, b }) {
   return <div>Result: {result}</div>;
 }
 
+export default MyComponent;
+
+
 function App() {
   const [valueA, setValueA] = useState(5);
   const [valueB, setValueB] = useState(10);
@@ -812,13 +815,10 @@ function App() {
 export default App;
 
 
-- useCallback(use to memoize function ,memoization) (v.imp)
+//useCallback() (v.imp)
 //The useCallback() hook in React is used to memoize a function instead of memoizing the function result. It is particularly useful when passing callbacks as props to child components to prevent unnecessary re-renders.
 
 //useCallback(callback, dependencies) can be used like useMemo(), but it memoizes functions instead of values, "to prevent recreation upon every render". allowing you to avoid unnecessary re-rendering which makes your application more efficient.
-
-
-
 // when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
 useCallback(callback, dependencies) will return a memoized instance of the callback that only changes if one of the dependencies has changed. This means that instead of recreating the function object on every re-render, we can use the same function object between renders.
 
