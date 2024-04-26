@@ -39,10 +39,10 @@
 //location 
 //your background domain knowledge
 
-//Good Afternoon sir,My name is Abhay Bhongade. I'm from Wardha, Maharashtra. I completed my graduation in copmuter engineering from Nagupur University, I have total 3years of experience as a React Developer. My skills include HTML, CSS, JavaScript, React, Redux, and Bootstrap.Thank you for giving me opportunity to introduce myself.
+//Good Morning sir,My name is Abhay Bhongade,I have total 3 year experience as a React Developer,I work on 7+ live Projects till,My Skills include React,Redux,Javascript,Git,Bootstrap,CSS,HTML,I am from Wardha,Maharashtra,I completed My graduation in Computer Engineering from Nagupur University,I strengths are positive attitude,team player,problem solving ,attention to details that is all about me,Thank you sir for giving me this opportunity to introduce myself.
 
 //What are your roles and responsibilities in your Project?
-//As a frontend developer my role is to estimate/gather the requirement and creating the design and then development where I focus on the  api integration and adding validation to forms and write unit test cases with the team and finally publish changes to  different environment and also I supportting the production and live environment by fixing the bugs
+//As a frontend developer my role is to gather the requirement and creating the design and then development where I focus on the  api integration and adding validation to forms and write unit test cases with the team and finally publish changes to  different environment and also I supportting the production and live environment by fixing the bugs
 //1.gather requirement => 2.create the design =>3.development(where I focus on the api integration and adding  validation to forms => 4.finally publish changes different environment) =>5.fixing the production time bugs.
 
 //Rate yourself in skills 1 - 10(confidence checking question)
@@ -687,7 +687,6 @@ window.addEventListener('resize', throttledHandleResize)
 - useContext (v.imp)
 //The useContext() hook allows functional components to consume a context value.
 //It takes a context object (created by createContext()) as an argument and returns the current context value.
-//It allows components to access the nearest matching provider's value in the component tree
 //useContext in React provides way to pass data from parent to child component without using Props.
 
 //MyContex.js
@@ -819,7 +818,7 @@ export default App;
 //The useCallback() hook in React is used to memoize a function instead of memoizing the function result. It is particularly useful when passing callbacks as props to child components to prevent unnecessary re-renders.
 
 //useCallback(callback, dependencies) can be used like useMemo(), but it memoizes functions instead of values, "to prevent recreation upon every render". allowing you to avoid unnecessary re-rendering which makes your application more efficient.
-// when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
+//when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
 useCallback(callback, dependencies) will return a memoized instance of the callback that only changes if one of the dependencies has changed. This means that instead of recreating the function object on every re-render, we can use the same function object between renders.
 
 import React, { useState, useCallback } from 'react';
@@ -881,6 +880,7 @@ function MyComponent() {
 - What?
 //Higher order component are functions that "takes another component as an argument" and return a new enhanced component with additional functionality.
 //Higher order component allows us to "reuse component logic" in a more flexible and modular way. 
+//example (like logging, authentication, etc.)
 
 - When?
 //Use HOCs when you need to "share common functionality" between multiple components.
@@ -927,7 +927,7 @@ function MyComponent() {
 //An action is simple javascript object ,Action tells store change is needed
 
 //What is Reducer
-//A reducer is pure function which accept/takes previous state and action as an argument and return new state as a result
+//A reducer is pure function which takes state and action as an argument and return new state as a result
 
 
 // 41) Custom Hooks:
@@ -3050,12 +3050,12 @@ function App() {
 //It takes all of the individual JavaScript files and other assets in a project, such as images and CSS, and combines them into a single bundle that can be loaded by the browser.
 
 //173.What is Babel
-//Babel is a popular JavaScript compiler that allows you to use the latest JavaScript syntax (ES6+ and beyond) while ensuring compatibility with older browsers and environments that may not support these features natively. 
-//Its primary role is to transform modern JavaScript code into a backward-compatible version that can run in older browsers.
+//Babel is a JavaScript compiler.
+//It is mainly used to "convert" ECMAScript 2015+ code into backwards-compatible JavaScript code that can be run by older JavaScript engines.
 
 //174.What is service worker
 //A service worker is a type of JavaScript worker that runs in the background of a web application, separate from the main browser thread. 
-//Its "primary role is to intercept network requests" and provide powerful features like caching, push notifications, and background synchronization. Service workers enable Progressive Web Apps (PWAs) to deliver offline functionality, improved performance, and a more engaging user experience. 
+//Its "primary role is to intercept network requests" and provide powerful features like "caching", "push notifications", and "background synchronization". Service workers enable Progressive Web Apps (PWAs) to deliver offline functionality, improved performance, and a more engaging user experience. 
 
 //175.What is OOP's Concept
 //The OOP acronym is short for Object-Oriented Programming, and it’s a paradigm that uses concepts such as classes, objects, and inheritance.
@@ -3245,5 +3245,26 @@ Add a success message upon successful registration
 //React.memo()
 //babel
 
+//weblisto,thoughtwin,hotwax,
+//anjali@webllisto.com
 
 //synechron,bussiness complex,
+
+//vagaro Technologies
+//reply vs redex
+//reducer vs extra reducer
+//useHistory vs useNavigate
+//how to use multiple middelware
+//how to programatically handle click event in React
+//how to make http to https request in react
+//limitation of react
+//what is reconcilation in react
+//diffrence between react vs React Dom
+//callback vs useCallback
+//lifting state up
+//lazy loading
+//what is Error Boundry
+//what is pure Component
+//What is diffrence between Component and Container
+//how to implement google analytics in react router
+//how to show default component if any url does not match
