@@ -3268,3 +3268,5 @@ Add a success message upon successful registration
 //What is diffrence between Component and Container
 //how to implement google analytics in react router
 //how to show default component if any url does not match
+
+//eiren height, sadhgaru plaza, orbit mall, c21 piche ki galiya, nextloop ,it park crystal it park,bussiness park,bhawarkuwa 
