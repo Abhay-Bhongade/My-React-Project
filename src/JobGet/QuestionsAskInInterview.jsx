@@ -1,6 +1,4 @@
-//Total 2 Rounds
-//1.Technical Round(30 to 45min)
-//2.Problem Solving Round
+
 
 //knowledge wale insaan ko hi paisa milta hai
 //The vital thing due to which the resume do get selected is due to projects. Mainly, if you have worked on e-commerce domain that would be a great plus.
@@ -16,8 +14,10 @@
 //tip for interview:- dont give answer in one line elaborate it with defination and mention use case in your project 
 
 //Rounds in interview
-//1.Coding Round / Machine coding round
-//2.Technical Round
+//1.Technical Round
+//2.Coding Round / Machine coding round
+
+
 
 //1. what is your role in the current project in your company , introduction and on which project you work on 
 
@@ -39,7 +39,7 @@
 //location 
 //your background domain knowledge
 
-//Good Morning sir,My name is Abhay Bhongade,I have total 3 year experience as a React Developer,I work on 7+ live Projects till,My Skills include React,Redux,Javascript,Git,Bootstrap,CSS,HTML,I am from Wardha,Maharashtra,I completed My graduation in Computer Engineering from Nagupur University,I strengths are positive attitude,team player,problem solving ,attention to details that is all about me,Thank you sir for giving me this opportunity to introduce myself.
+//Good Morning sir,My name is Abhay Bhongade,I have total 3 year experience as a React Developer,I work on 7+ live Projects still,My Skills include React,Redux,Javascript,Git,Bootstrap,CSS,HTML,I am from Nagpur,Maharashtra,I completed My graduation in Computer Engineering from Nagupur University,My strengths are positive attitude,team player,problem solving ,attention to details that is all about me,Thank you sir for giving me this opportunity to introduce myself.
 
 //What are your roles and responsibilities in your Project?
 //As a frontend developer my role is to gather the requirement and creating the design and then development where I focus on the  api integration and adding validation to forms and write unit test cases with the team and finally publish changes to  different environment and also I supportting the production and live environment by fixing the bugs
@@ -91,16 +91,16 @@
 //Difference Between React and Angular
 //both are use to create single page application UI application using components.
 
-//1. React is Javascript library
-//1. Angular is the Complete framework
-//2. React uses virtual Dom which make it faster.
-//2. Angular uses Real DOM
-//3. React is smaller in size and lighweight 
-//3. Angular is bigger in size because it is complete framework
+//1.React is Javascript library
+//1.Angular is the Complete framework
+//2.React uses virtual Dom which make it faster.
+//2.Angular uses Real DOM
+//3.React is smaller in size and lighweight 
+//3.Angular is bigger in size because it is complete framework
 //4.React is simple to learn and more popular than Angular
 //4.Angular is slightly difficult to learn as it has Typescript ,OOPS concept and many more things
 
-//3. what is virtual dom and how it is diffrent from the real dom
+//3.what is virtual dom and how it is diffrent from the real dom
 //The Virtual DOM in React is a lightweight copy of the real DOM.
 //When you make changes to the "state" of a React component, instead of directly manipulating the real DOM, React creates a new Virtual DOM representation of the updated UI.
 //React then compares this new Virtual DOM with the previous one to identify the differences (often referred to as "diffing"). Once the differences are identified, React calculates the most efficient way to update the real DOM to match the new Virtual DOM.
@@ -108,18 +108,18 @@
 
 //It’s a lightweight copy of the actual DOM, and changes are first made to the Virtual DOM and then efficiently reflected in the real DOM. This process is known as “reconciliation” and helps optimize performance by minimizing expensive DOM manipulations.
 
-//4. What Is Shadow DOM?
+//4.What Is Shadow DOM?
 //Shadow DOM is the concept that refers to the "encapsulation" of DOM elements and components.
 //Shadow  DOM is helpful for CSS scoping.(css of one component not conflict with the other component css)
 
-//5. explain life cycle methods in react js
+//5.explain life cycle methods in react js
 // mounting phase componentDidMount() , updating phase componentDidUpdate() , unmounting phase componentWillUnMount()
 
-//6. types of components which you prefer mostly
+//6.types of components which you prefer mostly
 //1.Class Based Component
 //2.Functional Component
 
-//7. Difference Between Class Based Component vs Functional Component
+//7.Difference Between Class Based Component vs Functional Component
 /*
 
 //1.Syntax:
@@ -639,7 +639,7 @@ window.addEventListener('resize', throttledHandleResize)
 //33.Error Handling in React Error Boundry.
 //Error Boundaries are "React components" that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire React application.
 
-//34. why we can not use async before callback in useEffect(async()=>{},[])   
+//34.why we can not use async before callback in useEffect(async()=>{},[])   
 //The reason for this is because useEffect expects its cleanup function "to return either undefined or a function" (if cleanup is required), "not a Promise".
 //Here are some common scenarios where cleanup functions are useful:
 //1.Clearing Timers or Intervals: If you set up any timers or intervals in your effect, it's essential to clear them to prevent memory leaks once the component unmounts or the effect re-runs.
@@ -881,6 +881,10 @@ function MyComponent() {
 //Higher order component are functions that "takes another component as an argument" and return a new enhanced component with additional functionality.
 //Higher order component allows us to "reuse component logic" in a more flexible and modular way. 
 //example (like logging, authentication, etc.)
+
+//Use Cases 
+//1.Code Reusability
+//You nedd comman functionality like authentication,logging or data fetching across multiple component
 
 - When?
 //Use HOCs when you need to "share common functionality" between multiple components.
@@ -3233,17 +3237,7 @@ Add a success message upon successful registration
 //why you want to switch your current job
 //Seeking a More Challenging Role.
 
-//Buzzy Brains interview question(tip:try to explain with example)
-//deep copy and shallow copy  json.parse() and json.stringify
-//hoisting
-//closuere
-//call,apply,bind
-//useEffect in Detail 
-//creteContext() and useContext()
-//useReducer()
-//useCallback()
-//React.memo()
-//babel
+
 
 //weblisto,thoughtwin,hotwax,
 //anjali@webllisto.com
@@ -3251,22 +3245,11 @@ Add a success message upon successful registration
 //synechron,bussiness complex,
 
 //vagaro Technologies
-//reply vs redex
-//reducer vs extra reducer
-//useHistory vs useNavigate
-//how to use multiple middelware
-//how to programatically handle click event in React
-//how to make http to https request in react
-//limitation of react
-//what is reconcilation in react
-//diffrence between react vs React Dom
-//callback vs useCallback
-//lifting state up
-//lazy loading
-//what is Error Boundry
-//what is pure Component
-//What is diffrence between Component and Container
-//how to implement google analytics in react router
-//how to show default component if any url does not match
+
 
 //eiren height, sadhgaru plaza, orbit mall, c21 piche ki galiya, nextloop ,it park crystal it park,bussiness park,bhawarkuwa 
+
+//reset restart refocus as many times as you need to but never give up
+
+//mpp disha,orange People,constructor,poshmark,championlister
+
