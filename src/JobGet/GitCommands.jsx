@@ -48,7 +48,7 @@
 
 //if git pull does not work if both work on the same  file
 //git pull not work
-//git stach save "my chages x" -u
+//git stash save "my chages x" -u
 //git pull
 //git stash apply 0
 

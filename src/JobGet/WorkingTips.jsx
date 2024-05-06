@@ -5,6 +5,7 @@
 //4.What you can get Paid for
 
 //Tips work hard than Bramhans so that they can salute your skills
+
 //Main Improvement Areas
 //1.Communication Section(focus more on this area many rejected due to communication skill)
 //2.Technical question prepared in depth with example(prepared more and in depth topic with example many time you failed in this round)
@@ -117,6 +118,18 @@
 //2nd Round Technical Round  (Friday,2pm to 2:45pm) 
 //taken by Team Lead with 9year exp Mehul Jogani
 //and Manager of the company Hardik Kathiria
+//give three question 1.reverse a string 2.count char in string 3.remove duplicate from nested array
+//what is patch method
+//what is diff algorithm in virtual dom
+//how many virtual dom are there total in component level
+//useMemo and useCallBack 
+//deep copy vs shallow copy 
+//when we do deep copy with json.parse and json.stringify what are issue with date and method not copied properly
+//when we do lazy loading that time if we go offline so it show white screen how we can resolve this issue by using custom hook offline and online base on that we can show component so it does not show white screen or blank page
+//have you work on the backend nodejs
+//
+
+
 //3rd there is third round also Problem solving Round
 
 //12.excite system(pune)
@@ -125,4 +138,22 @@
 
 //13.tekzee(2,May) face to face interviw at 11am
 //Experience 3.2
+//First Round(clear)
+//what is service worker
+//you work data with online or offline
+//git related question
+//what is map,filter,reduce
+//difference between map vs forEach
+//What is Hoisting
+//What is closure 
+//function currying
+//What is Event Loop
+//what is declarative syntax in react
+//can we write declarative syntax without jsx 
+//why we use React Fragment 
+//What is Lazy Loading
+//Difference between useContext and Redux Toolkit
+//Second Round(Clear)
+//question asked crud operation with yup,formik validation to forms with redux toolkit setup so prepared thoroughly redux toolkit syntax and stored data in localstorage
+
 

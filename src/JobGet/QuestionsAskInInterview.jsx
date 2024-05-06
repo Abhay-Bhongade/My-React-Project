@@ -734,11 +734,11 @@ export default Child;
 //2.Localization(Language Selection)
 //3.Notification System
 
-- useReducer(to manage complex state logic)
-// It is an alternative to the more commonly used useState hook.
+//useReducer(to manage complex state logic)
+//It is an alternative to the more commonly used useState hook.
 //useReducer Hook is used for "managing complex state logic" within functional components.
 //The useReducer hook "accepts" a "reducer function" and an "initial state", and returns the "current state" and a "dispatch function".
-// The reducer function takes the current state and an action as arguments, and returns a new state based on the action type.
+//The reducer function takes the current state and an action as arguments, and returns a new state based on the action type.
 
 import React, { useReducer } from 'react';
 
@@ -817,7 +817,7 @@ export default App;
 //useCallback() (v.imp)
 //The useCallback() hook in React is used to memoize a function instead of memoizing the function result. It is particularly useful when passing callbacks as props to child components to prevent unnecessary re-renders.
 
-//useCallback(callback, dependencies) can be used like useMemo(), but it memoizes functions instead of values, "to prevent recreation upon every render". allowing you to avoid unnecessary re-rendering which makes your application more efficient.
+//useCallback(callback, dependencies) can be used like useMemo(), but it memoizes functions instead of values, "to prevent recreation upon every render",allowing you to avoid unnecessary re-rendering which makes your application more efficient.
 //when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
 useCallback(callback, dependencies) will return a memoized instance of the callback that only changes if one of the dependencies has changed. This means that instead of recreating the function object on every re-render, we can use the same function object between renders.
 
@@ -849,7 +849,7 @@ export default App;
 
 //useCallback vs useMemo
 //useMemo is used to memoize values,
-// while useCallback is used to memoize callback functions. 
+//while useCallback is used to memoize callback functions. 
 //Both hooks help optimize the performance of React components by memoizing values and functions, respectively, and re-computing them only when necessary.
 
 
@@ -884,7 +884,7 @@ function MyComponent() {
 
 //Use Cases 
 //1.Code Reusability
-//You nedd comman functionality like authentication,logging or data fetching across multiple component
+//You need comman functionality like authentication,logging or data fetching across multiple component
 
 - When?
 //Use HOCs when you need to "share common functionality" between multiple components.
@@ -1158,11 +1158,11 @@ console.log("resularr", resularr);
 //The default object of browser is window.
 //The BOM includes objects such as: Window,Document,Location,History,Screen objects.
 
-//56. when you use useCallback hook?
+//56.when you use useCallback hook?
 //The useCallback hook in React is used to memoize functions, preventing them from being recreated on every render unless their dependencies change. It's primarily used to optimize performance in scenarios where you have a component that relies on functions as props or involves heavy computations within functions.
 
 
-//57. what is the difference between props and state 
+//57.what is the difference between props and state 
 //In React, both props and state are used to manage data
 //Props
 //Props are short for properties and are used to pass data from parent components to child components.
@@ -1175,7 +1175,7 @@ console.log("resularr", resularr);
 //State is private to the component owning it, meaning it is not accessible or modifiable from outside the component.
 //Changes to state trigger re-renders, updating the component UI to reflect the new state.
 
-//58. in react how many ways we can pass data between components? can we pass data from  child component to parent component 
+//58.in react how many ways we can pass data between components? can we pass data from  child component to parent component 
 //1.Props
 //Props (short for properties) are used for passing data from parent to child components. 
 //Props are immutable and are passed down the component tree.
@@ -1195,7 +1195,7 @@ console.log("resularr", resularr);
 //Yes, in React, you can pass data from a child component to a parent component by using callback functions. The parent component can pass a function down to the child component as a prop, and the child component can then call this function and pass data to it.
 
 
-//59. how we can use Routing in React ? What is Routing and Router in React?
+//59.how we can use Routing in React ? What is Routing and Router in React?
 //Here's a basic guide on how to use React Router for routing in a React application:
 //in short 1.install React Router 2.crate Navigation 3.Create Routes
 
@@ -1282,17 +1282,17 @@ export default Navigation;
 
 
 
-//60. how to create object in react js
+//60.how to create object in react js
 //with help  of object.create method we can create new object
 
 
-//61. what is the use of slice method 
+//61.what is the use of slice method 
 // to extract particular part of the string we can use slice method 
 
 
 
 
-//62. difference between var and let keyword
+//62.difference between var and let keyword
 // 1.Variables declared with var are function-scoped or globally scoped.
 //1. Variables declared with let are block-scoped.
 //2. with let we can not redeclare variable with same name.
@@ -1618,7 +1618,7 @@ function mergeStrings(a,b){
 //82.Error boundary
 //In React, an error boundary is a React component that catches JavaScript errors anywhere in its child component tree, logs those errors, and displays a fallback UI instead of crashing the entire application.
 
-//83. What is Generator Function in Javascript?
+//83.What is Generator Function in Javascript?
 //In javascript , generator are the special type of function which allow us to "control the execution flow and pause/resume it at certain points".
 //Generator function define using "function*" syntax
 //and it uses yeild keyword to "produce a sequence of values".
@@ -1681,7 +1681,7 @@ Note-
 
 */
 
-//89. What is Hoisting in JavaScript?
+//89.What is Hoisting in JavaScript?
 //Phenomena in JS through which we can access the variables and functions even before they have initialized, without any error.
 //console.log(x); //perfectly fine but o/p will be ‘undefined’
 //x = 90;
@@ -1703,7 +1703,7 @@ perfectly fine/valid. The property of a const object can be change but it
 cannot be change to reference to the new object.
 */
 
-//90. Type of Errors in JavaScript
+//90.Type of Errors in JavaScript
 //1.Reference error // when we try to access a variable which is not declare yet
 // console.log(a)
 //let a = 10;
@@ -1735,7 +1735,7 @@ so many things here. I would like to sum up in notes,
     reference error ... while trying to access variable which is not there in global memory.
 */
 
-//91. What is Closuere?
+//91.What is Closuere?
 // A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 /*
 //notice use of double parenthesis
@@ -1763,10 +1763,10 @@ disadvantages :
 
 */
 
-//92. Garbage Collector
+//92.Garbage Collector
 //It is a program in the browser/JS Engine which is responsible for freeing up the memory which are unutilised.
 
-//93. What is  First class function ?
+//93.What is  First class function ?
 /*
 The ability of functions to be:
 1. Assigned to variable
@@ -1790,7 +1790,7 @@ console.log(Object.keys(object1));
 
 
 
-//95. Object.values()
+//95.Object.values()
 //The Object.values() static method returns an array of a given object's own enumerable string-keyed property values.
 
 /*
@@ -1804,7 +1804,7 @@ console.log(Object.values(object1));
 // Expected output: Array ["somestring", 42, false]
 */
 
-//96. JS Engine EXPOSED 🔥 Google's V8 Architecture 🚀 
+//96.JS Engine EXPOSED 🔥 Google's V8 Architecture 🚀 
 /*
 when you run js code that time global execution context is created and push inside the call Stack
 Things learned:
@@ -1818,14 +1818,14 @@ Things learned:
 8. Execution has Garbage collector and other optimisation such as inlining, copy elusion, inline caching etc.
 */
 
-//97. What is Higher Order Function 
+//97.What is Higher Order Function 
 // A Function that takes other function as argument or return function from it, is called higher order function, whereas the passed function is called callback function
 // Example : Map,Filter,Reduce
 
 //98. What is Callback Function 
 //Functions passed as argument into another functions.
 
-//99. What is CallBackHell?
+//99.What is CallBackHell?
 /*
 Two issues while using callbacks
 
@@ -1838,7 +1838,7 @@ The callback function is passed to another callback, this way we lose the contro
 That process is called inversion of control. 
 */
 
-//100. What is Promise?
+//100.What is Promise?
 //A Promise is an object that represent the eventual completion or failure of an asynchronous operation.
 //Essentialy ,a promise is a return a object to which you can attach the callback,instead of passing callbacks into a function
 //State: A Promise can be in one of three states:
@@ -2046,16 +2046,16 @@ printName.call(student2,"Mumbai")  //value of this is student2(we will override 
 //printMyName()
 
 
-//103. What is JavaScript ? What is the role of Javascript engine? (v.imp)
+//103.What is JavaScript ? What is the role of Javascript engine? (v.imp)
 //Javascript is synchronus single threaded language , we used javascript to "convert" static web pages to ineractive and dynamic web pages.
 //Javascript is programming language that is used for converting static web pages to "interactive and dynamic" web pages.
 //Javascript engine is a program present in the web browser that execute javascript code.
 
-//104. What are the Client Side and Server Side? (v.imp)
+//104.What are the Client Side and Server Side? (v.imp)
 //A client is a device,application or software component that "requests" and consumes services or resource from a server.
 //A server is a device,computer or software application that "provides" resources or services to the clients
 
-//105. Js String Methods (v.imp)
+//105.Js String Methods (v.imp)
 //charAt(index): Returns the character at the specified index.
 //concat(str1, str2, ...): Concatenates two or more strings and returns a new string.
 //includes(searchString, position): Checks whether a string contains the specified substring. Returns true or false.
@@ -2255,7 +2255,7 @@ function foo() {
 //113.What is Arrow function? what is used of arrow function?
 //arrow function is also called as fat Arrow function,is a "simple and sorter way" for defining functions in javascript.
 
-//114. difference between arrow and normal function 
+//114.difference between arrow and normal function 
 //1.syntax 
 //1.Arrow functions have a concise syntax using the => arrow token. They don't need the function keyword, curly braces, or the return keyword if the function body is a single expression.
 //2.Normal functions can be defined using either function declarations or function expressions. They use the function keyword and may have a name (in function declarations) and a block body enclosed in curly braces.
@@ -2326,7 +2326,7 @@ exampleFunction(1, 2);
 //Animations and Transitions
 //Time taking Operations
 
-//117. What is difference between null vs undefined
+//117.What is difference between null vs undefined
 //null
 //null is assigned to indicate that a variable or object property has no value or that it is explicitly empty. 
 //type of null is a object
@@ -2336,14 +2336,14 @@ exampleFunction(1, 2);
 //Undefined can be used when you dont have a value right now,but you will get it after some logic or operation.
 //type of undefined is undefined
 
-//118. Explain ES6 features
+//118.Explain ES6 features
 //1.let and const keyword
 //both are block scope variable 
 //with let keyword we can declare a varible and we can e assign value to it later
 //but in const case we have declare and assign value to it same line/time
 
 //2.spread and Rest Operator
-// What is the difference between Rest and Spread Operator in Js?(v.imp);
+//What is the difference between Rest and Spread Operator in Js?(v.imp);
 //Spread 
 //The spread operator is used to "expand an iterable (like an array or string)" into individual elements.
 //It allows you to easily copy elements from one array into another or merge multiple arrays together.
@@ -2354,13 +2354,8 @@ exampleFunction(1, 2);
 //3.Template literal
 //Template literals, introduced in ECMAScript 6 (ES6), are a type of string literal that "allow" for easier and more flexible "string interpolation" in JavaScript. 
 //They are enclosed by backticks (` `) instead of single quotes or double quotes.
-
 //4.Arrow function
 //5.Promises
-
-
-
-
 
 //119. Difference between Find and Filter
 //Find Method
@@ -2370,20 +2365,20 @@ exampleFunction(1, 2);
 //Filter Method returns the "array of elements" that satifies the condition
 
 
-//120. What is the Difference between Map and ForEach Array Method 
+//120.What is the Difference between Map and ForEach Array Method 
 //1. Return Value
 //Map Method iterates over each element in the array and executes a callback function for each element and return new array with the transformed values.
 //Where as ForEach method return undefined
 
-//2. Method Chaining
+//2.Method Chaining
 //With Map Method we can chain other methods
 //we can not do method chaining with forEach because it returns undefined
 
-//121. What is Array Destructuring in js? (v.imp)
+//121.What is Array Destructuring in js? (v.imp)
 //It introduced in ECMAScript6
 //Array Destructuring  allows you to "extract elements from an array" and assign them to "individual variables" in the single Statement
 
-//122. for of vs for in
+//122.for of vs for in
 //for of loop is used to loop through the values of an array.
 //for in loop is used to loop through the properties of an Object.
 /*
@@ -2394,15 +2389,15 @@ for (let key in obj) {
 }
 */
 
-//123. What is Callback Function 
+//123.What is Callback Function 
 //A callback function is a function which "passed as an argument" to another function
 //JS is synchronous single threaded language but through use of Callback functions we can perform async task.
 //Eg, Event listeners make use of this.
 
-//124. What is Higher Order Function
+//124.What is Higher Order Function
 //Higher Order Function is function which take one or more function as an arguments or return a function
 
-//125. What is Pure and Impure Function 
+//125.What is Pure and Impure Function 
 //pure function is a function that always produces the "same output for the same input".
 //pure function
 /*
@@ -2425,7 +2420,7 @@ sum(5) //5
 sum(5) //10   when second time called with same argument
 */
 
-//126. what is meant by Function Currying?
+//126.what is meant by Function Currying?
 //Technique in which we convert a function with multiple arguments into several functions of a single arguments in sequence.
 
 //currying in JavaScript is a process in functional programming in which you can transform a function with multiple arguments into a sequence of nesting functions. It returns a new function that expects the next argument inline.  
@@ -2444,22 +2439,22 @@ multiplyFunc(5); // 10
 
 */
 
-//127. What are Template literals and string interpolation in the strings? (v.imp)
+//127.What are Template literals and string interpolation in the strings? (v.imp)
 // it is feature introduce in EcmaScript6 for "string interpolation and multiline strings" in js.
 
-//128. createElement in js?
+//128.createElement in js?
 // let newElement = document.createElement("div");
 //newElement.textContent = "This is newly Created div element"
 // document.body.appendChild(newElement)
 //<div>This is newly Created div element</div>
 
-//129. What are type of Errors in js?
+//129.What are type of Errors in js?
 //1.Syntax Error 
 //2.Type Error 
 //3.Reference Error 
 //4.Range Error 
 
-//130. In how many ways we can create an Object?
+//130.In how many ways we can create an Object?
 //1.Object literal
 /*
 const obj = {
@@ -2487,7 +2482,7 @@ men.name="Raj";
 men.age = 28;
 */
 
-//131. Difference between Array and Object?
+//131.Difference between Array and Object?
 //1.Array are collecton  of "values"
 //1.Objects are collection of "key value pairs"
 //2.Array are denoted by square brackets [].
@@ -2495,7 +2490,7 @@ men.age = 28;
 //3.Elements in array are ordered
 //3.Elements in Objects are unordered
 
-//132. how do you add,modify and delete properties of an object?
+//132.how do you add,modify and delete properties of an object?
 //add
 //var person = {};
 //person.name = "Raj"
@@ -2506,7 +2501,7 @@ men.age = 28;
 //delete
 //delete person.name
 
-//133. what are some common methods to iterate over the properties of an  object?
+//133.what are some common methods to iterate over the properties of an  object?
 //1.for in loop
 /*
 for(let keys in person){
@@ -2531,7 +2526,7 @@ Object.values(person).forEach((values)=>{
 // Raj
 */
 
-//134. how do you check if a property exists in the Object or not?
+//134.how do you check if a property exists in the Object or not?
 //1. Using in Operator    (return  boolean value)
 //console.log("name" in person);  //true
 //console.log("city" in person);  //false
@@ -2544,7 +2539,7 @@ Object.values(person).forEach((values)=>{
 //console.log(person.name !== undefined) //true
 //console.log(person.city !== undefined) //false
 
-//135. Difference between deep copy vs shallo copy
+//135.Difference between deep copy vs shallo copy
 //shallow copy in nested object case will changed the parent object property value , if cloned object property value is changed
 //but deep copy will not modify parent object property value.
 //In JavaScript, when you need to duplicate an object, you have to consider whether you want a shallow copy or a deep copy
@@ -2584,7 +2579,7 @@ console.log(deepCopy.address.city); //Pune
 */
 
 
-//136. How do you clone or copy an Object
+//136.How do you clone or copy an Object
 
 //1.Spread Syntax (shallow copy)
 //let clonedObject = {...originalObject}
@@ -2624,7 +2619,7 @@ let myArray = [1, 2, 3];
 addElement(myArray);
 console.log(myArray); // Output: [1, 2, 3, 4] (original array modified)
 */
-//137. What is Set Object in js?
+//137.What is Set Object in js?
 //The set Object is the collection of "unique values" ,meaning that duplicate values are not allowed.
 //Set provides Method for "adding,deleting and checking the existence of values" in the set.
 //set can be used to "remove duplicate values" from arrays.
@@ -2647,7 +2642,7 @@ console.log(uniqueValues.size); //2
 console.log(uniqueValues.size); //1
 */
 
-//138. What is Map Object in js?
+//138.What is Map Object in js?
 //The Map object is the collection of "key value pairs" where each key can be any type,and each value can also be of any type.
 //As map maintains the order of key-values pairs as they were inserted.
 /*
@@ -2669,7 +2664,7 @@ console.log(personDetails.size); //1
 */
 
 
-//139. What is Event Delegation in js? (v.imp)
+//139.What is Event Delegation in js? (v.imp)
 //Event delegation in javascript is a technique where you attach a "single event handler to a parent element" to handle events on its "child elements".
 //Event Bubbling => triggered bottom to top
 //Event Capturing => triggered top to bottom
@@ -2698,7 +2693,7 @@ console.log("Bubbling", + this.id); //MyButton inner outer
 }
 */
 
-//141. What is Event Capturing in js?
+//141.What is Event Capturing in js?
 //Event Capturing is the process in javascript where an event is handled starting from the highest-level anchestor (the root of the DOM tree(html)) and "moving down to the target element".
 /*
 <div id="outer">
@@ -2720,7 +2715,7 @@ console.log("Capturing", + this.id); //outer inner MyButton
 }
 */
 
-//142. what is the purpose of the event.preventDefault() in js?
+//142.what is the purpose of the event.preventDefault() in js?
 //The event.preventDefault() method is used to "prevent the default behaviour" of an event and the link will be prevented.
 //<a href="https://www.example.com" id="myLink">Click here</a>
 
@@ -2737,7 +2732,7 @@ console.log("Clicked,default action prevented")
 
 */
 
-//143. What is npm? what is role of node_modules folder? (v.imp)
+//143.What is npm? what is role of node_modules folder? (v.imp)
 //NPM(node package manager)
 //npm can used to manage "dependencies" for your project, including "react library" itself.
 //with npm we can install , update packages also
@@ -2745,10 +2740,10 @@ console.log("Clicked,default action prevented")
 //node_modules folder
 //"All dependencies" required by a project are "stored" in the node_modules folder. This ensures that the project has access to the necessary libraries and tools during development and execution.
 
-//187. what is role of index.html file in react? (v.imp)
+//what is role of index.html file in react? (v.imp)
 //In a typical React application, the index.html file serves as the entry point or the root HTML file of the application. Its primary role is to provide the HTML structure into which the React components are rendered.
 
-//144. what is role of index.js file and ReactDOM in react? (v.imp)
+//144.what is role of index.js file and ReactDOM in react? (v.imp)
 //The primary purpose of ReactDOM is to render React components into the DOM.
 //ReactDOM is the javascript library that "renders" component to the DOM or browser.
 //ReactDOM provides the render() method, which is used to "render a React element" into the DOM. It takes two arguments: the React element to be rendered and the DOM node where the element should be mounted.
@@ -2794,16 +2789,16 @@ ReactDOM.render(<App />, document.getElementById('root'));
 //5.Code Reusability
 
 
-//147. What is Babel? 
+//147.What is Babel? 
 //Babel is a popular "JavaScript compiler" that is mainly "used" to "convert" ECMAScriptES6+ code into a backwards-compatible version of JavaScript that can be executed in older browsers or environments.
 //Babel allows developers to write code using the "latest JavaScript syntax" (such as arrow functions, template literals, classes, etc.) without having to wait for all browsers to support these features. Babel then "transpiles" this modern JavaScript code into "equivalent code" that works in older environments.
 
-//148. What is the Role of Fragement in JSX? (v.imp)
+//148.What is the Role of Fragement in JSX? (v.imp)
  //React Fragment "allow" you to "wrap multiple component or elements" without adding extra node to the DOM.
 //This can be useful when rendering multiple child elements/components in a single parent component
 //We can't use className inside the fragment ex: < className> , but can use key inside the fragment ex: <React.Fragment key = {data.id}>
 
-//149. What are the Types of conditional Rendering in jsx? (v.imp)
+//149.What are the Types of conditional Rendering in jsx? (v.imp)
 //1.if/else statement
 //2.Ternary Operator
 //3.&&Operator
@@ -2818,12 +2813,12 @@ ReactDOM.render(<App />, document.getElementById('root'));
 //4.Using Callback Functions
 //5.Using Component composition
 
-//151. What are Class Component in React(v.imp)
+//151.What are Class Component in React(v.imp)
 //Class components are defined using "javascript classes".
 //They are stateful components by using the lifecycle methods.
 //The render method in class component is responsible for returning jsx.
 
-//152. What is Lazy Loading?
+//152.What is Lazy Loading?
 //lazy loading means that "a component or a part of code must get loaded when it is required". It is also referred to as code splitting.
 
 //In React, lazy loading is primarily achieved using the React.lazy() function and the Suspense component. Here's how lazy loading works in React:
@@ -2870,8 +2865,8 @@ function MyComponent() {
 //4.Css Frameworks: External libraries like bootstrap,tailwind css
 //5.Global Stylesheet
 
-//156. How you can impleament authentication in react application(v.imp)
-//1. Set Up a Backend Service
+//156.How you can impleament authentication in react application(v.imp)
+//1.Set Up a Backend Service
 //2.User Registration
 //3.User Login: Implement a user login form where users can enter their credentials (e.g., email and password). When the user submits the login form, send a request to the backend API to authenticate the user's credentials. If the credentials are valid, the backend should issue a JSON Web Token (JWT) or session token to the client.
 //4.Token Storage: Store the JWT or session token securely on the client side, typically using browser storage mechanisms such as localStorage or sessionStorage.
@@ -2880,10 +2875,10 @@ function MyComponent() {
 //7.send data
 //8.Display data on browser
 
-//157. What is the used of React Profiler
+//157.What is the used of React Profiler
 //React Profile is the set of tools in react that allow developers to anlyze the Performance of the React Application 
 
-//158. what is difference between fetch and axios for API calls in react?
+//158.what is difference between fetch and axios for API calls in react?
 //In React, both fetch and Axios are commonly used for making API calls
 /*
 Syntax:
